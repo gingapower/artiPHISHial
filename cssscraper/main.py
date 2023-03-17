@@ -1,10 +1,12 @@
 import requests
+import time
 from bs4 import BeautifulSoup
 from collections import Counter
 import os.path
 from urllib.parse import urlparse
 import colors
-URL = "https://www.instagram.com/"
+import logo
+URL = "https://www.htl-villach.at/"
 page = requests.get(URL)
 
 soup = BeautifulSoup(page.content, "html.parser")
@@ -31,14 +33,11 @@ if css_link is not None:
     css_response = requests.get(css_url)
     css_content = css_response.content.decode()
 
+    print("Extracting Colors from website ...")
     colors.extract_colors(css_content)
 
     # Find the URL of the logo image
-    logo_link = None
-    for img in soup.find_all("img"):
-        if ("logo" or "title") in img.get("src"):
-            logo_link = img.get("src")
-            break
+    logo_link = logo.extract_logo(URL)
 
     if logo_link is not None:
         # Download the logo image
@@ -54,6 +53,8 @@ if css_link is not None:
             logo_filename = os.path.basename(urlparse(logo_url).path)
             with open(logo_filename, "wb") as f:
                 f.write(logo_response.content)
+            print("Logo searching ...")
+            time.sleep(1)
             print(f"Logo image downloaded successfully and saved as {logo_filename}")
         else:
             print("Failed to download logo image")
@@ -61,6 +62,3 @@ if css_link is not None:
         print("Logo image not found")
 else: 
     print("CSS file link not found")
-
-#TO DO: Scale options for Logo
-#TO DO: List the first 4 top colors of the website
