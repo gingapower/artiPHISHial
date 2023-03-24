@@ -7,13 +7,14 @@ from urllib import request
 import requests
 import re
 import sys
+import cloner
 
 #Vars
 poss_var = ["Login","login","LOGIN","Log-in","log-in","signin", "Logon", "LOGON", "Log-on", "logon", "SignIn", "Sign-In","sing-in", "Accounts", "accounts", "account","Account","client"]
 links_with_text = []
 check = []
 login_link = []
-url = "https://www.paypal.com/at/home"
+url = "https://www.apple.com/"
 
 
 result = requests.get(url).text
@@ -99,7 +100,15 @@ def test():
         doc2 = BeautifulSoup(result, "html.parser")
         check_form(doc2)
         
-    
+def buildurl(linklist, url):
+    for index, element in enumerate(linklist):
+        if element.startswith("/"):
+            if url.endswith("/"):
+                url = url[:-1]
+            newurl = url + element
+            linklist[index] = newurl
+            #linklist.remove(element)
+
 def main():
     find_links()
     if(check_form(doc)):
@@ -115,7 +124,11 @@ def main():
         print(check_google_login())
         # print("checking standart ednings:")
         # test()
-        print(login_link)
+        #print(login_link)
+        if len(login_link) > 0:
+            buildurl(login_link, url)
+            print(login_link)
+            cloner.clone_webpage(login_link[0])
 
 
 main()
