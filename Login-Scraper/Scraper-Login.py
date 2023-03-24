@@ -1,16 +1,21 @@
 from cmath import log
+from doctest import ELLIPSIS_MARKER
 from pickle import FALSE
 from turtle import pos
 from bs4 import BeautifulSoup
 from urllib import request
 import requests
 import re
+import sys
+import cloner
 
 #Vars
-poss_var = ["Login","login","LOGIN","Log-in","log-in", "Logon", "LOGON", "Log-on", "logon", "SignIn", "Sign-In","sing-in", "Accounts", "accounts", "account","Account","client"]
+poss_var = ["Login","login","LOGIN","Log-in","log-in","signin", "Logon", "LOGON", "Log-on", "logon", "SignIn", "Sign-In","sing-in", "Accounts", "accounts", "account","Account","client"]
 links_with_text = []
 check = []
-url = "https://digi4school.at/"
+login_link = []
+url = "https://www.apple.com/"
+
 
 result = requests.get(url).text
 doc = BeautifulSoup(result, "html.parser")
@@ -19,83 +24,111 @@ doc = BeautifulSoup(result, "html.parser")
 with open('output.html', 'w', encoding="utf-8") as file:
     file.write(str(doc))
 
-
+#find all links with href in it:
 def find_links():
-    #find all links with href in it:
     for a in doc.find_all('a', href=True): 
         if a.text: 
             links_with_text.append(a['href'])
     a = doc.find_all('a')
     #print(links_with_text)
 
+#find <a> with clear title
+def find_links_title():
+    for link in doc.find_all('a'):
+        title = link.get('title')
+        if title is not None and any(var.lower() in title.lower() for var in poss_var):
+            href = link.get('href')
+            login_link.append(href)
+            return True
 
 #check if for <form> fied
 def check_form(document):
-    poss_var = ["username", "e-mail", "email", "mail", "USERNAME", "Account","Password", "password", "secret"]
-    for var in poss_var:
-        if document.find('input', {'name': var}):
-            return("found: "+var)
+    poss_vars = ["username", "e-mail", "email", "mail", "USERNAME", "Account","Password", "password", "secret"]
+    for var in poss_vars:
+        if document.find('input', {'name'.lower(): "email"} and {'name'.lower():'password'}): 
+            return True
         
-
 #check all links on page
 def check_links(linklist):
+    found_var = False
     for var in poss_var:
         for x in linklist:
             if var in x:
-                return(x)
+                login_link.append(x)
+                found_var = True
+    if found_var:
+        return True
+    else:return False
         
 #check complete html - search keywords
-check_url = False
 def check_html():
     #print(len(check))
     if len(check) == 0:
         file_path = 'output.html'
         with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
-            search = ""
             for i, line in enumerate(lines):
                 if "href" in line:
                     matches = re.findall(r'href="(.+?)"', line)
+                    #print(matches)
                     check_links(matches)
-                          
+                                          
                 if "login" in line:
                     search = line
                     #print(line)
                     for url in re.findall('"(/[^"]*)"', line):
                         if url.startswith('/'):
-                            check_url = True
-                            return(url)
+                            login_link.append(url)
+                            return True
+                       
 
 #check if it has a google Login (Googl -services:)
 def check_google_login():
     file_path = 'output.html'
-    if check_url == False:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-            for i, line in enumerate(lines):
-                if "https://accounts.google.com/" in line:
-                    print("Google Login found")
-                    print("url: https://accounts.google.com/")
+    with open(file_path, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+        for i, line in enumerate(lines):
+            if "https://accounts.google.com/" in line:
+                print("Google Login found")
+                print("url: https://accounts.google.com/")
 
 def test():
     for i in poss_var:
         url2 = url+i
-        print(url2)
+        #print(url2)
         result2 = requests.get(url2).text
         doc2 = BeautifulSoup(result, "html.parser")
-        print(check_form(doc2))
+        check_form(doc2)
         
-    
+def buildurl(linklist, url):
+    for index, element in enumerate(linklist):
+        if element.startswith("/"):
+            if url.endswith("/"):
+                url = url[:-1]
+            newurl = url + element
+            linklist[index] = newurl
+            #linklist.remove(element)
+
 def main():
     find_links()
-    print("standart Loginpage: ")
-    print(check_form(doc))    
-    print("check Links: ")
-    print(check_links(links_with_text))
-    print("check HTML: ")
-    print(check_html())
-    check_google_login()
-    test()
+    if(check_form(doc)):
+        print("Page identified as Loginpage!")
+    else:  
+        print("checking all found links:")   
+        print(check_links(links_with_text))#
+        print("titles of the links:")
+        print(find_links_title())
+        print("checking html code:")
+        print(check_html())
+        print("check if google login:")
+        print(check_google_login())
+        # print("checking standart ednings:")
+        # test()
+        #print(login_link)
+        if len(login_link) > 0:
+            buildurl(login_link, url)
+            print(login_link)
+            cloner.clone_webpage(login_link[0])
 
 
 main()

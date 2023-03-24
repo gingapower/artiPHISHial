@@ -2,11 +2,13 @@ import requests
 import time
 from bs4 import BeautifulSoup
 from collections import Counter
-import os.path
+import os
 from urllib.parse import urlparse
 import colors
 import logo
-URL = "https://www.htl-villach.at/"
+
+
+URL = "https://www.sparkasse.at/"
 page = requests.get(URL)
 
 soup = BeautifulSoup(page.content, "html.parser")
@@ -37,28 +39,5 @@ if css_link is not None:
     colors.extract_colors(css_content)
 
     # Find the URL of the logo image
-    logo_link = logo.extract_logo(URL)
-
-    if logo_link is not None:
-        # Download the logo image
-        if "http" in logo_link:
-            logo_url = logo_link
-        else:
-            logo_url = f"{URL}/{logo_link}"
-
-        logo_response = requests.get(logo_url)
-
-        if logo_response.ok:
-            # Save the logo image with the original image format
-            logo_filename = os.path.basename(urlparse(logo_url).path)
-            with open(logo_filename, "wb") as f:
-                f.write(logo_response.content)
-            print("Logo searching ...")
-            time.sleep(1)
-            print(f"Logo image downloaded successfully and saved as {logo_filename}")
-        else:
-            print("Failed to download logo image")
-    else:
-        print("Logo image not found")
-else: 
-    print("CSS file link not found")
+    query = "spotify logo"
+    logo_link = logo.extract_logo(query)
