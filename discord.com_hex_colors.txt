@@ -1,0 +1,5 @@
+Color code: #23272a, Count: 49
+Color code: #00b0f4, Count: 30
+Color code: #f6f6f6, Count: 22
+Color code: #5865f2, Count: 21
+Color code: #f04747, Count: 16

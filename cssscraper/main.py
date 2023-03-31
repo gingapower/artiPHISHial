@@ -8,7 +8,8 @@ import colors
 import logo
 
 
-URL = "https://www.sparkasse.at/"
+URL = "https://discord.com/"
+domain = URL.split("//")[1].split("/")[0]
 page = requests.get(URL)
 
 soup = BeautifulSoup(page.content, "html.parser")
@@ -36,8 +37,10 @@ if css_link is not None:
     css_content = css_response.content.decode()
 
     print("Extracting Colors from website ...")
-    colors.extract_colors(css_content)
+    #Call the function to get the colors
+    colors.extract_colors(URL, css_content)
 
-    # Find the URL of the logo image
-    query = "spotify logo"
-    logo_link = logo.extract_logo(query)
+    print("Loading image from website ...")
+    #Call the function to get the logo
+    logo_link = logo.extract_logo(domain)
+    print("Logo successfully pulled")
