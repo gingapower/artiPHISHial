@@ -7,14 +7,16 @@ from urllib import request
 import requests
 import re
 import sys
-import cloner
+import clonetry1
+import clonetry2
+import screenshot
 
 #Vars
-poss_var = ["Login","login","LOGIN","Log-in","log-in","signin", "Logon", "LOGON", "Log-on", "logon", "SignIn", "Sign-In","sing-in", "Accounts", "accounts", "account","Account","client"]
+poss_var = ["Login","login","LOGIN","sign_in","Sign_in","log_in","Log_in","Log-in","log-in","signin", "Logon", "LOGON", "Log-on", "logon", "SignIn", "Sign-In","sing-in", "Accounts", "accounts", "account","Account","client"]
 links_with_text = []
 check = []
 login_link = []
-url = "https://www.apple.com/"
+url = "https://www.esn.com/"
 
 
 result = requests.get(url).text
@@ -128,7 +130,10 @@ def main():
         if len(login_link) > 0:
             buildurl(login_link, url)
             print(login_link)
-            cloner.clone_webpage(login_link[0])
+            clonetry2.clone_webpage(login_link[0])
+            clonetry1.download_website(login_link[0])
+            screenshot.take_screenshot(login_link[0], 'screenhot.png')
+            #clonetry1.url = login_link
 
 
 main()
