@@ -1,1 +1,0 @@
-https://www.htl-villach.at/
