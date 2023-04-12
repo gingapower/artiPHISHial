@@ -4,6 +4,7 @@ from urllib.parse import urlparse, urljoin
 import requests
 from bs4 import BeautifulSoup
 from urllib.request import urlretrieve
+import htmlediter
 
 def download_website(url):
     # Create a folder to store the downloaded files
@@ -54,5 +55,6 @@ def check_html(folder_path):
     for filename in os.listdir(folder_path):
         if os.path.isfile(os.path.join(folder_path, filename)):
             print(filename)
+    htmlediter.insert_css_links(folder_path)
 
 

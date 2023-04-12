@@ -10,13 +10,14 @@ import sys
 import clonetry1
 import clonetry2
 import screenshot
+import htmlediter
 
 #Vars
 poss_var = ["Login","login","LOGIN","sign_in","Sign_in","log_in","Log_in","Log-in","log-in","signin", "Logon", "LOGON", "Log-on", "logon", "SignIn", "Sign-In","sing-in", "Accounts", "accounts", "account","Account","client"]
 links_with_text = []
 check = []
 login_link = []
-url = "https://www.esn.com/"
+url = "https://www.linkedin.com/"
 
 
 result = requests.get(url).text
@@ -115,6 +116,8 @@ def main():
     find_links()
     if(check_form(doc)):
         print("Page identified as Loginpage!")
+        clonetry1.download_website(url)
+        screenshot.take_screenshot(url, 'screenhot.png')
     else:  
         print("checking all found links:")   
         print(check_links(links_with_text))#
@@ -130,10 +133,10 @@ def main():
         if len(login_link) > 0:
             buildurl(login_link, url)
             print(login_link)
-            clonetry2.clone_webpage(login_link[0])
+            #clonetry2.clone_webpage(login_link[0])
             clonetry1.download_website(login_link[0])
             screenshot.take_screenshot(login_link[0], 'screenhot.png')
-            #clonetry1.url = login_link
+
 
 
 main()
