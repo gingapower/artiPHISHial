@@ -8,15 +8,15 @@ import colors
 import logo
 import webbrowser
 
-URL = "https://www.acp.at/"
-domain = URL.split("//")[1].split("/")[0]
-page = requests.get(URL)
-
-soup = BeautifulSoup(page.content, "html.parser")
+#URL = "https://www.x-tention.com/"
 
 
-# Find the URL of the CSS file
-def main():
+def main(url):
+    domain = url.split("//")[1].split("/")[0]
+    page = requests.get(url)
+
+    soup = BeautifulSoup(page.content, "html.parser")
+    # Find the URL of the CSS file
     css_link = None
     for link in soup.find_all("link"):
         if link.get("rel") == ["stylesheet"]:
@@ -28,7 +28,7 @@ def main():
         if "http" in css_link:
             css_url = css_link
         else:
-            css_url = f"{URL}{css_link}"
+            css_url = f"{url}{css_link}"
 
         # Remove "//" except after "http" and "https"
         if "//" in css_url and not css_url.startswith("http://") and not css_url.startswith("https://"):
@@ -40,11 +40,12 @@ def main():
 
         print("Extracting Colors from website ...")
         #Call the function to get the colors
-        colors.extract_colors(URL, css_content)
+        colors.extract_colors(url, css_content)
 
         print("Loading image from website ...")
-        #Call the function to get the logo
-        logo_link = logo.extract_logo(domain)
+
+        # Call the function to get the logo
+        logo.extract_logo(domain)
         print("Logo successfully pulled")
 
         url = 'file:///C:/Users/leonw/OneDrive - HTL Villach/HTL/artiPHISHial/artiPHISHial/cssscraper/login.html'
@@ -54,4 +55,4 @@ def main():
         # Open the URL in the specified browser
         webbrowser.open(url)
 
-main()
+#main("https://www.infineon.com")
