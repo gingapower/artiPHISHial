@@ -7,7 +7,7 @@ def extract_logo(query):
     response = requests.get(f"https://logo.clearbit.com/{query}")
     # Use Pillow to open the image data and save it to a file
     image = Image.open(BytesIO(response.content))
-    image.save(f"logo{query}.png")
+    image.save("logo.png")
 
 
 

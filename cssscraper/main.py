@@ -6,9 +6,9 @@ import os
 from urllib.parse import urlparse
 import colors
 import logo
+import webbrowser
 
-
-URL = "https://discord.com/"
+URL = "https://www.acp.at/"
 domain = URL.split("//")[1].split("/")[0]
 page = requests.get(URL)
 
@@ -44,3 +44,10 @@ if css_link is not None:
     #Call the function to get the logo
     logo_link = logo.extract_logo(domain)
     print("Logo successfully pulled")
+
+    url = 'file:///C:/Users/leonw/OneDrive - HTL Villach/HTL/artiPHISHial/artiPHISHial/cssscraper/login.html'
+
+    # Set the browser to use
+    os.environ['BROWSER'] = 'C:/Program Files/Mozilla Firefox/firefox.exe'
+    # Open the URL in the specified browser
+    webbrowser.open(url)

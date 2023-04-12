@@ -3,6 +3,14 @@ import re
 from collections import Counter
 import colorsys
 from urllib.parse import urlparse
+from bs4 import BeautifulSoup
+
+# Read the HTML file
+with open('login.html', 'r') as f:
+    html = f.read()
+
+# Parse the HTML with BeautifulSoup
+soup = BeautifulSoup(html, 'html.parser')
 
 def extract_colors(url, css_content):
     domain = urlparse(url).netloc
@@ -22,7 +30,7 @@ def extract_colors(url, css_content):
         if background_matches:
             background_counts.update(background_matches)
             with open(f"{domain}_background_colors.txt", "a") as f:
-                for color, count in background_counts.most_common(3):
+                for color, count in background_counts.most_common(2):
                     background_color = color[1]
                     f.write(f"Background color: {background_color}, Count: {count}\n")
                     print(f"Background color: {background_color}, Count: {count}")
@@ -40,14 +48,26 @@ def extract_colors(url, css_content):
 
             color_counts.update(matches)
 
+            # Save colors in a txt file
             with open(f"{domain}_{color_type}_colors.txt", "a") as f:
-                for color, count in color_counts.most_common(5):
+                for color, count in color_counts.most_common(2):
                     if color_type == "hex":
                         f.write(f"Color code: #{color}, Count: {count}\n")
                         print(f"Color code: #{color}, Count: {count}")
                     elif len(color) == 4:
                         f.write(f"Color code: {color_type}({', '.join(map(str, color))}), Count: {count}\n")
                         print(f"Color code: {color_type}({', '.join(map(str, color))}), Count: {count}")
+
+            # Get the second most common color
+            if color_type == "hex":
+                color = color_counts.most_common(1)[0][0]
+                login_button = soup.find('button', {'id': 'login-button'})
+                # Set the login button's background-color to the second color
+                login_button['style'] = f'background-color: #{color};'
+
+                # Write the modified HTML back to the file
+                with open('login.html', 'w') as f:
+                    f.write(str(soup))
 
         else:
             print(f"{color_type} not found")
