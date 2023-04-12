@@ -1,3 +1,0 @@
-Background color: #f6f6f6, Count: 17
-Background color: #23272a, Count: 6
-Background color: #ebf5ff, Count: 4
