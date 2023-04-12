@@ -1,0 +1,2 @@
+Color code: #f00f40, Count: 2
+Color code: #3d4a52, Count: 1

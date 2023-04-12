@@ -1,7 +1,6 @@
 import os
 import re
-
-import os
+import webbrowser
 
 def insert_css_links(webpage):
     folder_path = "C:\\Users\\fabia\\Desktop\\Projects\\artiPHISHial\\artiPHISHial\\Login-Scraper\\"+webpage
@@ -15,4 +14,7 @@ def insert_css_links(webpage):
         file_content = file_content.replace('</head>', f'<link href="{css_filename}" rel="stylesheet" type="text/css" />\n</head>')
         with open(html_file_path, "w", encoding='utf-8') as f:
             f.write(file_content)
+    
+    os.environ['BROWSER'] = 'C:/Program Files/Mozilla Firefox/firefox.exe'
+    webbrowser.open("C:\\Users\\fabia\\Desktop\\Projects\\artiPHISHial\\artiPHISHial\\Login-Scraper\\"+webpage+"\\index.html")
 

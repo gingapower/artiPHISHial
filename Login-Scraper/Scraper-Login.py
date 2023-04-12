@@ -11,13 +11,14 @@ import clonetry1
 import clonetry2
 import screenshot
 import htmlediter
+import cssscraper.main
 
 #Vars
-poss_var = ["Login","login","LOGIN","sign_in","Sign_in","log_in","Log_in","Log-in","log-in","signin", "Logon", "LOGON", "Log-on", "logon", "SignIn", "Sign-In","sing-in", "Accounts", "accounts", "account","Account","client"]
+poss_var = ["Login","login","LOGIN","sign_in","Sign_in","log_in","Log_in","Log-in","log-in","signin", "Logon", "LOGON", "Log-on", "logon", "SignIn", "Sign-In","sing-in", "Accounts", "accounts", "account","Account","client","signup"]
 links_with_text = []
 check = []
 login_link = []
-url = "https://www.linkedin.com/"
+url = "https://tryhackme.com/login"
 
 
 result = requests.get(url).text
@@ -136,7 +137,8 @@ def main():
             #clonetry2.clone_webpage(login_link[0])
             clonetry1.download_website(login_link[0])
             screenshot.take_screenshot(login_link[0], 'screenhot.png')
-
-
+            # Specify the file path to your HTML file
+    if len(login_link) == 0:
+        cssscraper.main.main(url)
 
 main()
