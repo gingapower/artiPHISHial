@@ -8,7 +8,7 @@ import colors
 import logo
 import webbrowser
 
-#URL = "https://www.x-tention.com/"
+# url = "https://www.x-tention.com/"
 
 
 def main(url):
