@@ -1,0 +1,2 @@
+Background color: #ffd500, Count: 42
+Background color: #ffd500, Count: 38

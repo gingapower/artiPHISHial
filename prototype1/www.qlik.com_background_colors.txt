@@ -1,0 +1,2 @@
+Background color: #62a1d8, Count: 3
+Background color: #de5052, Count: 3

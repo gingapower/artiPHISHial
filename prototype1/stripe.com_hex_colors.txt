@@ -1,0 +1,4 @@
+Color code: #0b2540, Count: 2
+Color code: #f6f9fc, Count: 1
+Color code: #0b2540, Count: 2
+Color code: #f6f9fc, Count: 1

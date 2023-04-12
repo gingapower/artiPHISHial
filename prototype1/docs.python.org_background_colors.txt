@@ -1,0 +1,2 @@
+Background color: #ffffc0, Count: 2
+Background color: #f8f8f8, Count: 1

@@ -1,0 +1,2 @@
+Color code: #008000, Count: 10
+Color code: #BA2121, Count: 9
