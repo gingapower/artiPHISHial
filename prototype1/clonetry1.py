@@ -4,7 +4,7 @@ from urllib.parse import urlparse, urljoin
 import requests
 from bs4 import BeautifulSoup
 from urllib.request import urlretrieve
-import htmlediter
+import htmledit
 
 def download_website(url):
     # Create a folder to store the downloaded files
@@ -24,12 +24,15 @@ def download_website(url):
             css_urls.append(css_url)
 
     # Download the CSS files and save them to the folder
-    for css_url in css_urls:
-        absolute_url = urljoin(url, css_url)
-        response = requests.get(absolute_url)
-        css_filename = os.path.basename(css_url.split('?')[0])
-        with open(os.path.join(folder_name, css_filename), 'w', encoding='utf-8') as f:
-            f.write(response.text)
+    try:
+        for css_url in css_urls:
+            absolute_url = urljoin(url, css_url)
+            response = requests.get(absolute_url)
+            css_filename = os.path.basename(css_url.split('?')[0])
+            with open(os.path.join(folder_name, css_filename), 'w', encoding='utf-8') as f:
+                f.write(response.text)
+    except Exception as e:
+        print(f"Error occurred: {e}")
 
     # Extract the image URLs from the HTML
     image_urls = []
@@ -64,6 +67,6 @@ def check_html(folder_path):
     for filename in os.listdir(folder_path):
         if os.path.isfile(os.path.join(folder_path, filename)):
             print(filename)
-    htmlediter.insert_css_links(folder_path)
+    htmledit.insert_css_links(folder_path)
 
 

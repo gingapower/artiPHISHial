@@ -1,521 +1,0 @@
-
-<!DOCTYPE html>
-<!--[if IE 7 ]><html class="ie7" lang="en" dir="ltr"><![endif]-->
-<!--[if IE 8 ]><html class="ie8" lang="en" dir="ltr"><![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" dir="ltr" class="no-js" data-qa-id="login"><!--<![endif]-->
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  
-  <meta http-equiv="Expires" content="0">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta http-equiv="Pragma" content="no-cache">
-
-
-  
-
-  <title>Log in</title>
-  <link rel="icon" type="image/vnd.microsoft.icon"
-  href="/assets/identityprovider/img/favicon.196d05df98a85cb985b31281cf3828a1.ico">
-
-  
-  <link href="/assets/vanilla-css/styles.31e541bac65173e36e0150005d21a631.css" rel="stylesheet">
-  
-  
-  
-
-
-  <!--[if lt IE 9]>
-  <script type="text/javascript" src="/assets/identityprovider/js/ie/html5shiv.c2670f8ab53ed5bd7cde461a0f50b6ca.js"></script>
-  <![endif]-->
-  <script>
-  document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'') + ' js';
-  </script>
-<link href="f3dee679-cookie-policy-v3.2.0.css" rel="stylesheet" type="text/css" />
-<link href="styles.31e541bac65173e36e0150005d21a631.css" rel="stylesheet" type="text/css" />
-</head>
-<body data-qa-id="" 
-class="">
-
-<!-- Current language: en -->
-
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5JLXNF"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  
-
-  <div id="cont" role="main">
-    
-
-
-
-<header id="navigation" class="p-navigation">
-  <div class="row">
-    <div class="p-navigation__banner">
-      <div class="p-navigation__logo">
-        
-        <a href="/" id="u1-logo" class="p-navigation__link">
-          <img src="https://assets.ubuntu.com/v1/d738f754-Ubuntu_One_Mono_Logo.svg" alt="Ubuntu One" width="90">
-        </a>
-        
-      </div>
-      <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-      <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
-    </div>
-    <nav class="p-navigation__nav">
-      <span class="u-off-screen">
-        <a href="#main-content">Jump to main content</a>
-      </span>
-      
-      
-
-
-
-<ul class="p-navigation__links" role="menu" id="ac-status">
-  
-  
-  
-
-<li id="login" data-qa-id="login" class="p-navigation__link">
-  
-  <a id="login-link" data-qa-id="login_link" href="/+login" class="p-link--soft">
-    <span >
-      Log in or Create account
-    </span>
-  </a>
-  
-</li>
-
-
-</ul>
-
-      
-
-      
-    </nav>
-  </div>
-</header>
-
-    <div id="content">
-      <section class="p-strip--dark p-cip-hero is-shallow">
-        <div class="row">
-          <div class="col-12">
-            <h1 class="u-no-margin--bottom" style="max-width: 100%">
-  One account for everything on Ubuntu
-</h1>
-          </div>
-        </div>
-      </section>
-
-      <div id="box" class="row">
-        
-        
-        
-        <div class="">
-          <section class="p-strip">
-            
-            
-            
-            
-
-            
-            
-
-            
-  <div class="row">
-    
-  </div>
-  <div class="row">
-    <div id="auth" class="login col-6">
-      
-      <div class="form-box p-card selected-login">
-        
-<h2 class="p-heading--four title login-title" data-qa-id="ubuntu_login_title">
-  
-    <span class="trusted-rp-name">Ubuntu One</span> › <span class="action-title">log in</span>
-  
-</h2>
-<h2 class="p-heading--four title create-title u-no-margin--top">
-  
-    <span class="trusted-rp-name">Ubuntu One</span> › <span class="action-title">create account</span>
-  
-</h2>
-<hr>
-
-        <div>
-          <div class="login-form">
-            
-
-<form id="login-form" action="/+login" method="post" name="loginform" data-qa-id="login_form">
-  <input type='hidden' name='csrfmiddlewaretoken' value='WouUxO6O6TY2caGEiPrzvtkcZZhhYmo8qLmufHfxv6gfiEbI9LtfhCvVpfCgEkLR' />
-  <div class="p-form-validation email-input">
-    <label for="id_email">Please type your email:</label>
-    <input type="email" name="email" required class="textType" id="id_email" autofocus="autofocus" placeholder="Your email address" />
-    
-  </div>
-
-  
-<div class="hide-nojs user-intention" data-qa-id="login_create_account_radio">
-  <input type="radio" id="id_new_user" name="user-intentions"   tabindex="20" value="create" data-qa-id="user_intention_create">
-  <label for="id_new_user" class="new-user"><span>I don’t have an Ubuntu One account</span></label>
-
-  <input type="radio" id="id_returning_user" name="user-intentions" checked="checked" tabindex="30" value="login" data-qa-id="user_intention_login">
-  <label for="id_returning_user" class="returning-user"><span>I have an Ubuntu One account <i>and my password is:</i></span></label>
-</div>
-
-
-  <div class="p-form-validation password-input">
-    
-    
-    <input type="password" name="password" required maxlength="512" placeholder="Password" class="disableAutoComplete textType" id="id_password" autocomplete="off" />
-  </div>
-
-  
-
-  <div class="actions">
-    
-    <button type="submit" class="p-button--positive u-no-margin--bottom" name="continue" data-qa-id="login_button">
-      <span>Log in</span>
-    </button>
-    
-    <input type="submit" class="p-button--base u-no-margin--bottom" name="forgot_password" formnovalidate formaction="/+forgot_password" value="Forgot your password?">
-    
-
-    
-  </div>
-
-
-<div style="display: none;">
-    <label>Leave this field blank to prove your humanity
-        <input type="text" name="openid.usernamesecret" value="" />
-    </label>
-</div>
-</form>
-
-          </div>
-
-          
-          <noscript>
-            <p class="no-js-create-account">Or create a new account:</p>
-          </noscript>
-
-          <div class="create-form show-no-js">
-            
-
-
-<form action="/+new_account" method="post" name="newaccountform" data-qa-id="create_account_form">
-
-<input type='hidden' name='csrfmiddlewaretoken' value='WouUxO6O6TY2caGEiPrzvtkcZZhhYmo8qLmufHfxv6gfiEbI9LtfhCvVpfCgEkLR' />
-
-  <div class="p-form-validation email-input">
-    <label for="id_email">Please type your email:</label>
-    
-    <input type="email" name="email" required class="textType p-form-validation__input" id="id_email" autofocus="autofocus" placeholder="Your email address" />
-  </div>
-
-  
-
-  
-  <label class="label-passwords">Please tell us your full name and choose a username and password:</label>
-  
-
-  <div class="p-form-validation name-input">
-    <label for="id_displayname">Full name</label>
-    
-    <input type="text" name="displayname" required class="textType p-form-validation__input" placeholder="Your full name" id="id_displayname" />
-  </div>
-
-  
-  <div class="p-form-validation username-input">
-    <label for="id_username">Username</label>
-    
-    <input type="text" name="username" class="textType p-form-validation__input" placeholder="Username" id="id_username" />
-    
-    
-    <ul class="p-form-help-text">
-        <li style="font-size: 0.75rem">Between 3 and 32 characters long.</li>
-        <li style="font-size: 0.75rem">Allowed: lowercase letters, numbers and hyphens.</li>
-        <li style="font-size: 0.75rem"><strong>NOT</strong> allowed: CAPITAL letters, special characters.</li>
-        <li style="font-size: 0.75rem"><strong>NOT</strong> allowed: only numbers or consecutive hyphens.</li>
-    </ul>
-    
-    
-  </div>
-  
-  
-
-
-<div class="p-form-validation">
-  
-  <label for="id_password">Choose password</label>
-  
-  
-  <input type="password" name="password" required maxlength="512" placeholder="Password with at least 8 and at most 512 characters (ASCII only)" class="disableAutoComplete textType p-form-validation__input" id="id_password" autocomplete="off" />
-</div>
-
-<div class="p-form-validation">
-  
-  <label for="id_passwordconfirm">Re-type password</label>
-  
-  
-  <input type="password" name="passwordconfirm" required maxlength="512" placeholder="Retype password" class="disableAutoComplete textType p-form-validation__input" id="id_passwordconfirm" autocomplete="off" />
-</div>
-
-
-  <div class="p-form-validation accept-tos-input">
-    
-    <input type="checkbox" name="accept_tos" required id="id_accept_tos" />
-    <label for="id_accept_tos">I have read and accept the <a href="https://www.ubuntu.com/legal/terms-and-policies/terms-of-service" class="external" target="_blank">Ubuntu One terms of service</a>, <a href="https://www.ubuntu.com/legal/dataprivacy" class="external" target="_blank">data privacy policy</a> and <a href="https://www.ubuntu.com/legal/dataprivacy/sso" class="external" target="_blank">Canonical's SSO privacy notice</a>.</label>
-  </div>
-
-  <button type="submit" class="p-button--positive u-no-margin--bottom" name="continue" data-qa-id="register_button">
-    <span>Create account</span>
-  </button>
-
-<div style="display: none;">
-    <label>Leave this field blank to prove your humanity
-        <input type="text" name="openid.usernamesecret" value="" />
-    </label>
-</div>
-</form>
-
-          </div>
-          
-        </div>
-      </div>
-      
-    </div>
-    <aside class="col-6">
-      <div class="p-table-of-contents">
-        
-<div class="ubuntuone-information related-information">
-    <p>
-        Ubuntu One is the single account you use to log in to all services and sites related to Ubuntu.
-    </p>
-
-    <p>
-        If you have an existing Ubuntu Single Sign On account, this is now called your Ubuntu One account.
-        <a href="/+ubuntuone-account">Read More &rsaquo;</a>
-    </p>
-</div>
-
-      </div>
-    </aside>
-  </div>
-
-          </section>
-        </div>
-      </div>
-  </div><!-- close #content -->
-
-  
-
-
-
-<hr>
-<footer class="p-strip is-shallow" data-qa-id="ubuntuone_footer">
-  <div class="row">
-    <p>Ubuntu One. One place to log in to everything on Ubuntu.</p>
-    <ul class="p-inline-list--middot"><li class="p-inline-list__item"><a href="https://www.ubuntu.com/legal/terms-and-policies/terms-of-service">Terms</a></li><li class="p-inline-list__item"><a href="https://www.ubuntu.com/legal/dataprivacy">Canonical privacy notice</a></li><li class="p-inline-list__item"><a href="https://www.ubuntu.com/legal/dataprivacy/sso">SSO privacy notice</a></li><li class="p-inline-list__item"><a href="https://help.ubuntu.com/community/SSO/FAQs">Support</a></li><li class="p-inline-list__item"><a href="" class="js-revoke-cookie-manager">Manage your tracker settings</a></li><li class="p-inline-list__item"><a href="https://bugs.launchpad.net/canonical-identity-provider/+filebug">Report a bug on this site</a></li><li class="p-inline-list__item"><a href="/set_language">Switch language</a></li></ul>
-    <p>&copy; Copyright 2023 Canonical Ltd. &lsquo;Ubuntu One&rsquo; and &lsquo;Canonical&rsquo; are registered trademarks of Canonical Ltd.</p>
-  </div>
-</footer>
-
-
-</div><!-- close #cont -->
-
-
-<script type="text/javascript">
-YUI_config = {
-  maxURLLength: 2000,
-  combine: true,
-  comboBase: '/combo/?',
-  base: '/assets/yui/3.15.0/',
-  root: 'yui/3.15.0/'
-}
-</script>
-
-
-<script type="text/javascript" src="/combo/?yui/3.15.0/yui/yui-min.js&notexist"></script>
-
-<script type="text/javascript">
-YUI().use('node', 'transition', function (Y) {
-  Y.all('.message.temporary').transition({
-    easing: 'ease-out',
-    duration: 0.1,
-    delay: 5,
-    height: 0,
-    opacity: 0,
-    marginTop: 0,
-    marginBottom: 0,
-    paddingTop: 0,
-    paddingBottom: 0,
-    on: {
-      start: function () {
-        this.setStyle('overflow', 'hidden');
-      }
-    }
-  });
-});
-</script>
-
-<link rel="stylesheet" type="text/css" media="screen" href="https://assets.ubuntu.com/v1/f3dee679-cookie-policy-v3.2.0.css">
-<script type="text/javascript" src="https://assets.ubuntu.com/v1/b9fc480c-cookie-policy-v3.2.0.js"></script>
-<script>cpNs.cookiePolicy();</script>
-
-
-
-
-<script type="text/javascript">
-  'use strict';
-
-  YUI().use('node', function(Y) {
-    var CREATE      = 'create',
-    LOGIN       = 'login',
-    VALUE       = 'value',
-    CLICK       = 'click',
-    PAGESHOW    = 'pageshow',
-    SELECTED    = 'selected',
-
-    formBox     = Y.one('.form-box'),
-    classes     = [CREATE, LOGIN],
-    change,
-    win         = Y.config.win;
-
-    change = function (target) {
-
-      var show = target.get(VALUE),
-      hide = classes[target.get(VALUE) === classes[0] ? 1 : 0],
-      newEmail = formBox.one('.' + hide + '-form input[type=email]').get(VALUE);
-
-      formBox.removeClass(SELECTED + '-' + hide).addClass(SELECTED + '-' + show);
-
-      // transfer email
-      if(newEmail) {
-        formBox.one('.' + show + '-form input[type=email]').set(VALUE, newEmail);
-      }
-
-      // move radios
-      Y.one('.' + show + '-form .email-input').insert(Y.one('.user-intention').remove(), 'after');
-    };
-
-    // bind radios
-    formBox.all('.user-intention input[type=radio]').on(CLICK, function (e) {
-      change(e.target);
-    });
-    // for back buttons, or when firefox caches the radio value
-    if(win.addEventListener) {
-      win.addEventListener(PAGESHOW, function () {
-        change(Y.one('.user-intention input:checked'));
-      }, false);
-    }
-  });
-</script>
-
-
-
-<script type="text/javascript">
-  YUI({
-    groups: {
-      u1: {
-        base: '/assets/identityprovider/js/u1/build/',
-        combine: true,
-        root: 'identityprovider/js/u1/build/',
-        modules:  {
-          'one-password-meter': {
-            type: 'js',
-            path: 'one-password-meter/one-password-meter-min.js',
-            skinnable: true
-          }
-        }
-      }
-    }
-  }).use('one-password-meter', function(Y) {
-    var passwordMeter = new Y.U1.Widgets.PasswordMeter({
-      input: '.create-form #id_password',
-      inputConfirm: '.create-form #id_passwordconfirm',
-      feedback: {
-        strengths: [
-        {
-          className: 'weak',
-          text: 'Strength: weak'
-        },
-        {
-          className: 'fair',
-          text: 'Strength: fair'
-        },
-        {
-          className: 'good',
-          text: 'Strength: good'
-        },
-        {
-          className: 'strong',
-          text: 'Strength: strong'
-        }
-        ],
-        'short': {
-          className: 'short',
-          text: 'Password too short'
-        },
-        'asymmetric': {
-          className: 'asymmetric',
-          text: 'The passwords do not match'
-        }
-      }
-    });
-    passwordMeter.render();
-  });
-</script>
-
-
-
-
-
-<script type="text/javascript">
-(function(){
-  // disable all submit buttons after initial form submission
-  // to prevent double-clicks
-  var formEls = document.querySelectorAll('form');
-
-  if (formEls && formEls.length) {
-    for (var i = formEls.length; i--;) {
-      formEls[i].addEventListener('submit', disableAfterSubmit);
-    }
-  }
-
-  function disableAfterSubmit(e) {
-    var formEl = e.currentTarget;
-    var submitEl = formEl.querySelector('input[type=submit],button[type=submit]');
-
-    if (!submitEl.classList.contains('disabled')) {
-      disableSubmitEl(submitEl);
-    } else {
-      e.preventDefault();
-    }
-  }
-
-  function disableSubmitEl(el) {
-    el.classList.add('disabled');
-  }
-
-})();
-</script>
-
-
-
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M5JLXNF');</script>
-<!-- End Google Tag Manager -->
-
-
-
-</body>
-</html>

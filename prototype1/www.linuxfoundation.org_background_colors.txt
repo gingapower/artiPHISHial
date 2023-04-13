@@ -1,2 +1,0 @@
-Background color: rgba(0,0,0,.6), Count: 2
-Background color: #0b0b0b, Count: 1

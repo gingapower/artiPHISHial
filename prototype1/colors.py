@@ -29,7 +29,7 @@ def extract_colors(url, css_content):
         background_matches = re.findall(background_pattern, css_content)
         if background_matches:
             background_counts.update(background_matches)
-            with open(f"{domain}_background_colors.txt", "a") as f:
+            with open(f"colors/{domain}_background_colors.txt", "a") as f:
                 for color, count in background_counts.most_common(2):
                     background_color = color[1]
                     f.write(f"Background color: {background_color}, Count: {count}\n")
@@ -49,7 +49,7 @@ def extract_colors(url, css_content):
             color_counts.update(matches)
 
             # Save colors in a txt file
-            with open(f"{domain}_{color_type}_colors.txt", "a") as f:
+            with open(f"colors/{domain}_{color_type}_colors.txt", "a") as f:
                 for color, count in color_counts.most_common(2):
                     if color_type == "hex":
                         f.write(f"Color code: #{color}, Count: {count}\n")

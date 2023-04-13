@@ -6,12 +6,9 @@ from bs4 import BeautifulSoup
 from urllib import request
 import requests
 import re
-import sys
 import clonetry1
-import clonetry2
 import screenshot
-import htmlediter
-import maincss
+import maincss 
 
 
 #Vars
@@ -19,8 +16,8 @@ poss_var = ["Login","login","LOGIN","sign_in","Sign_in","log_in","Log_in","Log-i
 links_with_text = []
 check = []
 login_link = []
-url = "https://coindesk-production.us.auth0.com/"
-
+#url = input("pls enter the fucking url")
+url="https://github.com/"
 
 result = requests.get(url).text
 doc = BeautifulSoup(result, "html.parser")

@@ -23,7 +23,7 @@ def take_screenshot(url, output_file):
         driver.quit()
 
         # Specify the file path to your image file
-        file_path = "C:\\Users\\fabia\\Desktop\\Projects\\artiPHISHial\\artiPHISHial\\prototype1\\screenhot.png"
+        file_path = "C:/Users/Fabian Huber/Desktop/ArtiPHISHial/artiPHISHial/prototype1/screenhot.png"
 
         # Open the image file using PIL
         image = Image.open(file_path)

@@ -1,0 +1,2 @@
+Color code: #000000, Count: 26
+Color code: #999999, Count: 14

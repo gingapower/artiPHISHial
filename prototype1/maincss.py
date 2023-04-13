@@ -51,7 +51,7 @@ def main(url):
         logo.extract_logo(domain)
         print("Logo successfully pulled")
 
-        url = 'file:///C:/Users/fabia/Desktop/Projects/artiPHISHial/artiPHISHial/prototype1/login.html'
+        url = 'file:///C:/Users/Fabian Huber/Desktop/ArtiPHISHial/artiPHISHial/prototype1/login.html'
 
         # Set the browser to use firefox
         os.environ['BROWSER'] = 'C:/Program Files/Mozilla Firefox/firefox.exe'
