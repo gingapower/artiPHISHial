@@ -16,8 +16,8 @@ poss_var = ["Login","login","LOGIN","sign_in","Sign_in","log_in","Log_in","Log-i
 links_with_text = []
 check = []
 login_link = []
-#url = input("pls enter the fucking url")
-url="https://github.com/"
+url = input("pls enter the fucking url")
+#url="https://github.com/"
 
 result = requests.get(url).text
 doc = BeautifulSoup(result, "html.parser")
@@ -32,7 +32,7 @@ def find_links():
         if a.text: 
             links_with_text.append(a['href'])
     a = doc.find_all('a')
-    #print(links_with_text)
+    print(links_with_text)
 
 #find <a> with clear title
 def find_links_title():
