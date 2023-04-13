@@ -33,21 +33,28 @@ def download_website(url):
 
     # Extract the image URLs from the HTML
     image_urls = []
-    for img in soup.find_all('img'):
-        image_url = img.get('src')
-        if image_url:
-            image_urls.append(image_url)
+    try:
+        for img in soup.find_all('img'):
+            image_url = img.get('src')
+            if image_url:
+                image_urls.append(image_url)
+        # Download the images and save them to the folder
+        for image_url in image_urls:
+            absolute_url = urljoin(url, image_url)
+            image_filename = os.path.basename(image_url)
+            image_filename = re.sub('[^0-9a-zA-Z_\-\.]', '_', image_filename) # replace invalid characters with an underscore
+            urlretrieve(absolute_url, os.path.join(folder_name, image_filename))
+    except Exception as e:
+        print(f"An error occurred while image file: {e}")
 
-    # Download the images and save them to the folder
-    for image_url in image_urls:
-        absolute_url = urljoin(url, image_url)
-        image_filename = os.path.basename(image_url)
-        image_filename = re.sub('[^0-9a-zA-Z_\-\.]', '_', image_filename) # replace invalid characters with an underscore
-        urlretrieve(absolute_url, os.path.join(folder_name, image_filename))
+    
 
     # Save the HTML of the webpage to a file in the folder
-    with open(os.path.join(folder_name, 'index.html'), 'w', encoding='utf-8') as f:
-        f.write(html)
+    try:
+        with open(os.path.join(folder_name, 'index.html'), 'w', encoding='utf-8') as f:
+            f.write(html)
+    except Exception as e:
+        print(f"An error occurred while writing the HTML file: {e}")
     
     check_html(folder_name)
 
