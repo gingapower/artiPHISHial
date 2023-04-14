@@ -3,6 +3,7 @@ from doctest import ELLIPSIS_MARKER
 from pickle import FALSE
 from turtle import pos
 from bs4 import BeautifulSoup
+import itertools
 from urllib import request
 import requests
 import re
@@ -12,11 +13,24 @@ import maincss
 
 
 #Vars
-poss_var = ["Login","login","LOGIN","sign_in","Sign_in","log_in","Log_in","Log-in","log-in","signin", "Logon", "LOGON", "Log-on", "logon", "SignIn", "Sign-In","sing-in", "Accounts", "accounts", "account","Account","client","signup"]
+link_var = []
+input_mail=[]
+input_pass=[]
+with open('link_keywords', 'r', encoding='utf-8') as file:
+    for line in file:
+        link_var.append(line.strip())
+with open('mail_keywords', 'r', encoding='utf-8') as file:
+    for line in file:
+        input_mail.append(line.strip())
+with open('password_keywords', 'r', encoding='utf-8') as file:
+    for line in file:
+        input_pass.append(line.strip())
+
+
 links_with_text = []
 check = []
 login_link = []
-url = input("pls enter the fucking url")
+url = input("pls enter a url: ")
 #url="https://github.com/"
 
 result = requests.get(url).text
@@ -32,30 +46,30 @@ def find_links():
         if a.text: 
             links_with_text.append(a['href'])
     a = doc.find_all('a')
-    print(links_with_text)
+    
 
 #find <a> with clear title
 def find_links_title():
     for link in doc.find_all('a'):
         title = link.get('title')
-        if title is not None and any(var.lower() in title.lower() for var in poss_var):
+        if title is not None and any(var.lower() in title.lower() for var in link_var):
             href = link.get('href')
             login_link.append(href)
             return True
 
 #check if for <form> fied
-def check_form(document):
-    poss_vars = ["username", "e-mail", "email", "mail", "USERNAME", "Account","Password", "password", "secret"]
-    for var in poss_vars:
-        if document.find('input', {'name'.lower(): "email"} and {'name'.lower():'password'}): 
+def check_form(document, list1, list2):
+    for var1, var2 in itertools.product(list1, list2):
+        if document.find('input', {'name'.lower(): var1}) and document.find('input', {'name'.lower(): var2}):
             return True
+            
         
 #check all links on page
 def check_links(linklist):
     found_var = False
-    for var in poss_var:
+    for var in link_var:
         for x in linklist:
-            if var in x:
+            if var in x.lower():
                 login_link.append(x)
                 found_var = True
     if found_var:
@@ -72,12 +86,9 @@ def check_html():
             for i, line in enumerate(lines):
                 if "href" in line:
                     matches = re.findall(r'href="(.+?)"', line)
-                    #print(matches)
                     check_links(matches)
                                           
                 if "login" in line:
-                    search = line
-                    #print(line)
                     for url in re.findall('"(/[^"]*)"', line):
                         if url.startswith('/'):
                             login_link.append(url)
@@ -91,16 +102,9 @@ def check_google_login():
         lines = f.readlines()
         for i, line in enumerate(lines):
             if "https://accounts.google.com/" in line:
-                print("Google Login found")
-                print("url: https://accounts.google.com/")
-
-def test():
-    for i in poss_var:
-        url2 = url+i
-        #print(url2)
-        result2 = requests.get(url2).text
-        doc2 = BeautifulSoup(result, "html.parser")
-        check_form(doc2)
+                return True
+    return False
+                
         
 def buildurl(linklist, url):
     for index, element in enumerate(linklist):
@@ -113,7 +117,7 @@ def buildurl(linklist, url):
 
 def main():
     find_links()
-    if(check_form(doc)):
+    if(check_form(doc, input_mail, input_pass)):
         print("Page identified as Loginpage!")
         clonetry1.download_website(url)
         screenshot.take_screenshot(url, 'screenhot.png')
@@ -125,11 +129,12 @@ def main():
         print("checking html code:")
         print(check_html())
         print("check if google login:")
-        print(check_google_login())
-        # print("checking standart ednings:")
-        # test()
-        #print(login_link)
-        if len(login_link) > 0:
+        if(check_google_login()):
+            print("Google Login found")
+            print("url: https://accounts.google.com/")
+            clonetry1.download_website("https://accounts.google.com/")
+            screenshot.take_screenshot("https://accounts.google.com/", 'screenhot.png')
+        elif len(login_link) > 0:
             buildurl(login_link, url)
             print(login_link)
             #clonetry2.clone_webpage(login_link[0])

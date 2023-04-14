@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DIGI4SCHOOL Bücherregal</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#40b7ea">
+<meta name="msapplication-TileColor" content="#40b7ea">
+<meta name="theme-color" content="#40b7ea">
+
+    <link rel="stylesheet" href="/resources/digi4s-br/br.css?v=20220523" type="text/css" media="all">
+    <link rel="stylesheet" href="/resources/digi4s-br/open_sans_400_700.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdn.digi4school.at/jquery-ui/jquery-ui.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/resources/digi4s-br/icon_fonts.css?v=20220520" type="text/css" media="all">
+   <script type="text/javascript" src="https://cdn.digi4school.at/js/jquery.min.js?v=20220520"></script>
+   <script type="text/javascript" src="https://cdn.digi4school.at/jquery-ui/jquery-ui.min.js?v=20220520"></script>
+   <script type="text/javascript" src="https://cdn.digi4school.at/js/jquery-migrate.js"></script>
+   <script type="text/javascript" src="https://cdn.digi4school.at/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+   <script type="text/javascript" src="/resources/digi4s-br/br.js?v=20220920"></script>
+
+<link href="br.css" rel="stylesheet" type="text/css" />
+<link href="icon_fonts.css" rel="stylesheet" type="text/css" />
+<link href="jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="open_sans_400_700.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+
+<style>
+    @-webkit-keyframes run {
+        0% { left: 20%;}
+        49% { left : 80%; -webkit-transform: scale(1, 1);}
+        50% { left : 80%; -webkit-transform: scale(-1, 1);}
+        99%{ left: 20%; -webkit-transform: scale(-1, 1);}
+        100%{ left: 20%; -webkit-transform: scale(1, 1);}
+    }
+</style>
+<div id="top"><div>
+
+<a href="/"><img id="logo" src="/resources/digi4s-br/img/d4s_logo.png"></a>
+</div>
+</div>
+
+<div id="mid">
+
+    <div class="cent">
+
+<script nonce="A583EE48839E0EDB1B9A3C8084D51FC88A81E6F1" >
+$(function() {
+ var start_page_message_txt = "";
+    $("#start").after('<div id="start-page-message-bar" style="font-size:small;background:#eee;width:100%;margin-top:1em;border-radius:1em 1em 0 1em">'+start_page_message_txt+'</div>');
+
+  $("#login").on("submit", function(e) {
+    e.preventDefault();
+    $.post("/br/xhr/login", $("#login").serialize(), function(data){
+      if (data == "OK") { window.location.href="/ebooks"; return false; }
+      else if (data == "KO_MAX") { $("#password").val(''); error("Sie haben die maximale Anzahl an Anmeldeversuchen erreicht!<br><br>Bitte warten Sie einige Minuten, bevor Sie es erneut versuchen."); }
+      else { $("#password").val(''); error("E-Mail-Adresse oder Passwort sind falsch.<br/><br/>Bitte überprüfen Sie Ihre Eingabe oder registrieren Sie sich, falls Sie das noch nicht getan haben.") };
+    }, "text");
+  });
+
+  $("#erneuern").on("click", function(e) {
+    e.preventDefault();
+    window.location.href='/erneuern?email='+$('#email').val();
+  });
+
+  $("#indefinite").on("change", function(e) {
+    if($(this).is(":checked")) {
+        $(this).attr("title", '');
+        $(this).focus();
+        $(this).tooltip({
+            content: "Dadurch bleibt die Anmeldung auch bei Schließen des Browsers bestehen. Nutzen Sie diese Option bitte nur auf privaten Geräten!"
+        });
+        $(this).tooltip("open");
+    } else {
+        $(this).tooltip("close");
+    }
+  });
+
+  //Don't hide tooltip on mouseout
+  $("#indefinite").on("mouseout", function(e) {
+    e.stopImmediatePropagation();
+  });
+
+});
+</script>
+
+<div id="start">
+
+<div id="midd">
+
+
+
+ <div id="null" class="blk">
+ <img src="/resources/digi4s-br/img/d4s_icon.png">
+ <h2>Willkommen!</h2>
+ Hier geht es zu den digitalen Schulbüchern. Registrieren Sie sich kostenlos und lösen Sie die E-Books in Ihrem digitalen Bücherregal ein!
+ </div>
+
+ <div id="drei" class="blk">
+  <div class="lasche"><div class="icon-check"></div>REGISTRIEREN</div>
+  <h2>Neu hier?</h2>
+  <div class="wtxt">
+    <a href="/registrieren"><button id="register">Registrieren</button></a>
+    <div class="features"><div class="feature"><div class="icon-check blue"></div>Vorteile des digitalen Bücherregals nutzen</div></div>
+  </div>
+ </div>
+
+ <div id="zwei" class="blk">
+  <div class="lasche"><div class="icon-person"></div>LOGIN</div>
+  <h2>Schon registriert?
+</h2>
+  <div class="txt">
+   <form id="login" method="post" action="/br/login">
+    <label for="email">E-Mail</label><br>
+    <input name="email" id="email" type="email" required><br>
+    <label for="password">Passwort</label><br>
+    <input name="password" id="password" type="password" required><br>
+    <a href="#" id="erneuern">Passwort vergessen?</a><br>
+    <button>Anmelden</button>
+    <div>
+      <input style="width:auto;" type="checkbox" autocomplete="off" id="indefinite" name="indefinite" value=1>
+      <a href=#><label for="indefinite">angemeldet bleiben</label></a>
+    </div>
+
+   </form>
+  </div>
+  <div class="features">
+    <div class="feature"><div class="icon-check blue"></div>E-Books im persönlichen Bücherregal nutzen</div>
+    <div class="feature"><div class="icon-check blue"></div>Notizen und Anmerkungen im E-Book speichern</div>
+  </div>
+ </div>
+
+ <br style="clear:both">
+</div>
+</div>
+</div>
+</div>
+<div id="bot"><div class="cent">
+<a href="/faq">FRAGEN &amp; ANTWORTEN</a>
+<a href="/tutorials">ANLEITUNG</a>
+<a href="/demo">DEMO</a>
+<a href="/kontakt">KONTAKT</a>
+<a href="/impressum">IMPRESSUM</a></div>
+</div>
+
+
+
+
+</body>
+</html>
