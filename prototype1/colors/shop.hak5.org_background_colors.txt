@@ -1,4 +1,0 @@
-Background color: #ffffff, Count: 6
-Background color: #EC1F27, Count: 2
-Background color: #ffffff, Count: 6
-Background color: #EC1F27, Count: 2
