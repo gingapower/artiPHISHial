@@ -8,9 +8,6 @@ import colors
 import logo
 import webbrowser
 
-# url = "https://www.x-tention.com/"
-
-
 def main(url):
     domain = url.split("//")[1].split("/")[0]
     page = requests.get(url)
@@ -51,7 +48,16 @@ def main(url):
         logo.extract_logo(domain)
         print("Logo successfully pulled")
 
-        url = 'file:///C:/Users/Fabian Huber/Desktop/ArtiPHISHial/artiPHISHial/prototype1/login.html'
+        cwd = os.getcwd()
+
+        # Define the relative path to the file
+        relative_path = "login.html"
+
+        # Combine the current working directory and the relative path
+        file_path = os.path.join(cwd, relative_path)
+
+        # Use the file path in your code
+        url = f"file://{file_path}"
 
         # Set the browser to use firefox
         os.environ['BROWSER'] = 'C:/Program Files/Mozilla Firefox/firefox.exe'
@@ -59,6 +65,4 @@ def main(url):
         webbrowser.open(url)
     except Exception as e:
         print("An error occurred trying to pull the logo:", e)
-
-#main("https://www.deepl.com/")
 
