@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from PIL import Image
+import os
 
 def take_screenshot(url, output_file):
     try:
@@ -22,8 +23,16 @@ def take_screenshot(url, output_file):
         # Clean up
         driver.quit()
 
-        # Specify the file path to your image file
-        file_path = "C:/Users/Fabian Huber/Desktop/ArtiPHISHial/artiPHISHial/prototype1/screenhot.png"
+        cwd = os.getcwd()
+
+        # Define the relative path to the file
+        relative_path = "screenhot.png"
+
+        # Combine the current working directory and the relative path
+        file_path = os.path.join(cwd, relative_path)
+
+        # Use the file path in your code
+        url = f"file://{file_path}"
 
         # Open the image file using PIL
         image = Image.open(file_path)

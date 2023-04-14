@@ -38,8 +38,4 @@ def extract_logo(query):
                 image = Image.open(BytesIO(response.content))
                 image.save("logo.png")
     except Exception as e:
-<<<<<<< HEAD
         print("An error occurred trying to pull the logo from HTML:", e)
-=======
-        print("An error occurred trying to pull the logo from HTML:", e)
->>>>>>> 098558a18617d35a1808412ed4f179ead342d548
