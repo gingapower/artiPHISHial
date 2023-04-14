@@ -137,10 +137,8 @@ def main():
         elif len(login_link) > 0:
             buildurl(login_link, url)
             print(login_link)
-            #clonetry2.clone_webpage(login_link[0])
             clonetry1.download_website(login_link[0])
             screenshot.take_screenshot(login_link[0], 'screenhot.png')
-            # Specify the file path to your HTML file
     
     maincss.main(url)
 
