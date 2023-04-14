@@ -7,6 +7,7 @@ from urllib.parse import urlparse
 import colors
 import logo
 import webbrowser
+import configparser
 
 url = "https://digi4school.at/"
 
@@ -14,6 +15,8 @@ url = "https://digi4school.at/"
 def main(url):
     domain = url.split("//")[1].split("/")[0]
     page = requests.get(url)
+    config = configparser.ConfigParser()
+
 
     soup = BeautifulSoup(page.content, "html.parser")
     try:
@@ -62,8 +65,12 @@ def main(url):
         # Use the file path in your code
         url = f"file://{file_path}"
 
-        # Set the browser to use firefox
-        os.environ['BROWSER'] = 'C:/Program Files/Mozilla Firefox/firefox.exe'
+        #Read the config file
+        config.read('config.ini')
+
+        # Get the browser path
+        browser_path = config.get('browser', 'path')
+        os.environ['BROWSER'] = browser_path
         # Open the URL in the specified browser
         webbrowser.open(url)
     except Exception as e:
