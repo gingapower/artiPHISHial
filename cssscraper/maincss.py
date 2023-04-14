@@ -8,7 +8,7 @@ import colors
 import logo
 import webbrowser
 
-url = "https://www.inventa-networks.at/"
+url = "https://digi4school.at/"
 
 
 def main(url):
@@ -51,7 +51,16 @@ def main(url):
         logo.extract_logo(domain)
         print("Logo successfully pulled")
 
-        url = 'file:///C:/Users/leonw/OneDrive - HTL Villach/HTL/artiPHISHial/artiPHISHial/cssscraper/login.html'
+        cwd = os.getcwd()
+
+        # Define the relative path to the file
+        relative_path = "login.html"
+
+        # Combine the current working directory and the relative path
+        file_path = os.path.join(cwd, relative_path)
+
+        # Use the file path in your code
+        url = f"file://{file_path}"
 
         # Set the browser to use firefox
         os.environ['BROWSER'] = 'C:/Program Files/Mozilla Firefox/firefox.exe'

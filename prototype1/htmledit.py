@@ -16,7 +16,18 @@ def insert_css_links(webpage):
             f.write(file_content)
     
     os.environ['BROWSER'] = 'C:/Program Files/Mozilla Firefox/firefox.exe'
-    url = ("file:///C:/Users/Fabian Huber/Desktop/ArtiPHISHial/artiPHISHial/prototype1/"+webpage+"/index.html")
+
+    cwd = os.getcwd()
+
+    # Define the relative path to the file
+    relative_path = webpage + "index.html"
+
+    # Combine the current working directory and the relative path
+    file_path = os.path.join(cwd, relative_path)
+
+    # Use the file path in your code
+    url = f"file://{file_path}"
+
     print(url)
     webbrowser.open(url)
 
