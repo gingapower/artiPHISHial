@@ -1,0 +1,2 @@
+Background color: #007bff, Count: 15
+Background color: #e9ecef, Count: 12
