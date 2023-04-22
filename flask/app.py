@@ -1,26 +1,26 @@
-import http.server
-import socketserver
+from flask import Flask, request, jsonify, render_template, redirect
+from flask_cors import CORS
 
-PORT = 8000
-FILE_NAME = "data.txt"
+app = Flask(__name__)
+CORS(app)
 
-class MyHandler(http.server.SimpleHTTPRequestHandler):
-    def do_POST(self):
-        content_length = int(self.headers['Content-Length'])
-        post_data = self.rfile.read(content_length).decode('utf-8')
-        
-        # Write the data to a file
-        with open(FILE_NAME, 'a') as f:
-            f.write(post_data)
-        
-        # Send a response back to the client
-        self.send_response(200)
-        self.send_header("Content-type", "text/html")
-        self.end_headers()
-        self.wfile.write(bytes("<html><body><h1>Form submitted successfully!</h1></body></html>", "utf-8"))
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-Handler = MyHandler
+@app.route('/submit_data', methods=['POST'])
+def submit_data():
+    email = request.form['login']
+    name = request.form['password']
+    
+    with open('user_data.txt', 'a') as file:
+        file.write(f'Name: {name}\n')
+        file.write(f'Email: {email}\n')
+    
+    response_data = {
+        'message': f'Daten gespeichert: Name: {name}, Email: {email}'
+    }
+    return jsonify(response_data)
 
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print(f"Serving at http://localhost:{PORT}")
-    httpd.serve_forever()
+if __name__ == '__main__':
+    app.run(debug=True)
