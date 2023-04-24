@@ -10,15 +10,17 @@ def index():
 
 @app.route('/submit_data', methods=['POST'])
 def submit_data():
-    email = request.form['login']
-    name = request.form['password']
+    #email = request.form['login']
+    #name = request.form['password']
+    identifier = request.form['identifier']
     
     with open('user_data.txt', 'a') as file:
-        file.write(f'Name: {name}\n')
-        file.write(f'Email: {email}\n')
+        #file.write(f'Name: {name}\n')
+        #file.write(f'Email: {email}\n')
+        file.write(f'Email: {identifier}\n')
     
     response_data = {
-        'message': f'Daten gespeichert: Name: {name}, Email: {email}'
+        'message': f'Daten gespeichert: Name: {identifier}'#, Email: {email}'
     }
     return jsonify(response_data)
 
