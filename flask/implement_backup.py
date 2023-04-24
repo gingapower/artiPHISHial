@@ -75,6 +75,6 @@ def iniate_flask(variable_names):
         app.run(debug=True)
 
 
-#edit_forms()
-#get_vars_for_flask(inputlist, inputnames)
+edit_forms()
+get_vars_for_flask(inputlist, inputnames)
 iniate_flask(inputnames)
