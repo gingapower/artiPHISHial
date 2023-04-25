@@ -49,23 +49,19 @@ def main(url):
         print("Logo successfully pulled")
 
         cwd = os.getcwd()
-
         # Define the relative path to the file
         relative_path = "login.html"
-
         # Combine the current working directory and the relative path
         file_path = os.path.join(cwd, relative_path)
-
         # Use the file path in your code
         url = f"file://{file_path}"
-
         #Read the config file
         config.read('config.ini')
-
         # Get the browser path
         browser_path = config.get('browser', 'path')
         os.environ['BROWSER'] = browser_path
         # Open the URL in the specified browser
+        print(url)
         webbrowser.open(url)
     except Exception as e:
         print("An error occurred trying to pull the logo:", e)
