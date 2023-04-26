@@ -32,7 +32,7 @@ def download_website(url):
             with open(os.path.join(folder_name, css_filename), 'w', encoding='utf-8') as f:
                 f.write(response.text)
     except Exception as e:
-        print(f"Error occurred: {e}")
+        print(f"Error occurred while downloading css: {e}")
 
     # Extract the image URLs from the HTML
     image_urls = []
@@ -48,7 +48,7 @@ def download_website(url):
             image_filename = re.sub('[^0-9a-zA-Z_\-\.]', '_', image_filename) # replace invalid characters with an underscore
             urlretrieve(absolute_url, os.path.join(folder_name, image_filename))
     except Exception as e:
-        print(f"An error occurred while image file: {e}")
+        print(f"An error occurred while downloading image file: {e}")
 
     
 
@@ -64,9 +64,9 @@ def download_website(url):
         print(f"An error occurred while writing the HTML file: {e}")
 
 def check_html(folder_path):
-    for filename in os.listdir(folder_path):
-        if os.path.isfile(os.path.join(folder_path, filename)):
-            print(filename)
+    # for filename in os.listdir(folder_path):
+    #     if os.path.isfile(os.path.join(folder_path, filename)):
+    #         print(filename)
     htmledit.insert_css_links(folder_path)
 
 

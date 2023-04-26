@@ -30,6 +30,8 @@ with open('password_keywords', 'r', encoding='utf-8') as file:
 links_with_text = []
 check = []
 login_link = []
+uniquestrings = []
+finallinks = []
 url = input("pls enter a url: ")
 #url="https://github.com/"
 
@@ -46,6 +48,7 @@ def find_links():
         if a.text: 
             links_with_text.append(a['href'])
     a = doc.find_all('a')
+    print(links_with_text)
     
 
 #find <a> with clear title
@@ -115,8 +118,27 @@ def buildurl(linklist, url):
             linklist[index] = newurl
             #linklist.remove(element)
 
+def sortlinks(linklist, unique_strings):
+    for string in linklist:
+        if string not in unique_strings:
+            unique_strings.append(string)
+    linklist[:] = unique_strings
+
+def filter_links(links, list):
+    keyword_list = ["signup", "login"]
+    
+    for link in links:
+        for keyword in keyword_list:
+            if keyword in link:
+                list.append(link)
+                break  # Stop checking other keywords for this link
+
+    return list
+
+
 def main():
     find_links()
+
     if(check_form(doc, input_mail, input_pass)):
         print("Page identified as Loginpage!")
         clonetry1.download_website(url)
@@ -136,9 +158,12 @@ def main():
             screenshot.take_screenshot("https://accounts.google.com/", 'screenhot.png')
         elif len(login_link) > 0:
             buildurl(login_link, url)
-            print(login_link)
-            clonetry1.download_website(login_link[0])
-            screenshot.take_screenshot(login_link[0], 'screenhot.png')
+            sortlinks(login_link, uniquestrings)
+            filter_links(uniquestrings, finallinks)
+            
+            print(finallinks)
+            clonetry1.download_website(finallinks[0])
+            screenshot.take_screenshot(finallinks[0], 'screenhot.png')
     
     maincss.main(url)
 
