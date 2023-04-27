@@ -1,0 +1,2 @@
+Color code: #0070ba, Count: 65
+Color code: #f5f7fa, Count: 52

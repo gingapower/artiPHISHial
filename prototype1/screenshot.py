@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from PIL import Image
 import os
+import platform
+from termcolor import colored
 
 def take_screenshot(url, output_file):
     try:
@@ -9,6 +11,13 @@ def take_screenshot(url, output_file):
         chrome_options = Options()
         chrome_options.add_argument('--headless') # Run Chrome in headless mode (no GUI)
         chrome_options.add_argument('--disable-gpu') # Disable GPU acceleration (not needed for screenshots)
+         # Suppress console log messages
+        if platform.system() == 'Windows':
+            chrome_options.add_argument('log-level=3')
+        else:
+            chrome_options.add_argument('--log-level=3')
+            chrome_options.add_argument('--disable-logging')
+            chrome_options.add_argument('--no-sandbox')
         
         # Initialize Chrome driver
         driver = webdriver.Chrome(options=chrome_options)
@@ -22,7 +31,7 @@ def take_screenshot(url, output_file):
         
         # Clean up
         driver.quit()
-
+        print(colored("screenshot taken","green"))
         cwd = os.getcwd()
 
         # Define the relative path to the file
