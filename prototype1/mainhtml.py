@@ -65,10 +65,15 @@ def buildurl(linklist, url):
             linklist[index] = newurl
 
 def sortlinks(linklist, unique_strings):
-    for string in linklist:
+    updated_links = []
+    for link in linklist:
+        updated_link = link.split('?')[0]
+        updated_links.append(updated_link)
+
+    for string in updated_links:
         if string not in unique_strings:
             unique_strings.append(string)
-    linklist[:] = unique_strings
+    updated_links[:] = unique_strings
 
 def filter_links(links, list):
     keyword_list = ["signup", "login", "signin"]
