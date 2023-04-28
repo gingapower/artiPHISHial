@@ -1,0 +1,28 @@
+https://www.google.com - good
+https://www.facebook.com -good
+https://twitter.com - bad
+https://www.instagram.com -bad
+https://www.linkedin.com - good
+https://github.com - good
+https://www.amazon.com -bad
+https://www.netflix.com -good
+https://www.dropbox.com - good
+https://www.paypal.com - good
+https://www.reddit.com - good
+https://www.ebay.com
+https://www.pinterest.com
+https://www.tumblr.com
+https://www.airbnb.com
+https://www.slack.com
+https://www.adobe.com/creativecloud.html
+https://www.office.com
+https://www.salesforce.com
+https://www.lastpass.com
+https://www.spotify.com
+https://www.evernote.com
+https://www.trello.com
+https://www.lastpass.com
+https://www.mailchimp.com
+https://www.asana.com
+https://www.zoom.us
+https://www.pinterest.com
