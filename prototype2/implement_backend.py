@@ -78,9 +78,27 @@ def get_vars_for_flask(list1, list2):
                             input_name = input_field.get('name')
                             if input_name:
                                 list2.append(input_name)
+            print(list2)
                             
         else:
             print('No input fields found in form:')
+
+def delete_scripts():
+    file_path = os.path.join('templates', 'index.html')
+    with open(file_path, 'rb') as f:
+        data = f.read()
+        encoding = chardet.detect(data)['encoding']
+        html = data.decode(encoding)
+
+    soup = BeautifulSoup(html, 'html.parser')
+    script_tags = soup.find_all('script')
+
+    for script in script_tags:
+        script.extract()
+
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(str(soup))
+
     
 
 

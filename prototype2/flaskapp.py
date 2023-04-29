@@ -21,7 +21,7 @@ def submit_data():
         # Loop over the variable names and add the form data to the dictionary
     for var_name in variable_names:
         form_data[var_name] = request.form[var_name]
-        
+    
         # Write the form data to a file
     with open('user_data.txt', 'a') as file:
         file.write(f'Form Data: {form_data}\n')

