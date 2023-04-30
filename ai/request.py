@@ -19,7 +19,7 @@ response_data = response.json()
 # Remove newline characters and tab characters
 response_content = response_data['choices'][0]['message']['content']
 response_content = response_content.replace('\n', '').replace('\t', '')
-with open('output.html', 'w') as file:
+with open('index.html', 'w') as file:
     file.write(response_content)
 print(response_content)
 html = response_content
