@@ -36,6 +36,9 @@ login_link = []
 uniquestrings = []
 finallinks = []
 url = input("Enter a URL: ")
+urlpath = cwd + "\\url"
+with open (urlpath ,"w") as file:
+    file.write(url)
 
 #Scrape Page:
 result = requests.get(url).text
@@ -101,7 +104,7 @@ else:
             print(colored(link,"yellow"))
             postion= int(input("which link you want to use? "))
             clone.download_website(link[postion-1])
-            #screenshot.take_screenshot(link[postion-1], 'screenhot.png')
+            screenshot.take_screenshot(link[postion-1], 'screenhot.png')
             backend.copy_files(urlparse(link[postion-1]).netloc, "index.html")
             backend.implement_form()
             inputlist =[]
@@ -120,4 +123,4 @@ else:
         else:
             print(colored("No Loginlink found!", "red"))
 
-maincss.main(url)
+#maincss.main(url)

@@ -2,3 +2,9 @@ Form Data: {'identifier': '123123'}
 Form Data: {'phoneInputphoneNumber': '3214'}
 Form Data: {'username': 'fabian.hubrr@gmail.com', 'password': '', 'loginButton': 'Continue', 'rememberMe': 'true'}
 Form Data: {'email': '1234234@gmail.com'}
+Form Data: {'username': 'fabian.hubrr@gmail.com', 'password': '32142134', 'otp': ''}
+Form Data: {'username': 'fabian.hubrr@gmail.com', 'password': '', 'loginButton': 'Continue'}
+Form Data: {'email': '12341234', 'password': '21342134'}
+Form Data: {'login_email': 'fabian.huber@mein.gmx', 'captchaCode': '', 'login_password': '', 'captcha': ''}
+Form Data: {'login_email': 'fabian.huber@mein.gmx', 'captchaCode': '', 'login_password': '', 'captcha': ''}
+Form Data: {'login_email': 'fabian.huber@mein.gmx', 'captchaCode': '', 'login_password': '12341234', 'captcha': ''}

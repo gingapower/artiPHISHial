@@ -1,14 +1,14 @@
-https://www.google.com - good
-https://www.facebook.com -good
-https://twitter.com - bad
-https://www.instagram.com -bad
-https://www.linkedin.com - good
-https://github.com - good
-https://www.amazon.com -bad
-https://www.netflix.com -good
-https://www.dropbox.com - good
-https://www.paypal.com - good
-https://www.reddit.com - good
+https://www.google.com 
+https://www.facebook.com 
+https://twitter.com
+https://www.instagram.com 
+https://www.linkedin.com  
+https://github.com 
+https://www.amazon.com 
+https://www.netflix.com 
+https://www.dropbox.com 
+https://www.paypal.com 
+https://www.reddit.com
 https://www.ebay.com
 https://www.pinterest.com
 https://www.tumblr.com
