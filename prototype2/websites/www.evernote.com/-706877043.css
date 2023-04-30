@@ -1,0 +1,949 @@
+
+
+.Btn {
+  width: 100%;
+}
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+@media all {
+  body.wrapper {
+    background: url("/static/static_css_resources/bb6ce0ce7affff91989d4aab2ba9fa53.png") center;
+    background-size: 228px 228px;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  html:not(.ie8) body.wrapper {
+    background: url("/static/static_css_resources/a2a3034848470cd4432c4eaafc86e532.png") center;
+    background-size: 228px 228px;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) and (-moz-min-device-pixel-ratio: 1.5), all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) and (-o-min-device-pixel-ratio: 3/2), all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) and (-webkit-min-device-pixel-ratio: 1.5), all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) and (min-device-pixel-ratio: 1.5), all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) and (min-resolution: 1.5dppx) {
+  html:not(.ie8) body.wrapper {
+    background: url("/static/static_css_resources/00f3b084dc5f792b5ce8b077044e79b3.png") center;
+    background-size: 228px 228px;
+  }
+}
+@media only screen and (max-width: 709px) {
+  body.wrapper {
+    background: none;
+  }
+}
+@media only screen and (max-width: 709px) and (-moz-min-device-pixel-ratio: 1.5), only screen and (max-width: 709px) and (-o-min-device-pixel-ratio: 3/2), only screen and (max-width: 709px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 709px) and (min-device-pixel-ratio: 1.5), only screen and (max-width: 709px) and (min-resolution: 1.5dppx) {
+  html:not(.ie8) body.wrapper {
+    background: none;
+  }
+}
+.wrapper #container-boundingbox,
+.wrapper #container {
+  width: auto;
+  border: none;
+  margin: 0;
+  padding: 0px;
+  min-height: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 930px) {
+  .wrapper #container-boundingbox,
+  .wrapper #container {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 710px) and (max-width: 929px) {
+  .wrapper #container-boundingbox,
+  .wrapper #container {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 709px) {
+  .wrapper #container-boundingbox,
+  .wrapper #container {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .wrapper #container-boundingbox,
+  .wrapper #container {
+    width: auto;
+  }
+}
+@media all {
+  .wrapper #container-boundingbox,
+  .wrapper #container {
+    background: none;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  html:not(.ie8) .wrapper #container-boundingbox,
+  html:not(.ie8) .wrapper #container {
+    background: none;
+  }
+}
+.wrapper #container-boundingbox .main,
+.wrapper #container .main {
+  position: relative;
+  width: auto;
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+@media only screen and (min-width: 930px) {
+  .wrapper #container-boundingbox .main,
+  .wrapper #container .main {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 710px) and (max-width: 929px) {
+  .wrapper #container-boundingbox .main,
+  .wrapper #container .main {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 709px) {
+  .wrapper #container-boundingbox .main,
+  .wrapper #container .main {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .wrapper #container-boundingbox .main,
+  .wrapper #container .main {
+    width: auto;
+  }
+}
+@media all {
+  .wrapper #container-boundingbox .main,
+  .wrapper #container .main {
+    background: none;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  html:not(.ie8) .wrapper #container-boundingbox .main,
+  html:not(.ie8) .wrapper #container .main {
+    background: none;
+  }
+}
+@media only screen and (max-width: 709px) {
+  .wrapper #container-boundingbox .main,
+  .wrapper #container .main {
+    height: auto;
+  }
+}
+.wrapper #container-boundingbox .main .minimal-frame,
+.wrapper #container .main .minimal-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 709px) {
+  .wrapper #container-boundingbox .main .minimal-frame,
+  .wrapper #container .main .minimal-frame {
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}
+.wrapper .shadow {
+  width: auto;
+  display: none;
+}
+@media only screen and (min-width: 930px) {
+  .wrapper .shadow {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 710px) and (max-width: 929px) {
+  .wrapper .shadow {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 709px) {
+  .wrapper .shadow {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .wrapper .shadow {
+    width: auto;
+  }
+}
+.heading {
+  text-align: center;
+  color: #aaaaaa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.heading h1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 8px;
+  color: #333333;
+}
+:lang(zh-cn) .heading h1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .heading h1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .heading h1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .heading h1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .heading h1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.heading h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  margin-bottom: 8px;
+  color: #333333;
+}
+:lang(zh-cn) .heading h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .heading h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .heading h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .heading h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .heading h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.heading .MinimalFormFrame-evernote-logo {
+  margin-bottom: 19px;
+}
+.heading .tagline {
+  color: #333333;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 44px;
+}
+:lang(zh-cn) .heading .tagline {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .heading .tagline {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .heading .tagline {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .heading .tagline {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .heading .tagline {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+@media only screen and (max-width: 320px) {
+  .heading .tagline {
+    margin-bottom: 0;
+  }
+}
+.heading .context-reminder {
+  color: #333333;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+:lang(zh-cn) .heading .context-reminder {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .heading .context-reminder {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .heading .context-reminder {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-600-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .heading .context-reminder {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-600-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .heading .context-reminder {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-600-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.minimal-wrapper {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+:lang(zh-cn) .minimal-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .minimal-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .minimal-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .minimal-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .minimal-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+@media only screen and (max-width: 709px) {
+  .minimal-wrapper {
+    padding: 0;
+  }
+}
+.minimal-body {
+  max-width: 512px;
+  margin: 0px auto 28px auto;
+  padding: 62.12px 99px 48px;
+  width: 314px;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-align: left;
+}
+@media all {
+  .minimal-body {
+    background: #ffffff;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  html:not(.ie8) .minimal-body {
+    background: #ffffff;
+  }
+}
+@media only screen and (max-width: 709px) {
+  .minimal-body {
+    box-shadow: none;
+    padding: 28px 0 0 0;
+    margin: 0px auto;
+  }
+}
+@media only screen and (max-width: 51.6875em) {
+  .minimal-body {
+    max-width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .Btn {
+    padding: 5px 0;
+  }
+}
+#context-switch {
+  text-align: center;
+  margin-top: 34px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+:lang(zh-cn) #context-switch {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) #context-switch {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 #context-switch {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) #context-switch {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) #context-switch {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+#context-switch .switch {
+  margin-top: 6px;
+}
+#context-switch .switch a {
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #00a82d;
+  text-decoration: none;
+}
+#context-switch .switch a:hover {
+  color: #008f26;
+}
+#context-switch .switch a:active {
+  color: #00751f;
+}
+.t-milli {
+  color: #555555;
+}
+.context-switch-explaination {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #737373;
+}
+:lang(zh-cn) .context-switch-explaination {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .context-switch-explaination {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .context-switch-explaination {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .context-switch-explaination {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .context-switch-explaination {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.banner-padding {
+  margin-top: 75px;
+}
+.banner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 75px;
+  background-color: #00A82C;
+  font-size: 16px;
+  font-family: 'PingFangSC-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 22px;
+}
+.banner-container .banner-content {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  max-width: 1220px;
+  margin: auto;
+  min-height: 75px;
+  align-content: center;
+}
+.banner-container .banner-content .text-container {
+  display: inline-block;
+  color: #ffffff;
+  width: 815px;
+  margin-right: 225px;
+}
+.banner-container .banner-content .button-container {
+  display: flex;
+  height: 44px;
+  min-width: 100px;
+  background-color: white;
+  border-radius: 4px;
+  color: #00A82C !important;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+.CanBePulledDown {
+  position: relative;
+  max-height: 0px;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+  transition-property: opacity, max-height;
+  transition-delay: 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+.CanBePulledDown.PulledIntoView {
+  transition-delay: 1.1s;
+  max-height: 100px;
+  opacity: 1;
+  visibility: visible;
+}
+.CanBePulledDown.PulledIntoViewWithoutDelay {
+  max-height: 100px;
+  opacity: 1;
+  visibility: visible;
+}
+.CanBePulledDown .PullableText {
+  margin-bottom: 7px;
+  margin-top: 5px;
+  width: 100%;
+  text-align: left;
+  background-color: #ffffff;
+  position: relative;
+  color: #747474;
+  visibility: visible;
+  font-size: 14px;
+  font-family: helvetica, arial, sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+:lang(zh-cn) .CanBePulledDown .PullableText {
+  font-family: helvetica, arial, sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .CanBePulledDown .PullableText {
+  font-family: helvetica, arial, sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .CanBePulledDown .PullableText {
+  font-family: helvetica, arial, sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .CanBePulledDown .PullableText {
+  font-family: helvetica, arial, sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .CanBePulledDown .PullableText {
+  font-family: helvetica, arial, sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.CanBePulledDown .sso-error {
+  color: #cc4539 !important;
+}
+@media only screen and (max-width: 709px) {
+  .minimal-form {
+    margin: 10px 10px;
+  }
+}
+.tos {
+  margin-bottom: 16px;
+}
+.checkbox-container {
+  text-align: center;
+}
+.checkbox-container,
+.checkbox-container label {
+  color: #737373;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+:lang(zh-cn) .checkbox-container,
+:lang(zh-cn) .checkbox-container label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .checkbox-container,
+:lang(ja) .checkbox-container label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .checkbox-container,
+.ie8 .checkbox-container label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .checkbox-container,
+.ie8 :lang(zh-cn) .checkbox-container label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .checkbox-container,
+.ie8 :lang(ja) .checkbox-container label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.checkbox-container:focus {
+  outline: none;
+}
+.arrow {
+  display: inline-block;
+  text-decoration: none;
+  position: absolute;
+  top: 1px;
+}
+.switch-service {
+  margin-top: 10px;
+  position: relative;
+  height: 14px;
+}
+.switch-service-message {
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  left: 18px;
+}
+#password-wrapper {
+  margin-bottom: 10px;
+}
+#passwordRow:focus {
+  outline: none;
+}
+#email-wrapper,
+#password-wrapper {
+  position: relative;
+}
+#email-wrapper input,
+#password-wrapper input {
+  border-radius: 7px;
+  color: #333333;
+  border: 1px solid #e6e6e6;
+  padding: 12px 16px;
+}
+#email-wrapper input::placeholder,
+#password-wrapper input::placeholder {
+  color: #737373;
+}
+#email-wrapper input:focus,
+#password-wrapper input:focus {
+  border-color: #dff2e6;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 1px #dff2e6, 0 0 4px 0 #dff2e6;
+  -moz-box-shadow: 0 0 0 1px #dff2e6, 0 0 4px 0 #dff2e6;
+  box-shadow: 0 0 0 1px #dff2e6, 0 0 4px 0 #dff2e6;
+}
+@media only screen and (min-width: 51.75em) {
+  #email-wrapper input:focus,
+  #password-wrapper input:focus {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+  }
+}
+#email-wrapper .passMsg,
+#password-wrapper .passMsg {
+  margin-top: 6px;
+}
+#email-wrapper i.inline,
+#password-wrapper i.inline {
+  display: none;
+  height: 100%;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 16px;
+}
+@media all {
+  #email-wrapper i.inline,
+  #password-wrapper i.inline {
+    background:  url("/static/static_css_resources/705ace9a18978e326746874e3226a644.png") 0 50% no-repeat;
+    -webkit-background-size: 16px 16px;
+    -moz-background-size: 16px 16px;
+    -o-background-size: 16px 16px;
+    background-size: 16px 16px;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  html:not(.ie8) #email-wrapper i.inline,
+  html:not(.ie8) #password-wrapper i.inline {
+    background:  url("/static/static_css_resources/9fd44ba25f4bf22ac7313425145ca061.png") 0 50% no-repeat;
+    -webkit-background-size: 16px 16px;
+    -moz-background-size: 16px 16px;
+    -o-background-size: 16px 16px;
+    background-size: 16px 16px;
+  }
+}
+#email-wrapper input.error + i.inline,
+#password-wrapper input.error + i.inline {
+  display: block;
+}
+#email-wrapper u.inline,
+#password-wrapper u.inline {
+  height: 7px;
+  display: none;
+  position: absolute;
+  right: 11px;
+  top: -1px;
+  width: 14px;
+}
+@media all {
+  #email-wrapper u.inline,
+  #password-wrapper u.inline {
+    background:  url("/static/static_css_resources/dce37102780650b1766d689aecca07d8.png") no-repeat;
+    -webkit-background-size: 14px 7px;
+    -moz-background-size: 14px 7px;
+    -o-background-size: 14px 7px;
+    background-size: 14px 7px;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  html:not(.ie8) #email-wrapper u.inline,
+  html:not(.ie8) #password-wrapper u.inline {
+    background:  url("/static/static_css_resources/986cb106a029ccc1d24aa63ba8cf0ede.png") no-repeat;
+    -webkit-background-size: 14px 7px;
+    -moz-background-size: 14px 7px;
+    -o-background-size: 14px 7px;
+    background-size: 14px 7px;
+  }
+}
+#email-wrapper.visible-error u.inline,
+#password-wrapper.visible-error u.inline {
+  display: block;
+}
+#email-wrapper.visible-error .email-errors.inline,
+#password-wrapper.visible-error .email-errors.inline,
+#email-wrapper.visible-error .username-errors.inline,
+#password-wrapper.visible-error .username-errors.inline,
+#email-wrapper.visible-error .password-errors.inline,
+#password-wrapper.visible-error .password-errors.inline {
+  display: block;
+}
+#email-wrapper .FieldState-message.FieldState_error-message,
+#password-wrapper .FieldState-message.FieldState_error-message {
+  background: none;
+  border: none;
+  color: #cc4539;
+  padding-left: 0;
+  margin-left: 0;
+}
+.captcha-instruction {
+  color: #333333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+:lang(zh-cn) .captcha-instruction {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .captcha-instruction {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .captcha-instruction {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .captcha-instruction {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .captcha-instruction {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.captcha-image {
+  border-radius: 2px;
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.captcha-image img {
+  border: 1px solid #acacac;
+  margin-top: 3px;
+  height: 36px;
+}
+#captcha-wrapper input {
+  color: #333333;
+  border: 1px solid #e6e6e6;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  line-height: 1.1875;
+  padding: .7917rem 1rem;
+  font-size: 1.33333333rem;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 7px;
+}
+#captcha-wrapper input::placeholder {
+  color: #737373;
+}
+#captcha-wrapper input:focus {
+  border-color: #dff2e6;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 1px #dff2e6, 0 0 4px 0 #dff2e6;
+  -moz-box-shadow: 0 0 0 1px #dff2e6, 0 0 4px 0 #dff2e6;
+  box-shadow: 0 0 0 1px #dff2e6, 0 0 4px 0 #dff2e6;
+}
+@media only screen and (min-width: 51.75em) {
+  #captcha-wrapper input:focus {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+  }
+}
+.input-wrapper {
+  margin-bottom: 10px;
+}
+.CanBePulledDown.PulledIntoView {
+  max-height: 160px !important;
+}
+.Row {
+  margin-bottom: 6px;
+}
+.Row.horizontalRow {
+  position: relative;
+  margin-bottom: 18px;
+  margin-top: 17px;
+}
+.Row.horizontalRow .horizontalText {
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  position: relative;
+  color: #ababab;
+  font-size: 14px;
+  z-index: 1;
+  overflow: hidden;
+}
+.Row.horizontalRow .horizontalText:before,
+.Row.horizontalRow .horizontalText:after {
+  width: 50%;
+  top: 51%;
+  overflow: hidden;
+  height: 1px;
+  background-color: #d0d0d0;
+  content: '\a0';
+  position: absolute;
+}
+.Row.horizontalRow .horizontalText:before {
+  margin-left: -52%;
+  text-align: right;
+}
+.Row.horizontalRow .horizontalText:after {
+  margin-left: 2%;
+}
+.Row.horizontalSpace {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+.Btn {
+  background-color: #00a82d;
+  border-radius: 7px;
+  margin-top: -9px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+:lang(zh-cn) .Btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+:lang(ja) .Btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.ie8 .Btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+.ie8 :lang(zh-cn) .Btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, Hiragino Sans GB, STHeiti, Microsoft Yahei, helvetica, arial, sans-serif;
+}
+.ie8 :lang(ja) .Btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif-400-normal, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", helvetica, arial, sans-serif;
+}
+.Btn:hover {
+  background-color: #008f26;
+  border-color: #008f26;
+}
+.forgotPasswordContainer {
+  text-align: center;
+  margin-top: 8px;
+}
+.forgotPasswordContainer a,
+.forgotPasswordContainer a.visited {
+  color: #00a82d;
+}
+.forgotPasswordContainer:focus {
+  outline: none;
+}
+.reset-password {
+  color: #00a82d;
+}
+.reset-password:visited {
+  color: #00a82d;
+}
+.reset-password:focus {
+  outline: none;
+}
+#extraContentDiv div {
+  border-top: 1px solid #ababab;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.error-status {
+  color: #CC4539 !important;
+  font-size: 12px;
+}
+
+
+
+
+
+.oauth-google {
+  height: 40px;
+  border-radius: 7px;
+  border: solid 1px #d0d0d0;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff;
+  text-align: center;
+  text-decoration: none !important;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -moz-flex-basis: auto;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+.oauth-google:hover {
+  background-color: #f8f8f8;
+}
+.oauth-google .oauth-google-inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.oauth-google .oauth-google-inner img {
+  width: 18px;
+  height: 18px;
+}
+.oauth-google .oauth-google-text {
+  max-width: 280px;
+  font-size: 15px;
+  color: #6a6a6a;
+  display: inline-block;
+  position: relative;
+  padding-left: 6px;
+}
+
+
