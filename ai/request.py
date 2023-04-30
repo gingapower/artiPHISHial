@@ -1,5 +1,6 @@
 import requests
 import json
+import colors
 
 url = "https://api.openai.com/v1/chat/completions"
 
@@ -24,14 +25,25 @@ with open('index.html', 'w') as file:
 print(response_content)
 html = response_content
 
+# Extract colors from the CSS file
+css_file = open("style.css", "r")
+css_content = css_file.read()
+css_file.close()
+
+exec(open("colors.py").read())
+
+# Assign the two most common colors to color1 and color2
+with open(f"colors/{colors.domain}_hex_colors.txt", "r") as f:
+    lines = f.readlines()
+    color1 = lines[0].split()[2][1:]
+    color2 = lines[1].split()[2][1:]
+
 url = "https://api.openai.com/v1/chat/completions"
 headers = {
     "Content-Type": "application/json",
     "Authorization": "Bearer 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"
 }
 
-color1="#ffffff"
-color2="#000000"
 
 data = {
     "model": "gpt-3.5-turbo",

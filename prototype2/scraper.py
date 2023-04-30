@@ -8,6 +8,7 @@ from termcolor import colored
 import implement_backend as backend
 from urllib.parse import urlparse
 import pickle
+import maincss
 import subprocess
 
 
@@ -34,7 +35,7 @@ check = []
 login_link = []
 uniquestrings = []
 finallinks = []
-url = input("pls enter a url: ")
+url = input("Enter a URL: ")
 
 #Scrape Page:
 result = requests.get(url).text
@@ -118,4 +119,5 @@ else:
             
         else:
             print(colored("No Loginlink found!", "red"))
-#maincss.main(url)
+
+maincss.main(url)
