@@ -43,7 +43,7 @@ def submit_data():
     response_data = {
         'message': f'Daten gespeichert: {form_data}'
     }
-    os.remove(cwd + "\\url")
+    
     return redirect(url)
     #return jsonify(response_data)
     

