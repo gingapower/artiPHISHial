@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify, render_template, redirect
-from werkzeug.exceptions import BadRequestKeyError
-import pickle
-import subprocess
 import os
+import pickle
+from werkzeug.exceptions import BadRequestKeyError
+import subprocess
+from flask import Flask, request, render_template, redirect
+
 cwd = os.getcwd()
 
 with open('data.pkl', 'rb') as f:
