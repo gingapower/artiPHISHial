@@ -78,7 +78,7 @@ def get_vars_for_flask(list1, list2):
                             input_name = input_field.get('name')
                             if input_name:
                                 list2.append(input_name)
-            print(list2)
+            #print(list2)
                             
         else:
             print('No input fields found in form:')

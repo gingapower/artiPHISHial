@@ -60,8 +60,8 @@ mainhtml.find_links(doc, links_with_text)
 #check if input field
 if menu == 2:
         print(colored("Start to clone Loginpage!","blue"))
-        clone.download_website(url)
-        screenshot.take_screenshot(url, 'screenhot.png')
+        #clone.download_website(url)
+        #screenshot.take_screenshot(url, 'screenhot.png')
         backend.copy_files(urlparse(url).netloc, "index.html")
         backend.implement_form()
         inputlist =[]
