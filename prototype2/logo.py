@@ -5,15 +5,15 @@ import re
 from bs4 import BeautifulSoup
 
 def extract_logo(query):
-    try:
-        # Call clearbit API to get the logo image
-        response = requests.get(f"https://logo.clearbit.com/{query}")
-        # Use Pillow to open the image data and save it to a file
-        image = Image.open(BytesIO(response.content))
-        image.save("logo.png")
-        return  # exit the function if Clearbit option succeeds
-    except Exception as e:
-        print("An error occurred trying to pull logo from clearbit:", e)
+    # try:
+    #     # Call clearbit API to get the logo image
+    #     response = requests.get(f"https://logo.clearbit.com/{query}")
+    #     # Use Pillow to open the image data and save it to a file
+    #     image = Image.open(BytesIO(response.content))
+    #     image.save("logo.png")
+    #     return  # exit the function if Clearbit option succeeds
+    # except Exception as e:
+    #     print("An error occurred trying to pull logo from clearbit:", e)
     
     try:
         # Get the HTML content of the website
