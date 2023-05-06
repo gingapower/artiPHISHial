@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Screenshot Result</title>
+</head>
+
+<body>
+    <h1>Screenshot Result</h1>
+    <p>Original Page:</p>
+    <img src="{{ url_for('static', filename='screenshot.png') }}" alt="Screenshot">
+    <p>Scraped:</p>
+    <img src="{{ url_for('static', filename='screenshot2.png') }}" alt="Screenshot">
+</body>
+
+</html>
