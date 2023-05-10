@@ -18,11 +18,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('indexr.html')
 
 
-@app.route('/submit', methods=['POST'])
-def submit():
+@app.route('/scrape', methods=['POST'])
+def scrape():
     url = request.form['myInput']
     #Open Keyword files:
     cwd = os.getcwd()

@@ -11,6 +11,16 @@
     <img src="{{ url_for('static', filename='screenshot.png') }}" alt="Screenshot">
     <p>Scraped:</p>
     <img src="{{ url_for('static', filename='screenshot2.png') }}" alt="Screenshot">
+    <form action="/" method="POST">
+        <div>
+            <input type="text" id="myInput" name="myInput" placeholder="Enter some text">
+        </div>
+        <p>Do you want to use the Result?</p>
+        <button type="submit">Yes</button>
+    </form>
+    <form action="/ai" method="POST">
+        <button type="AI">No, Generate me instead a Loginpage with AI</button>
+    </form>
 </body>
 
 </html>
