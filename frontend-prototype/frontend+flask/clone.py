@@ -7,7 +7,7 @@ from urllib.request import urlretrieve
 import htmledit
 from termcolor import colored
 
-def download_website(url):
+def download_website(url, method):
     # Create a folder to store the downloaded files
     folder_name = urlparse(url).netloc
     cwd = os.getcwd()
@@ -62,11 +62,11 @@ def download_website(url):
     except Exception as e:
         print(colored(f"An error occurred while writing the HTML file: {e}","red"))
     try:
-        check_html(folder_name)
+        check_html(folder_name, method)
     except Exception as e:
         print(colored(f"An error occurred while edeting the HTML file: {e}","red"))
 
-def check_html(folder_path):
-    htmledit.insert_css_links(folder_path)
+def check_html(folder_path, method):
+    htmledit.insert_css_links(folder_path, method)
 
 

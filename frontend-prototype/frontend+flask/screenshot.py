@@ -5,7 +5,7 @@ import os
 import platform
 from termcolor import colored
 
-def take_screenshot(url, output_file):
+def take_screenshot(url, output_file, time_to_wait):
     try:
         # Set up Chrome options
         chrome_options = Options()
@@ -24,7 +24,7 @@ def take_screenshot(url, output_file):
         
         # Navigate to the URL and wait for page to load
         driver.get(url)
-        driver.implicitly_wait(10) # Wait for up to 10 seconds for page to load
+        driver.implicitly_wait(time_to_wait) # Wait for up to 10 seconds for page to load
 
         # Accept cookies
         try:
