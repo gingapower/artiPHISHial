@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('indexr.html')
+    return render_template('index.html')
 
 
 @app.route('/scrape', methods=['POST'])
@@ -67,12 +67,12 @@ def scrape():
         file.write(str(doc))
     mainhtml.find_links(doc, links_with_text)
     print(colored("Start to clone Loginpage!","blue"))
-    clone.download_website(url)
-    screenshot.take_screenshot(url, 'screenshot.png')
+    clone.download_website(url, 1)
+    screenshot.take_screenshot(url, 'screenshot.png',10)
     
     folder_path = cwd+ "\\" + "websites\\"+urlparse(url).netloc+"\\index.html"
     print(folder_path)
-    screenshot.take_screenshot(folder_path, 'screenshot2.png')
+    screenshot.take_screenshot(folder_path, 'screenshot2.png', 4)
     screensho1_path = os.path.join(cwd, 'screenshot.png')
     screensho2_path = os.path.join(cwd, 'screenshot2.png')
     frontend = cwd + "\\static"
