@@ -2,7 +2,7 @@ import os
 import pickle
 from werkzeug.exceptions import BadRequestKeyError
 import subprocess
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, jsonify
 
 cwd = os.getcwd()
 
@@ -12,12 +12,11 @@ with open('data.pkl', 'rb') as f:
 with open(cwd + "\\url", 'r') as f:
     url = f.read()
 
-app = Flask(__name__, static_url_path='/static')
-
+app = Flask(__name__, static_folder='build/static')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory('build', 'index.html')
 
 @app.route('/submit_data', methods=['POST'])
 def submit_data():
@@ -44,9 +43,8 @@ def submit_data():
     response_data = {
         'message': f'Daten gespeichert: {form_data}'
     }
-    
-    return redirect(url)
-    #return jsonify(response_data)
-    
+
+    return jsonify(response_data)
+
 if __name__ == '__main__':
     app.run(debug=True)
