@@ -55,6 +55,7 @@ function App() {
         <div>
           <h2>Thank you for submitting!</h2>
           <p>Your data has been successfully submitted.</p>
+          <img src="screenshot1.png"></img>
           {/* Additional HTML and CSS code specific to the successful response */}
         </div>
       )}
