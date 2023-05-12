@@ -72,7 +72,8 @@ def submit_data():
     print(folder_path)
     screenshot.take_screenshot(folder_path, 'screenshot2.png', 4)
 
-    destination_directory = os.path.abspath('../frontend/src')
+    #copy screenshots into another directory
+    destination_directory = os.path.abspath('../frontend/public')
     screenshot1_path = os.path.join(cwd, 'screenshot.png')
     destination_path = os.path.join(destination_directory, 'screenshot.png')
     shutil.copy(screenshot1_path, destination_path)
