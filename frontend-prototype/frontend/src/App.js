@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 function App() {
   const [input, setInput] = useState('');
@@ -36,18 +37,19 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container"> {/* Apply the 'container' CSS class */}
       <h1>Generate Your Phishing Page</h1>
       <div>
         <input
           type="text"
           name="link"
-          placeholder="Link to Website/Login Page"
+          placeholder="Website Link or Login Page Link"
           value={input}
           onChange={handleChange}
         />
       </div>
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit}>Submit Website Link</button>
+      <button onClick={handleSubmit}>Submit Login Link</button>
       {message && <p>{message}</p>}
       {isSubmitted && (
         <div>
