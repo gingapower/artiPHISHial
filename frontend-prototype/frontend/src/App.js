@@ -37,9 +37,31 @@ function App() {
   };
 
   return (
-    <div className="container"> {/* Apply the 'container' CSS class */}
-      <h1>Generate Your Phishing Page</h1>
-      <div>
+    <div className="container">
+      <nav className="top-nav">
+        <div className="logo-container">
+          <img src="logo.png" alt="Logo" className="logo" />
+        </div>
+        <ul className="facts-list">
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Pricing</a>
+          </li>
+          <li>
+            <a href="#">Documentation</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div className="hero">
+        <h1>Generate Your Phishing Page</h1>
+        <p>A user-friendly web service tool that enables users to create realistic phishing pages for educational and security purposes. It simplifies the process of generating custom phishing pages, helping users enhance their understanding of phishing threats and strengthen their security measures.</p>
+      </div>
+      <div className="demo-container">
         <input
           type="text"
           name="link"
@@ -47,16 +69,18 @@ function App() {
           value={input}
           onChange={handleChange}
         />
+        <button onClick={handleSubmit}>Submit Website Link</button>
+        <button onClick={handleSubmit}>Submit Login Link</button>
       </div>
-      <button onClick={handleSubmit}>Submit Website Link</button>
-      <button onClick={handleSubmit}>Submit Login Link</button>
+      <div className="image-field">
+        <img src="../pictures for webpage/hacker.png" alt="Image Field" className="image" />
+      </div>
       {message && <p>{message}</p>}
       {isSubmitted && (
         <div>
           <h2>Thank you for submitting!</h2>
           <p>Your data has been successfully submitted.</p>
-          <img src="screenshot1.png"></img>
-          {/* Additional HTML and CSS code specific to the successful response */}
+          <img src="screenshot1.png" alt="Screenshot" />
         </div>
       )}
     </div>

@@ -6,7 +6,12 @@ import webbrowser
 
 def generatepage(domain):
     name = input("Enter name of the company: ")
-    api_key = "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"
+    
+    # Load API key from config file
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    api_key = config.get('api', 'key')
+    
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
     model = "gpt-3.5-turbo-0301"
 
