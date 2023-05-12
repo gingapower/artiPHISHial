@@ -1,0 +1,2 @@
+Color code: #f5f5f5, Count: 33
+Color code: #0092ff, Count: 30

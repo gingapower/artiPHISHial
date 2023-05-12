@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 300%;
+    font-weight: bolder;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 20px;
+  padding: 5%;
+  margin: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  width: 120%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgb(215, 99, 119);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(209, 53, 79);
+  transform: translateY(-2px);
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
