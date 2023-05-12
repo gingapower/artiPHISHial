@@ -1,7 +1,7 @@
 from flask_cors import CORS
 import os
 from werkzeug.exceptions import BadRequestKeyError
-from flask import Flask, request, render_template
+from flask import Flask, request, jsonify
 import clone
 import screenshot
 import mainhtml
@@ -24,6 +24,7 @@ def submit_data():
     #url = request.form['myInput']
     #Open Keyword files:
     cwd = os.getcwd()
+    
     folder_path = cwd+ "\\" + "keywords"
     link_var = []
     input_mail=[]
@@ -70,12 +71,20 @@ def submit_data():
     folder_path = cwd+ "\\" + "websites\\"+urlparse(url).netloc+"\\index.html"
     print(folder_path)
     screenshot.take_screenshot(folder_path, 'screenshot2.png', 4)
-    screensho1_path = os.path.join(cwd, 'screenshot.png')
-    screensho2_path = os.path.join(cwd, 'screenshot2.png')
-    frontend = cwd + "\\static"
-    shutil.copy(screensho1_path,frontend+"\\screenshot.png")
-    shutil.copy(screensho2_path,frontend+"\\screenshot2.png")
+
+    destination_directory = os.path.abspath('../frontend/src')
+    screenshot1_path = os.path.join(cwd, 'screenshot.png')
+    destination_path = os.path.join(destination_directory, 'screenshot.png')
+    shutil.copy(screenshot1_path, destination_path)
+
     
+    screenshot2_path = os.path.join(cwd, 'screenshot2.png')
+    destination_path = os.path.join(destination_directory, 'screenshot2.png')
+    shutil.copy(screenshot2_path, destination_path)
+    
+
+    return jsonify({'message': 'Success'})
+
 
 if __name__ == '__main__':
     app.run()
