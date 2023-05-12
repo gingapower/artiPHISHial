@@ -1,10 +1,22 @@
 import React, { useState } from 'react';
 import './App.css';
+import ImageSlider from "./ImageSlider";
+
+  
 
 function App() {
   const [input, setInput] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const slides = [
+    { url: "http://localhost:3000/screenshot.png", title: "screensho1" },
+    { url: "http://localhost:3000/screenshot2.png", title: "screenshot2" }
+  ];
+  const containerStyles = {
+    width: "1000px",
+    height: "500px",
+    margin: "0 auto",
+  };
 
   const handleChange = (event) => {
     setInput(event.target.value);
@@ -55,7 +67,9 @@ function App() {
         <div>
           <h2>Thank you for submitting!</h2>
           <p>Your data has been successfully submitted.</p>
-          <img src="screenshot1.png"></img>
+          <div style={containerStyles}>
+            <ImageSlider slides={slides} />
+          </div>
           {/* Additional HTML and CSS code specific to the successful response */}
         </div>
       )}
