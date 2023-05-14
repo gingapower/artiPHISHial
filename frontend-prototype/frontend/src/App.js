@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
 import ImageSlider from "./ImageSlider";
+import { BeatLoader } from 'react-spinners';
 
-  
 
 function App() {
   const [input, setInput] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showSlider, setShowSlider] = useState(false);
   const slides = [
     { url: "http://localhost:3000/screenshot.png", title: "screensho1" },
     { url: "http://localhost:3000/screenshot2.png", title: "screenshot2" }
@@ -22,8 +23,11 @@ function App() {
     setInput(event.target.value);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent the default form submission and page reload
+
     try {
+      setIsSubmitted(true); // Set isSubmitted to true immediately to show the loader
       const response = await fetch('http://localhost:5000/submit_data', {
         method: 'POST',
         headers: {
@@ -34,17 +38,16 @@ function App() {
 
       if (response.ok) {
         // Handle successful response
-        setMessage('Data submitted successfully');
-        setIsSubmitted(true);
+        setMessage('Data submitted successfully')
+        setIsSubmitted(false);
+        setShowSlider(true); // Set showSlider to true after the backend function is done
       } else {
         // Handle error response
         setMessage('Failed to submit data');
-        setIsSubmitted(false);
       }
     } catch (error) {
       // Handle fetch error
       setMessage('An error occurred: ' + error.message);
-      setIsSubmitted(false);
     }
   };
 
@@ -55,40 +58,17 @@ function App() {
           <img src="logo.png" alt="Logo" className="logo" />
         </div>
         <ul className="facts-list">
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Pricing</a>
-          </li>
-          <li>
-            <a href="#">Documentation</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
       <div className="hero">
         <h1>Generate Your Phishing Page</h1>
         <p>A user-friendly web service tool that enables users to create realistic phishing pages for educational and security purposes. It simplifies the process of generating custom phishing pages, helping users enhance their understanding of phishing threats and strengthen their security measures.</p>
       </div>
-      <div className="demo-container">
-        <input
-          type="text"
-          name="link"
-          placeholder="Website Link or Login Page Link"
-          value={input}
-          onChange={handleChange}
-        />
-        <button onClick={handleSubmit}>Submit Website Link</button>
-        <button onClick={handleSubmit}>Submit Login Link</button>
-      </div>
-      <div className="image-field">
-        <img src="../pictures for webpage/hacker.png" alt="Image Field" className="image" />
-      </div>
-      {message && <p>{message}</p>}
-      {isSubmitted && (
+      {showSlider ? (
         <div>
           <h2>Thank you for submitting!</h2>
           <p>Your data has been successfully submitted.</p>
@@ -97,9 +77,32 @@ function App() {
           </div>
           {/* Additional HTML and CSS code specific to the successful response */}
         </div>
+      ) : (
+        <div>
+          <div className="demo-container">
+            <input
+              type="text"
+              name="link"
+              placeholder="Website Link or Login Page Link"
+              value={input}
+              onChange={handleChange}
+            />
+            <button onClick={handleSubmit}>Submit Website Link</button>
+            <button onClick={handleSubmit}>Submit Login Link</button>
+          </div>
+          <div className="image-field">
+            <img src="../pictures for webpage/hacker.png" alt="Image Field" className="image" />
+          </div>
+          {message && <p>{message}</p>}
+          {isSubmitted && (
+            <div className="loader-container">
+              <BeatLoader color="#123abc" loading={true} />
+              <p>Loading...</p>
+            </div>
+          )}
+        </div>
       )}
     </div>
-  );
+  );   
 }
-
 export default App;
