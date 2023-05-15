@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { BeatLoader } from 'react-spinners';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import background from './background2.png';
+import background from './background3.png';
 
 function App() {
   const [input, setInput] = useState('');
@@ -42,36 +42,37 @@ function App() {
   };
 
   return (
-    <div className={`container ${isSubmitted ? 'dark-overlay' : ''}`}>
-      <nav className="top-nav">
-        <div className="logo-container">
-          <img src="logo.png" alt="Logo" className="logo" />
-        </div>
-        <ul className="facts-list">
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Pricing</a>
-          </li>
-          <li>
-            <a href="#">Documentation</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </nav>
+    // <div className={`container ${isSubmitted ? 'dark-overlay' : ''}`}>
+    //   <nav className="top-nav">
+    //     <div className="logo-container">
+    //       <img src="logo.png" alt="Logo" className="logo" />
+    //     </div>
+    //     <ul className="facts-list">
+    //       <li>
+    //         <a href="#">About</a>
+    //       </li>
+    //       <li>
+    //         <a href="#">Pricing</a>
+    //       </li>
+    //       <li>
+    //         <a href="#">Documentation</a>
+    //       </li>
+    //       <li>
+    //         <a href="#">Contact</a>
+    //       </li>
+    //     </ul>
+    //   </nav>
       <Parallax pages={3}>
         <ParallaxLayer style={{
             backgroundImage: `url(${background})`,
             backgroundSize: '100%' ,
-          }} offset={0}
-          speed={1}
+          }} 
+          offset={0}
+          speed={0.5}
           factor={2}>
         
         </ParallaxLayer>
-        <ParallaxLayer speed={0.1} factor={0.3}>
+        <ParallaxLayer speed={0.1} factor={10}>
           {/* First page content */}
           <div className="hero">
             <h1>Generate Your Phishing Page</h1>
@@ -106,7 +107,7 @@ function App() {
           </div>
         </ParallaxLayer>
       </Parallax>   
-    </div>
+    // </div>
   );
   
 }

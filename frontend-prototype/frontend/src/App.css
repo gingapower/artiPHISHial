@@ -90,6 +90,7 @@ li a {
 
 .hero {
   margin-bottom: 40px;
+  margin-top: 300px;
 }
 
 .demo-container {
@@ -202,3 +203,4 @@ img {
   background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as desired */
   z-index: 9999; /* Make sure the overlay appears on top of other elements */
 } 
+
