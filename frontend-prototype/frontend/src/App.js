@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import ImageSlider from "./ImageSlider";
 
-  
-
 function App() {
   const [input, setInput] = useState('');
   const [message, setMessage] = useState('');
@@ -22,7 +20,9 @@ function App() {
     setInput(event.target.value);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevents the default form submission
+
     try {
       const response = await fetch('http://localhost:5000/submit_data', {
         method: 'POST',
@@ -81,8 +81,8 @@ function App() {
           value={input}
           onChange={handleChange}
         />
-        <button onClick={handleSubmit}>Submit Website Link</button>
-        <button onClick={handleSubmit}>Submit Login Link</button>
+        <button onClick={(event) => handleSubmit(event)}>Submit Website Link</button>
+        <button onClick={(event) => handleSubmit(event)}>Submit Login Link</button>
       </div>
       <div className="image-field">
         <img src="../pictures for webpage/hacker.png" alt="Image Field" className="image" />
