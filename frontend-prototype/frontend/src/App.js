@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { BeatLoader } from 'react-spinners';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import background from './background.png';
+import background from './background2.png';
 
 function App() {
   const [input, setInput] = useState('');
@@ -65,13 +65,13 @@ function App() {
       <Parallax pages={3}>
         <ParallaxLayer style={{
             backgroundImage: `url(${background})`,
-            backgroundSize: 'cover',
+            backgroundSize: '100%' ,
           }} offset={0}
           speed={1}
           factor={2}>
         
         </ParallaxLayer>
-        <ParallaxLayer speed={0.1}>
+        <ParallaxLayer speed={0.1} factor={0.3}>
           {/* First page content */}
           <div className="hero">
             <h1>Generate Your Phishing Page</h1>
