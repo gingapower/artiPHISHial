@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; 
+  background-color: #f7f7f7;
+}
+
+.top-nav {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.logo-container {
+  display: flex;
+  align-items: left;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.facts-list {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font-size: 24px;
+  color: #555;
+  margin-left: 10px;
+}
+
+li a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.facts-list li a:hover {
+  color: #202A44;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.section {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.demo {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+
+.imagec1 {
+  position: absolute;
+  top: 0;
+  right: 35%;
+  width: 80%;
+  height: 80%;
+}
+.imagec2 {
+  position: absolute;
+  top: 0;
+  left: 33%;
+  width: 70%;
+  height: 70%;
+}
+.imagec3 {
+  position: absolute;
+  top: 0;
+  right: 45%;
+  width: 60%;
+  height: 60%;
+}
+.screen {
+  object-fit: cover;
+}
+
+
+
+
+
+.hero {
+  margin-bottom: 40px;
+  margin-top: 300px; 
+}
+.layer2 {
+  margin-right: 60%;
+  /* margin-top: 300px;  */
+}
+.layer2 h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #f2f2f2;
+  margin-bottom: 10px;
+}
+.layer2 p {
+  text-align: left;
+  font-size: 18px;
+  color: #f2f2f2;
+  width: 70%;
+  margin: 0 auto; /* Center the paragraph */
+}
+.layer3 {
+  margin-left: 50%;
+  /* margin-top: 300px;  */
+}
+.layer3 h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #f2f2f2;
+  margin-bottom: 10px;
+}
+.layer3 p {
+  text-align: left;
+  font-size: 18px;
+  color: #f2f2f2;
+  width: 70%;
+  margin: 0 auto; /* Center the paragraph */
+}
+
+.layer4 {
+  margin-right: 60%;
+  /* margin-top: 300px;  */
+}
+.layer4 h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #0D0630;
+  margin-bottom: 10px;
+}
+.layer4 p {
+  text-align: left;
+  font-size: 18px;
+  color: #0D0630;
+  width: 70%;
+  margin: 0 auto; /* Center the paragraph */
+}
+.layer5 {
+  margin-left: 50%;
+  /* margin-top: 300px;  */
+}
+.layer5 h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #0D0630;
+  margin-bottom: 10px;
+}
+.layer5 p {
+  text-align: left;
+  font-size: 18px;
+  color: #0D0630;
+  width: 70%;
+  margin: 0 auto; /* Center the paragraph */
+}
+.demo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #f2f2f2;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  text-align: left;
+  font-size: 18px;
+  color: #f2f2f2;
+  width: 33%;
+  margin: 0 auto; /* Center the paragraph */
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+section ul li {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.facts-list li {
+  font-size: 16px;
+  color: #555;
+  margin-left: 10px;
+}
+
+.demo-container input {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  width: 50%;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.demo-container button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #0D0630;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.demo-container button:hover {
+  background-color: #384E77;
+  transform: translateY(-2px);
+}
+
+.demo-container input:focus {
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.container.dark-overlay {
+  position: relative;
+}
+
+.container.dark-overlay::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as desired */
+  z-index: 9999; /* Make sure the overlay appears on top of other elements */
+} 
+

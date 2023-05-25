@@ -11,6 +11,7 @@ from termcolor import colored
 import implement_backend as backend
 from urllib.parse import urlparse
 import shutil
+import clone2
 
 
 app = Flask(__name__)
@@ -73,7 +74,7 @@ def submit_data():
     screenshot.take_screenshot(folder_path, 'screenshot2.png', 4)
 
     #copy screenshots into another directory
-    destination_directory = os.path.abspath('../frontend/public')
+    destination_directory = os.path.abspath('../frontend/src/screenshots')
     screenshot1_path = os.path.join(cwd, 'screenshot.png')
     destination_path = os.path.join(destination_directory, 'screenshot.png')
     shutil.copy(screenshot1_path, destination_path)
@@ -86,6 +87,11 @@ def submit_data():
 
     return jsonify({'message': 'Success'})
 
+@app.route('/submit_data2', methods=['POST'])
+def submit_data2():
+    data = request.get_json()  # Access the JSON data sent from the frontend
+    url = data.get('input')
+    clone2.clonetry2(url)
 
 if __name__ == '__main__':
     app.run()

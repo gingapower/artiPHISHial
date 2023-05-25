@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+
+<!-- template name: ifx.identifier.first.template.html -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+<html lang="en" dir="ltr">
+<head>
+        <title>Who are you?</title>
+        <base href="https://sso.infineon.com/"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <style>
+        #postButton {
+                    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+    <script src='assets/scripts/Modernizr.js'></script>
+<link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="setFocus();">
+
+<div class="ping-container ping-signin login-template">
+	<!--
+    if there is a logo present in the 'company-logo' container,
+    then 'has-logo' class should be added to 'ping-header' container.
+    -->
+    <div class="ping-header has-logo">
+        <span class="company-logo"><img src="assets/images/logo-infineon.svg" alt="Infineon Technologies AG"/><!-- client company logo here --></span>
+        <text id="company-logo-div-text">
+                        Who are you?
+                    </text>
+		    </div>
+    <!-- .ping-header -->
+    <div class="ping-body-container">
+
+        <br/>
+        <form method="POST" action="/as/AtPKa/resume/as/authorization.ping" autocomplete="off">
+            
+
+                        <div id="identifierInputLabel" class="ping-input-label">
+                            E-Mail / Username (without preceding domain)
+				            </div>
+            <div class="ping-input-container">
+                                <input id="identifierInput" type="text" size="36" name="subject" value="" autocorrect="off"
+                       autocapitalize="off" onKeyPress="return postOnReturn(event)"/>
+                                <div class="place-bottom type-alert tooltip-text" id="username-text">
+                    <div class="icon">!</div>
+                    Please fill out this field.
+                </div>
+            </div>
+
+            <div id="postButton" class="ping-buttons">
+                <a onclick="postOk();" class="ping-button normal allow"
+                   title="Next">
+                	Next
+                </a>
+            </div><!-- .ping-buttons -->
+                        <br>
+            Don't have an account?&nbsp;<a onclick="postCancel()">Register now</a>
+            
+            <input type="hidden" name="clear.previous.selected.subject" id="clear.previous.selected.subject" value=""/>
+            <input type="hidden" name="cancel.identifier.selection" value="false"/>
+			        </form>
+    </div><!-- .ping-body-container -->
+
+</div><!-- .ping-container -->
+<div class="ping-footer-container">
+    <div class="ping-footer">
+        <div class="ping-credits"></div>
+        <div class="ping-copyright"><span style="float:left">&copy;&nbsp;1999 - 2023 &nbsp;Infineon Technologies AG,<a target="_blank" href="https://www.infineon.com/cms/en/about-infineon/usage-terms/">Usage of this website is subject to our Usage Terms</a></span><span style="float:right"><a target="_blank" href="https://www.infineon.com/cms/en/about-infineon/imprint/">Imprint</a>|<a target="_blank" href="https://www.infineon.com/cms/en/about-infineon/company/contacts/">Contact</a>|<a target="_blank" href="https://www.infineon.com/cms/en/about-infineon/privacy-policy/">Privacy Policy</a>|<a target="_blank" href="https://www.infineon.com/cms/en/about-infineon/press/general-information/glossary/">Glossary</a></span></div>
+    </div>
+    <!-- .ping-footer -->
+</div>
+<!-- .ping-footer-container -->
+
+<script type="text/javascript">
+
+    function removeIdentifier(existingIdentifier) {
+        document.forms[0]['clear.previous.selected.subject'].value = existingIdentifier;
+        document.forms[0]['subject'].value = '';
+        submitForm();
+    }
+
+    function showIdentifierInputBox() {
+        // update the title text
+        document.title = 'Who are you?';
+        // update company-logo-div-text
+        document.getElementById("company-logo-div-text").textContent = 'Who are you?';
+        // hide the identifier selection list
+        document.getElementById("existingAccountsSelectionList").style.display = "none";
+        // show the identifier input box
+        document.getElementById("identifierInputLabel").style.display = "inline";
+        document.getElementById("identifierInput").style.display = "inline";
+        document.getElementById("postButton").style.display = "inline-block";
+
+        setFocus();
+    }
+
+    function selectIdentifier(identifier) {
+        document.forms[0]['subject'].value = identifier;
+        postOk();
+    }
+
+    function postOk() {
+        // remove error tips
+        if (document.forms[0]['subject'].value !== '') {
+            document.getElementById('username-text').className = 'place-bottom type-alert tooltip-text';
+        }
+        // Add back
+        if (document.forms[0]['subject'].value === '') {
+            document.getElementById('username-text').className += ' show';
+        }
+        else {
+            submitForm()
+        }
+    }
+
+    function postCancel() {
+
+    		    	document.forms[0].action = '/as/AtPKa/resume/as/authorization.ping?pf.registration=true';
+	        document.forms[0]['cancel.identifier.selection'].value = 'true';
+	        submitForm();
+        
+    }
+
+    function submitForm()
+    {
+        document.forms[0].submit();
+    }
+
+    function postOnReturn(e) {
+        var keycode;
+        if (window.event) keycode = window.event.keyCode;
+        else if (e) keycode = e.which;
+        else return true;
+
+        if (keycode == 13) {
+            postOk();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function setFocus() {
+        var platform = navigator.platform;
+        if (platform != null && platform.indexOf("iPhone") == -1) {
+            document.getElementById('identifierInput').focus();
+        }
+    }
+
+    function setMobile(mobile) {
+        var className = ' mobile',
+            hasClass = (bodyTag.className.indexOf(className) !== -1);
+
+        if (mobile && !hasClass) {
+            bodyTag.className += className;
+
+        } else if (!mobile && hasClass) {
+            bodyTag.className = bodyTag.className.replace(className, '');
+        }
+
+        <!-- Check if this is the PingOne Mobile App -->
+            }
+
+    function getScreenWidth() {
+        return (window.outerHeight) ? window.outerWidth : document.body.clientWidth;
+    }
+
+    var bodyTag = document.getElementsByTagName('body')[0],
+        width = getScreenWidth();
+
+    if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        setMobile(true);
+    } else {
+        setMobile((width <= 480));
+        window.onresize = function() {
+            width = getScreenWidth();
+            setMobile((width <= 480));
+        }
+    }
+
+</script>
+
+</body>
+<script src='assets/scripts/infineon.js'></script>
+</html>
