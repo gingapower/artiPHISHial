@@ -7,14 +7,14 @@ import background1 from './bg3.png';
 import startscreen from './startscreen.png'
 import clonescreen from './clonescreen.png'
 import downloadscreen from './downloadscreen.png'
-import white from './white.png'
+import logo from './logo.png'
 import './Home.css';
 
-export default function Home(){
+export default function Home() {
   const [input, setInput] = useState('');
   const [setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setInput(event.target.value);
@@ -46,6 +46,7 @@ export default function Home(){
       setMessage('An error occurred: ' + error.message);
     }
   };
+
   return (
     <body>
       <Parallax pages={9}>
@@ -59,14 +60,26 @@ export default function Home(){
           factor={2}
         ></ParallaxLayer>
         <ParallaxLayer speed={0.1} factor={10}>
+          <div className="navbar">
+          <div className="logo">
+            <a href="#hero"><img src={logo} alt="Logo"/></a>
+          </div>
+            <div className="links">
+              <ul className="nav_ul"></ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#layer2">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Log in</a></li>
+            </div>
+          </div>
           {/* First page content */}
-          <div className="hero">
+          <div id="hero" className="hero">
             <h1>Generate Your Phishing Page</h1>
             <p>
               A user-friendly web service tool that enables users to create realistic phishing pages for educational and security purposes. It simplifies the process of generating custom phishing pages, helping users enhance their understanding of phishing threats and strengthen their security measures.
             </p>
           </div>
-          <div className="demo-container">
+          <div id="demo-container" className="demo-container">
             {/* Input and button */}
             <input type="text" name="link" placeholder="Website Link or Login Page Link" value={input} onChange={handleChange} />
             <button onClick={handleSubmit}>Submit Website Link</button>
@@ -88,64 +101,60 @@ export default function Home(){
           speed={0.5}
           factor={2}
         ></ParallaxLayer>
-        <ParallaxLayer offset={1} speed={2} >
+        <ParallaxLayer offset={1} speed={2}>
           {/* Second page content */}
-          <div className="layer2">
+          <div id="layer2" className="layer2">
             <h1>Why should you create a phishing mail?</h1>
             <p>
-            Training employees against phishing emails is crucial for strong cybersecurity. Phishing attacks are pervasive and can lead to data breaches, financial losses, and reputation damage. By educating employees, organizations create a vigilant workforce capable of identifying and reporting suspicious emails, thus mitigating the risk of successful phishing attempts. Empowering employees with knowledge and awareness is an essential defense against evolving cyber threats.
+              Training employees against phishing emails is crucial for strong cybersecurity. Phishing attacks are pervasive and can lead to data breaches, financial losses, and reputation damage. By educating employees, organizations create a vigilant workforce capable of identifying and reporting suspicious emails, thus mitigating the risk of successful phishing attempts. Empowering employees with knowledge and awareness is an essential defense against evolving cyber threats.
             </p>
           </div>
         </ParallaxLayer>
-        
+
         <ParallaxLayer offset={1.9} speed={0.4} factor={1}>
           {/* Second page content */}
           <div className="layer3">
             <h1>How does it work?</h1>
             <p>
-            Training employees against phishing emails is crucial for strong cybersecurity. Phishing attacks are pervasive and can lead to data breaches, financial losses, and reputation damage. By educating employees, organizations create a vigilant workforce capable of identifying and reporting suspicious emails, thus mitigating the risk of successful phishing attempts. Empowering employees with knowledge and awareness is an essential defense against evolving cyber threats.
+              Training employees against phishing emails is crucial for strong cybersecurity. Phishing attacks are pervasive and can lead to data breaches, financial losses, and reputation damage. By educating employees, organizations create a vigilant workforce capable of identifying and reporting suspicious emails, thus mitigating the risk of successful phishing attempts. Empowering employees with knowledge and awareness is an essential defense against evolving cyber threats.
             </p>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={1.99} speed={0.8}>
-          <div className='imagec1'>
+          <div className="imagec1">
             <img src={startscreen} alt="Image 1" className="screen" />
           </div>
         </ParallaxLayer>
-        
-        <ParallaxLayer offset={2} speed={0.9} >
-          <div className='imagec2'>
+
+        <ParallaxLayer offset={2} speed={0.9}>
+          <div className="imagec2">
             <img src={clonescreen} alt="Image 1" className="screen" />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.1} speed={0.99} >
+        <ParallaxLayer offset={2.1} speed={0.99}>
           {/* Second page content */}
           <div className="layer4">
             <h1>The orginal Page gets cloned</h1>
             <p>
-              The website is automaticly cloned and shown to you. Now you can decide if you wnat to download this website, or if you want to generate one with AI.
+              The website is automatically cloned and shown to you. Now you can decide if you want to download this website or if you want to generate one with AI.
             </p>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.7} speed={1.3} >
-          <div className='imagec3'>
+        <ParallaxLayer offset={2.7} speed={1.3}>
+          <div className="imagec3">
             <img src={downloadscreen} alt="Image 1" className="screen" />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.8} speed={0.8}   >
+        <ParallaxLayer offset={2.8} speed={0.8}>
           {/* Second page content */}
           <div className="layer5">
             <h1>Download your Landing page</h1>
             <p>
-            Training employees against phishing emails is crucial for strong cybersecurity. Phishing attacks are pervasive and can lead to data breaches, financial losses, and reputation damage. By educating employees, organizations create a vigilant workforce capable of identifying and reporting suspicious emails, thus mitigating the risk of successful phishing attempts. Empowering employees with knowledge and awareness is an essential defense against evolving cyber threats.
+              Training employees against phishing emails is crucial for strong cybersecurity. Phishing attacks are pervasive and can lead to data breaches, financial losses, and reputation damage. By educating employees, organizations create a vigilant workforce capable of identifying and reporting suspicious emails, thus mitigating the risk of successful phishing attempts. Empowering employees with knowledge and awareness is an essential defense against evolving cyber threats.
             </p>
           </div>
         </ParallaxLayer>
       </Parallax>
     </body>
-    
-    
   );
-  
 }
-// export default App;

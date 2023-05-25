@@ -13,13 +13,29 @@ body {
   background-color: #f7f7f7;
 }
 
-.top-nav {
+/* Home.css */
+
+.navbar {
   display: flex;
-  align-items: left;
   justify-content: space-between;
-  padding: 10px;
-  background-color: #f2f2f2;
+  align-items: center;
+  padding: 20px;
+  background-color: #384E77;
+  font-family: 'Montserrat', sans-serif;
 }
+
+.links {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+  color: white;
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+}
+
 
 .logo-container {
   display: flex;
@@ -48,13 +64,13 @@ body {
 
 li {
   font-size: 24px;
-  color: #555;
+  color: #ffffff;
   margin-left: 10px;
 }
 
 li a {
   text-decoration: none;
-  color: #555;
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 
