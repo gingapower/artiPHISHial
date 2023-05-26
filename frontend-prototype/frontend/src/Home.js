@@ -17,13 +17,16 @@ export default function Home() {
   const navigate = useNavigate();
 
   const handleChange = (event) => {
-    setInput(event.target.value);
+    const inputValue = event.target.value;
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const inputValue = event.target.value;
+    setInput(inputValue);
 
     try {
+      const url = new URL(inputValue);
       setIsSubmitted(true);
 
       const response = await fetch('http://localhost:5000/submit_data', {
@@ -36,20 +39,23 @@ export default function Home() {
 
       if (response.ok) {
         setIsSubmitted(false);
-        navigate('result');
+        navigate('/result?inputValue=' + input);
       } else {
         setIsSubmitted(false);
-        setMessage('Failed to submit data');
+        return(<p>error</p>)
       }
     } catch (error) {
       setIsSubmitted(false);
-      setMessage('An error occurred: ' + error.message);
+      return(<p>error</p>)
+      // setMessage('An error occurred: ' + error.message);
     }
   };
 
   return (
     <body>
+      
       <Parallax pages={9}>
+
         <ParallaxLayer
           style={{
             backgroundImage: `url(${background})`,
@@ -60,18 +66,7 @@ export default function Home() {
           factor={2}
         ></ParallaxLayer>
         <ParallaxLayer speed={0.1} factor={10}>
-          <div className="navbar">
-          <div className="logo">
-            <a href="#hero"><img src={logo} alt="Logo"/></a>
-          </div>
-            <div className="links">
-              <ul className="nav_ul"></ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#layer2">About</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Log in</a></li>
-            </div>
-          </div>
+          
           {/* First page content */}
           <div id="hero" className="hero">
             <h1>Generate Your Phishing Page</h1>

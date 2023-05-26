@@ -60,7 +60,10 @@ def submit_data():
         'X-Requested-With': 'XMLHttpRequest',  # Indicate AJAX request
         # Add more headers as required
     }
-    result = requests.get(url, headers=headers).text
+    try:
+        result = requests.get(url, headers=headers).text
+    except:
+        return jsonify({'message': 'failure'})
     doc = BeautifulSoup(result, "html.parser")
     with open('output.html', 'w', encoding="utf-8") as file:
         file.write(str(doc))
@@ -89,9 +92,21 @@ def submit_data():
 
 @app.route('/submit_data2', methods=['POST'])
 def submit_data2():
+    cwd = os.getcwd()
     data = request.get_json()  # Access the JSON data sent from the frontend
-    url = data.get('input')
+    url = data.get('inputValue')
+    print(url)
     clone2.clonetry2(url)
+    folder_path = cwd+ "\\" + "websites\\"+urlparse(url).netloc+"\\index.html"
+    print(folder_path)
+    screenshot.take_screenshot(folder_path, 'screenshot2.png', 4)
+
+    #copy screenshots into another directory
+    destination_directory = os.path.abspath('../frontend/src/screenshots')   
+    screenshot2_path = os.path.join(cwd, 'screenshot2.png')
+    destination_path = os.path.join(destination_directory, 'screenshot2.png')
+    shutil.copy(screenshot2_path, destination_path)
+    return jsonify({'message': 'Success'})
 
 if __name__ == '__main__':
     app.run()

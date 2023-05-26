@@ -10,6 +10,7 @@ from urllib.request import urlretrieve
 import urllib.request
 import cssutils
 import logging
+from urllib.parse import urlparse, urljoin
 
 
 print ('''Python script to Clone a Web Page
@@ -43,7 +44,14 @@ def clonetry2(baseurl):
     print ("Connection Success!")
     try :
             soup = BeautifulSoup(html_doc, 'html.parser')
-            f = open('index.html', 'w', encoding='utf-8')
+            
+            folder_name = urlparse(baseurl).netloc
+            cwd = os.getcwd()
+            folder_path = cwd+ "\\" + "websites\\"+folder_name
+            os.makedirs(folder_path, exist_ok=True)
+            print(os.path.join(folder_path, "index.html"))
+
+            f = open (os.path.join(folder_path, "index.html"), 'w', encoding='utf-8')
             f.write(str(soup))
             f.close()
             print ("Initializing Index File")
