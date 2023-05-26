@@ -7,8 +7,10 @@ import background1 from './bg3.png';
 import startscreen from './startscreen.png'
 import clonescreen from './clonescreen.png'
 import downloadscreen from './downloadscreen.png'
+import white from './white.png'
 import logo from './logo.png'
 import './Home.css';
+import price from './price.jpg'
 
 export default function Home() {
   const [input, setInput] = useState('');
@@ -49,7 +51,12 @@ export default function Home() {
 
   return (
     <body>
-      <Parallax pages={9}>
+      <Parallax pages={10}
+                          style={{
+                            backgroundImage: `url(${white})`,
+                            backgroundSize: '100%',
+                          }}
+      >
         <ParallaxLayer
           style={{
             backgroundImage: `url(${background})`,
@@ -59,7 +66,7 @@ export default function Home() {
           speed={0.5}
           factor={2}
         ></ParallaxLayer>
-        <ParallaxLayer speed={0.1} factor={10}>
+          <ParallaxLayer speed={0.1} factor={10}>
           <div className="navbar">
           <div className="logo">
             <a href="#hero"><img src={logo} alt="Logo"/></a>
@@ -68,9 +75,12 @@ export default function Home() {
               <ul className="nav_ul"></ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#layer2">About</a></li>
-                <li><a href="#">Pricing</a></li>
+                <li><a href="#layer6">Pricing</a></li>
                 <li><a href="#">Log in</a></li>
             </div>
+          <div className='getstarted'>
+            <button onClick={handleSubmit}>Get Started</button>
+          </div>
           </div>
           {/* First page content */}
           <div id="hero" className="hero">
@@ -101,7 +111,7 @@ export default function Home() {
           speed={0.5}
           factor={2}
         ></ParallaxLayer>
-        <ParallaxLayer offset={1} speed={2}>
+        <ParallaxLayer offset={1.2} speed={0.3} >
           {/* Second page content */}
           <div id="layer2" className="layer2">
             <h1>Why should you create a phishing mail?</h1>
@@ -111,7 +121,7 @@ export default function Home() {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.9} speed={0.4} factor={1}>
+        <ParallaxLayer offset={1.989} speed={0.3} factor={1}>
           {/* Second page content */}
           <div className="layer3">
             <h1>How does it work?</h1>
@@ -131,7 +141,7 @@ export default function Home() {
             <img src={clonescreen} alt="Image 1" className="screen" />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.1} speed={0.99}>
+        <ParallaxLayer offset={2.2} speed={0.99}>
           {/* Second page content */}
           <div className="layer4">
             <h1>The orginal Page gets cloned</h1>
@@ -140,18 +150,44 @@ export default function Home() {
             </p>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.7} speed={1.3}>
+        <ParallaxLayer offset={2.7} speed={1.3} >
           <div className="imagec3">
             <img src={downloadscreen} alt="Image 1" className="screen" />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.8} speed={0.8}>
+        <ParallaxLayer offset={2.9} speed={0.8}>
           {/* Second page content */}
           <div className="layer5">
             <h1>Download your Landing page</h1>
             <p>
               Training employees against phishing emails is crucial for strong cybersecurity. Phishing attacks are pervasive and can lead to data breaches, financial losses, and reputation damage. By educating employees, organizations create a vigilant workforce capable of identifying and reporting suspicious emails, thus mitigating the risk of successful phishing attempts. Empowering employees with knowledge and awareness is an essential defense against evolving cyber threats.
             </p>
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={3} speed={0.8} style={{
+            backgroundImage: `url(${white})`,
+            backgroundSize: '100%',
+          }}>
+        <ParallaxLayer offset={1.5} speed={1} >
+        <div className="imagec4">
+            <img src={price} alt="Image Price" className="priceimage" />
+          </div>
+        </ParallaxLayer>
+          {/* Pricing page content */}
+          <div id="layer6" className="layer6">
+            <h1>Simple Pricing for everyone</h1>
+            <p className='layer6p'>Pricing built for businesses of all sizes. Always know what you’ll pay.</p>
+            <div className="pricingtable">
+            <h2>
+              Security Plus
+            </h2>
+            <h3>
+              Features
+            </h3>
+            <p>Our tool will scrape the website you provide or generates a Login Page with AI.</p>
+            <h5>$10/mo</h5>
+            <button onClick={handleSubmit}>Get Started</button>
+            </div>
           </div>
         </ParallaxLayer>
       </Parallax>
