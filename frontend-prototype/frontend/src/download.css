@@ -1,0 +1,10 @@
+body {
+    background-color: aliceblue;
+}
+body .p{
+    text-align: left;
+    font-size: 18px;
+    color: black;
+    width: 33%;
+    margin: 0 auto;
+}

@@ -19,13 +19,16 @@ export default function Home() {
   const navigate = useNavigate();
 
   const handleChange = (event) => {
-    setInput(event.target.value);
+    const inputValue = event.target.value;
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const inputValue = event.target.value;
+    setInput(inputValue);
 
     try {
+      const url = new URL(inputValue);
       setIsSubmitted(true);
 
       const response = await fetch('http://localhost:5000/submit_data', {
@@ -38,14 +41,15 @@ export default function Home() {
 
       if (response.ok) {
         setIsSubmitted(false);
-        navigate('result');
+        navigate('/result?inputValue=' + input);
       } else {
         setIsSubmitted(false);
-        setMessage('Failed to submit data');
+        return(<p>error</p>)
       }
     } catch (error) {
       setIsSubmitted(false);
-      setMessage('An error occurred: ' + error.message);
+      return(<p>error</p>)
+      // setMessage('An error occurred: ' + error.message);
     }
   };
 

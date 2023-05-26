@@ -6,7 +6,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-left: 3%;
+    margin-left: 4%;
    
   }
   .gallery p{
@@ -19,7 +19,7 @@ body{
   
   .image-container {
     margin: 10px;
-    transition: transform 0.3s;
+    transition: transform 0.9s;
   }
   
   .image-container:hover {
@@ -27,8 +27,8 @@ body{
   }
   
   .image {
-    width: 70%;
-    height: 70%;
+    width: 90%;
+    height: 90%;
   }
   
   .Button {
