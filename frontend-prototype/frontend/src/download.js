@@ -1,12 +1,14 @@
 import React from 'react';
-import screenshot2 from './screenshots/screenshot2.png';
 import './download.css'
 
-export default function Download() {
+export default function download() {
 
     return (
       <body>
+        <div className='downlaodoptions'>
         <p>downlaod</p>
+        </div>
+        
         
         </body>
         
