@@ -1,22 +1,24 @@
 import os
 import pickle
 from werkzeug.exceptions import BadRequestKeyError
-import subprocess
-from flask import Flask, request, render_template, redirect, jsonify
+from flask import Flask, request, render_template, redirect
+import sys
 
 cwd = os.getcwd()
 
 with open('data.pkl', 'rb') as f:
     variable_names = pickle.load(f)
 
-with open(cwd + "\\url", 'r') as f:
+with open(os.path.join(cwd, "url"), 'r') as f:
     url = f.read()
 
-app = Flask(__name__, static_folder='build/static')
+app = Flask(__name__, static_url_path='/static')
+
 
 @app.route('/')
 def index():
-    return send_from_directory('build', 'index.html')
+    return render_template('index.html')
+
 
 @app.route('/submit_data', methods=['POST'])
 def submit_data():
@@ -33,8 +35,7 @@ def submit_data():
             variable_names.remove(key_error_value)
             with open('data.pkl', 'wb') as f:
                 pickle.dump(variable_names, f)
-            subprocess.Popen(["python", "flaskapp.py"])
-            return "App restarted successfully! please reload the page!"
+            return "App restarted successfully! Please reload the page!"
 
     # Write the form data to a file
     with open('user_data.txt', 'a') as file:
@@ -44,7 +45,9 @@ def submit_data():
         'message': f'Daten gespeichert: {form_data}'
     }
 
-    return jsonify(response_data)
+    return redirect(url)
+    # return jsonify(response_data)
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+  app.run(debug=True)

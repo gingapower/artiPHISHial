@@ -20,17 +20,15 @@ export default function Home() {
 
   const handleChange = (event) => {
     const inputValue = event.target.value;
+    setInput(inputValue);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const inputValue = event.target.value;
-    setInput(inputValue);
-
+  
     try {
-      const url = new URL(inputValue);
       setIsSubmitted(true);
-
+  
       const response = await fetch('http://localhost:5000/submit_data', {
         method: 'POST',
         headers: {
@@ -38,18 +36,17 @@ export default function Home() {
         },
         body: JSON.stringify({ input }),
       });
-
+  
       if (response.ok) {
         setIsSubmitted(false);
         navigate('/result?inputValue=' + input);
       } else {
         setIsSubmitted(false);
-        return(<p>error</p>)
+        console.log('error');
       }
     } catch (error) {
       setIsSubmitted(false);
-      return(<p>error</p>)
-      // setMessage('An error occurred: ' + error.message);
+      console.log('error');
     }
   };
 

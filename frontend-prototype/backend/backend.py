@@ -1,3 +1,4 @@
+import imp
 from flask_cors import CORS
 import os
 from werkzeug.exceptions import BadRequestKeyError
@@ -6,12 +7,16 @@ import clone
 import screenshot
 import mainhtml
 import requests
+import implement_backend
+import htmledit
 from bs4 import BeautifulSoup
 from termcolor import colored
 import implement_backend as backend
 from urllib.parse import urlparse
 import shutil
 import clone2
+import pickle
+import subprocess
 
 
 app = Flask(__name__)
@@ -60,10 +65,7 @@ def submit_data():
         'X-Requested-With': 'XMLHttpRequest',  # Indicate AJAX request
         # Add more headers as required
     }
-    try:
-        result = requests.get(url, headers=headers).text
-    except:
-        return jsonify({'message': 'failure'})
+    result = requests.get(url, headers=headers).text
     doc = BeautifulSoup(result, "html.parser")
     with open('output.html', 'w', encoding="utf-8") as file:
         file.write(str(doc))
@@ -106,6 +108,30 @@ def submit_data2():
     screenshot2_path = os.path.join(cwd, 'screenshot2.png')
     destination_path = os.path.join(destination_directory, 'screenshot2.png')
     shutil.copy(screenshot2_path, destination_path)
+    return jsonify({'message': 'Success'})
+
+@app.route('/download_flask', methods=['POST'])
+def download_flask():
+    cwd = os.getcwd()
+    data = request.get_json()  # Access the JSON data sent from the frontend
+    url = data.get('inputValue')
+    htmledit.insert_css_links(urlparse(url).netloc, 2)
+    implement_backend.copy_files(urlparse(url).netloc, "index.html")
+    implement_backend.implement_form()
+    inputlist =[]
+    inputnames = []
+    implement_backend.get_vars_for_flask(inputlist, inputnames)
+    print(inputlist)
+    print(inputnames)
+    with open('data.pkl', 'wb') as f:
+        pickle.dump(inputnames, f)
+    
+    def convert_to_exe():
+        command = f'pyinstaller -F --add-data "templates;templates" --add-data "static;static" --add-data "data.pkl;." flaskapp.py'
+        subprocess.run(command, shell=True)
+
+    
+    convert_to_exe()
     return jsonify({'message': 'Success'})
 
 if __name__ == '__main__':

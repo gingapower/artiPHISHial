@@ -14,7 +14,7 @@ const navigate = useNavigate();
 
 // Retrieve the query parameter value
 const inputValue = new URLSearchParams(location.search).get('inputValue');
-
+// const Flask_file = "http://localhost:3000/"
 
 const trySubmit = async (event) => {
   event.preventDefault();
@@ -37,8 +37,26 @@ const trySubmit = async (event) => {
     setMessage('An error occurred: ' + error.message);
   }
 };
-const download = () => {
-  navigate('/download');
+const download =async (event) => {
+  event.preventDefault();
+
+  try {
+    const response = await fetch('http://localhost:5000/download_flask', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ inputValue }),
+    });
+
+    if (response.ok) {
+      setMessage('worked');
+    } else {
+      setMessage('An error occurred');
+    }
+  } catch (error) {
+    setMessage('An error occurred: ' + error.message);
+  }
 };
 const test = () => {
   navigate('/test');
@@ -61,7 +79,7 @@ const test = () => {
           {/* Input and button */}
           <button onClick={trySubmit}>Try again</button>
           <button onClick={test}>test webpae</button>
-          <button onClick={download}>Download</button>
+          <button onClick={download}>Download Flask</button>
         </div>
         
         </body>
