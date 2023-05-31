@@ -39,6 +39,8 @@ const trySubmit = async (event) => {
 };
 const download =async (event) => {
   event.preventDefault();
+  // const checkbox = document.getElementById('checkbox');
+  const checkbox = document.getElementById('checkbox').checked;
 
   try {
     const response = await fetch('http://localhost:5000/download_flask', {
@@ -46,7 +48,7 @@ const download =async (event) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ inputValue }),
+      body: JSON.stringify({ inputValue, checkbox}),
     });
 
     if (response.ok) {
@@ -54,7 +56,7 @@ const download =async (event) => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'flaskapp.exe'; // Replace with the desired filename and extension
+      a.download = 'flaskapp.zip'; // Replace with the desired filename and extension
       a.click();
       URL.revokeObjectURL(url);
     } else {
@@ -119,6 +121,11 @@ const test = () => {
             <input type="checkbox" id="checkbox"></input>
             <label for="checkbox">remove scripts</label>
           </div>
+          <button class="btn" onClick={download}>Download</button>
+        </div>
+        <div class="rectangle2">
+          <h2 class="headline">Download HTML </h2>
+          <p class="text">Download just html and css files!</p>
           <button class="btn" onClick={download}>Download</button>
         </div>
         <div class="footer"></div>
