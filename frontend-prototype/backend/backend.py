@@ -134,5 +134,21 @@ def download_flask():
     convert_to_exe()
     return jsonify({'message': 'Success'})
 
+@app.route('/ai_request', methods=['POST'])
+def ai_request():
+    # Get the domain from the frontend input
+    data = request.get_json()
+    domain = urlparse(data.get('input')).netloc
+
+    # Call the request.py file and process the AI request
+    subprocess.run(["python", "request.py"])
+
+    # Move the generated HTML and CSS files to a separate directory
+    destination_directory = os.path.abspath('../frontend/src/generated_files')
+    shutil.move('index.html', os.path.join(destination_directory, 'index.html'))
+    shutil.move('style.css', os.path.join(destination_directory, 'style.css'))
+
+    return jsonify({'message': 'AI request successful'})
+
 if __name__ == '__main__':
     app.run()

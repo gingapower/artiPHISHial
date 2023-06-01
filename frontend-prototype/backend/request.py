@@ -16,7 +16,7 @@ def generatepage(domain):
 
     data = {
         "model": "gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": "please generate me html code of a loginpage for a company named"+name+". stylesheet=style.css and also an image: logo.png which should be in a mini size"}]
+        "messages": [{"role": "user", "content": "Please generate HTML code for a login page for a company named "+name+". The stylesheet for the page should be style.css. Additionally, please include an image named logo.png that should be displayed in a mini size."}]
     }
 
     response = requests.post(url, headers=headers, data=json.dumps(data))
@@ -47,7 +47,7 @@ def generatepage(domain):
 
     data = {
         "model": "gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": "create me a advancded css file for html:"+html+". The colors should  be "+color1+" and "+color2+" and in a modern and professional style with "+font_style+" as font family style. Simple animations at the button."}]
+        "messages": [{"role": "user", "content": "Create an advanced CSS file for an HTML page that uses the following parameters: HTML code: "+html+", Primary color: "+color1+", Secondary color: "+color2+", Font family style: "+font_style+", Include simple animations for buttons."}]
     }
     response = requests.post(url, headers=headers, data=json.dumps(data))
     response_data = response.json()
@@ -64,3 +64,6 @@ def generatepage(domain):
     os.environ['BROWSER'] = browser_path
     # Open the generated HTML file in the default browser
     webbrowser.open('index.html')
+
+
+    
