@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home'
 import Result from './screenshots'
-import Download from './download';
-import Test from './test'
+import AIRequest from './AIRequest'
 
 
 function App() {
@@ -11,10 +10,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path='result' element={<Result />}/>
-          <Route path='download' elemet={<Download />}/>
-          <Route path='test' elemet={<Test />}/>
+        <Route index element={<Home />} />
+        <Route path='result' element={<Result />} />
+        <Route path='ai_request' element={<AIRequest />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -10,11 +10,10 @@ import downloadscreen from './downloadscreen.png'
 import white from './white.png'
 import logo from './logo.png'
 import './Home.css';
-import price from './price.jpg'
+import price from './price.jpg';
 
-export default function Home() {
+const Home = () => {
   const [input, setInput] = useState('');
-  const [setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
 
@@ -25,10 +24,10 @@ export default function Home() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     try {
       setIsSubmitted(true);
-  
+
       const response = await fetch('http://localhost:5000/submit_data', {
         method: 'POST',
         headers: {
@@ -36,7 +35,7 @@ export default function Home() {
         },
         body: JSON.stringify({ input }),
       });
-  
+
       if (response.ok) {
         setIsSubmitted(false);
         navigate('/result?inputValue=' + input);
@@ -50,13 +49,18 @@ export default function Home() {
     }
   };
 
+  const handleAIRequestClick = () => {
+    navigate('/ai_request');
+  };
+
   return (
     <body>
-      <Parallax pages={10}
-                          style={{
-                            backgroundImage: `url(${white})`,
-                            backgroundSize: '100%',
-                          }}
+      <Parallax
+        pages={10}
+        style={{
+          backgroundImage: `url(${white})`,
+          backgroundSize: '100%',
+        }}
       >
         <ParallaxLayer
           style={{
@@ -67,21 +71,22 @@ export default function Home() {
           speed={0.5}
           factor={2}
         ></ParallaxLayer>
-          <ParallaxLayer speed={0.1} factor={10}>
+        <ParallaxLayer speed={0.1} factor={10}>
           <div className="navbar">
-          <div className="logo">
-            <a href="#hero"><img src={logo} alt="Logo"/></a>
-          </div>
+            <div className="logo">
+              <a href="#hero"><img src={logo} alt="Logo" /></a>
+            </div>
             <div className="links">
               <ul className="nav_ul"></ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#layer2">About</a></li>
-                <li><a href="#layer6">Pricing</a></li>
-                <li><a href="#">Log in</a></li>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#layer2">About</a></li>
+              <li><a href="#layer6">Pricing</a></li>
+              <li><a href="#">Log in</a></li>
             </div>
-          <div className='getstarted'>
-            <button onClick={handleSubmit}>Get Started</button>
-          </div>
+            <div className='getstarted'>
+              <button onClick={handleSubmit}>Get Started</button>
+              <button onClick={handleAIRequestClick}>Generate AI Login Page</button>
+            </div>
           </div>
           {/* First page content */}
           <div id="hero" className="hero">
@@ -194,4 +199,6 @@ export default function Home() {
       </Parallax>
     </body>
   );
-}
+};
+
+export default Home;
