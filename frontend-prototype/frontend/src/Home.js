@@ -182,7 +182,7 @@ const Home = () => {
           <div id="layer6" className="layer6">
             <h1>Simple Pricing for everyone</h1>
             <p className='layer6p'>Pricing built for businesses of all sizes. Always know what you’ll pay.</p>
-            <div className="pricingtable">
+            {/* <div className="pricingtable">
             <h2>
               Security Plus
             </h2>
@@ -192,7 +192,7 @@ const Home = () => {
             <p>Our tool will scrape the website you provide or generates a Login Page with AI.</p>
             <h5>$10/mo</h5>
             <button onClick={handleSubmit}>Get Started</button>
-            </div>
+            </div> */}
           </div>
         </ParallaxLayer>
       </Parallax>

@@ -93,8 +93,12 @@ const download2 =async (event) => {
     setMessage('An error occurred: ' + error.message);
   }
 };
-const test = () => {
-  navigate('/download');
+const handleNavigateHome = () => {
+  navigate('/');
+};
+
+const handleAIRequest = () => {
+  navigate('/ai_request');
 };
 
     return (
@@ -109,6 +113,15 @@ const test = () => {
             <p>Cloned Page</p>
             <img src={screenshot2} alt="Image 2" className="image" />
           </div>
+        </div>
+        <div className='askDivision'>
+        <div className='tryDivision'>
+          <h3>Did not like it? Try with AI or go back to Home:</h3>
+        </div>
+        <div className="button-container-div">
+          <button className='navigateHome' onClick={handleNavigateHome}>Go to Home</button>
+          <button className='navigateAI' onClick={handleAIRequest}>Try with AI</button>
+        </div>
         </div>
         <div className="Button">
           {/* Input and button */}
@@ -129,8 +142,6 @@ const test = () => {
           <button class="btn" onClick={download}>{message ? 'Downloading...' : 'Download'}</button>
         </div>
         <div class="footer"></div>
-      
-           
         </body>
         
       );
