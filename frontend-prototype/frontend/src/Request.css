@@ -3,34 +3,63 @@ body {
 }
 
 .container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
 
-  button{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-    background-color: #0D0630;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-button:hover {
-    background-color: #384E77;
-    transform: translateY(-2px);
-  }
-  
+.request-container {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: bold;
+  color: #0d0630;
+  margin-bottom: 2.5%;
+}
+
+.input-field {
+  font-family: Montserrat, sans-serif;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  width: 50%;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.aiButton {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #0d0630;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backButton {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #0d0630;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

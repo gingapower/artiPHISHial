@@ -46,29 +46,31 @@ const Request = () => {
   };
 
   return (
-    <div>
-      <h1>AI Request Page</h1>
-      <input
+  <body>
+    <div className='container'>
+      <h1 className='heading'>Generate Your Login Page with OpenAI</h1>
+      <input className='input-field'
         type="text"
         value={name}
         onChange={(e) => setCompanyName(e.target.value)}
         placeholder="Company Name"
       />
-      <input
+      <input className='input-field'
         type="text"
         value={domain}
         onChange={(e) => setDomain(e.target.value)}
         placeholder="Domain (link)"
       />
-      <button onClick={handleAIRequest} disabled={isAIRequesting}>
+      <button className='aiButton' onClick={handleAIRequest} disabled={isAIRequesting}>
         {isAIRequesting ? 'Performing AI Request...' : 'Perform AI Request'}
       </button>
-      <button onClick={handleNavigateHome}>Go back to Home</button>
+      <button className='backButton' onClick={handleNavigateHome}>Go back to Home</button>
 
       {htmlContent && (
         <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
       )}
     </div>
+  </body>
   );
 };
 

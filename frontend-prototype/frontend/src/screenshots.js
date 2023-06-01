@@ -121,12 +121,12 @@ const test = () => {
             <input type="checkbox" id="checkbox"></input>
             <label for="checkbox">remove scripts</label>
           </div>
-          <button class="btn" onClick={download}>Download</button>
+          <button class="btn" onClick={download}>{message ? 'Downloading...' : 'Download'}</button>
         </div>
         <div class="rectangle2">
           <h2 class="headline">Download HTML </h2>
           <p class="text">Download just html and css files!</p>
-          <button class="btn" onClick={download}>Download</button>
+          <button class="btn" onClick={download}>{message ? 'Downloading...' : 'Download'}</button>
         </div>
         <div class="footer"></div>
       
