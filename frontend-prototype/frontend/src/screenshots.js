@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation,useNavigate } from 'react-router-dom';
-
+import { BarLoader} from 'react-spinners';
 
 import './screenshot.css'
 import screenshot1 from './screenshots/screenshot.png';
@@ -11,6 +11,7 @@ const [message, setMessage] = useState('');
 // const { inputValue } = useParams();
 const location = useLocation();
 const navigate = useNavigate();
+const [isSubmitted, setIsSubmitted] = useState(false);
 
 // Retrieve the query parameter value
 const inputValue = new URLSearchParams(location.search).get('inputValue');
@@ -38,9 +39,11 @@ const trySubmit = async (event) => {
   }
 };
 const download =async (event) => {
+  setIsSubmitted(true);
   event.preventDefault();
   // const checkbox = document.getElementById('checkbox');
   const checkbox = document.getElementById('checkbox').checked;
+  const checkbox2 = document.getElementById('checkbox2').checked;
 
   try {
     const response = await fetch('http://localhost:5000/download_flask', {
@@ -48,7 +51,7 @@ const download =async (event) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ inputValue, checkbox}),
+      body: JSON.stringify({ inputValue, checkbox, checkbox2}),
     });
 
     if (response.ok) {
@@ -59,23 +62,30 @@ const download =async (event) => {
       a.download = 'flaskapp.zip'; // Replace with the desired filename and extension
       a.click();
       URL.revokeObjectURL(url);
+      setIsSubmitted(false);
     } else {
       setMessage('An error occurred');
+      setIsSubmitted(false);
     }
   } catch (error) {
     setMessage('An error occurred: ' + error.message);
+    setIsSubmitted(false);
   }
 };
-const download2 =async (event) => {
+const downloadhtml =async (event) => {
+  setIsSubmitted(true);
   event.preventDefault();
+  // const checkbox = document.getElementById('checkbox');
+  const checkbox = document.getElementById('checkbox').checked;
+  const checkbox2 = document.getElementById('checkbox2').checked;
 
   try {
-    const response = await fetch('http://localhost:5000/download_var', {
+    const response = await fetch('http://localhost:5000/download_html', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ inputValue }),
+      body: JSON.stringify({ inputValue,}),
     });
 
     if (response.ok) {
@@ -83,14 +93,17 @@ const download2 =async (event) => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'flaskapp.exe'; // Replace with the desired filename and extension
+      a.download = inputValue+'.zip'; // Replace with the desired filename and extension
       a.click();
       URL.revokeObjectURL(url);
+      setIsSubmitted(false);
     } else {
       setMessage('An error occurred');
+      setIsSubmitted(false);
     }
   } catch (error) {
     setMessage('An error occurred: ' + error.message);
+    setIsSubmitted(false);
   }
 };
 const handleNavigateHome = () => {
@@ -123,24 +136,34 @@ const handleAIRequest = () => {
           <button className='navigateAI' onClick={handleAIRequest}>Try with AI</button>
         </div>
         </div>
-        <div className="Button">
-          {/* Input and button */}
-          <button onClick={trySubmit}>Try again</button>
-        </div>
-        <div class="rectangle">
-          <h2 class="headline">Download Executable</h2>
-          <p class="text">Download .exe file which deploys the phishing mail on your local system!</p>
-          <div class="checkbox-wrapper">
-            <input type="checkbox" id="checkbox"></input>
-            <label for="checkbox">remove scripts</label>
+
+        <div class="recs">
+          <div class="rectangle">
+            <h2 class="headline">Download Executable</h2>
+            <p class="text">Download .exe file which deploys the phishing mail on your local system!</p>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox"></input>
+              <label for="checkbox">remove scripts</label>
+              <div class="textbox">Remove all script elements out of html. Because often functionality is blocked by scripts.</div>
+            </div>
+            <div class="checkbox-wrapper2">
+              <input type="checkbox" id="checkbox2"></input>
+              <label for="checkbox">online css</label>
+            </div>
+            <button class="btn" onClick={download}>{'Download'}</button>
+            {isSubmitted && (
+              <div className="loader">
+                <BarLoader color="#ffb500" loading={true} />
+              </div>
+            )}
           </div>
-          <button class="btn" onClick={download}>{message ? 'Downloading...' : 'Download'}</button>
-        </div>
-        <div class="rectangle2">
-          <h2 class="headline">Download HTML </h2>
-          <p class="text">Download just html and css files!</p>
-          <button class="btn" onClick={download}>{message ? 'Downloading...' : 'Download'}</button>
-        </div>
+          <div class="rectangle2">
+            <h2 class="headline">Download HTML </h2>
+            <p class="text">Download just html and css files!</p>
+            <button class="btn" onClick={downloadhtml}>{'Download'}</button>
+            
+          </div>
+          </div>
         <div class="footer"></div>
         </body>
         

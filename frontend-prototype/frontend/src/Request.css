@@ -1,14 +1,28 @@
-.body {
-  background-color: white;
+body {
+  background-color: black;
 }
+
 
 .container {
   flex-direction: column;
   align-items: center;
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
   background: linear-gradient(to bottom, #3f1a42, #784bc1);  
+=======
+<<<<<<< HEAD
+  height: 80vh;
+  background-color: black;
+}
+.gardient{
+  padding: 100px;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(198,24,159,1) 50%, rgba(0,0,0,1) 97%);
+=======
+  background: linear-gradient(to bottom, #660f3b, #854343);  
+>>>>>>> 4211077896df1538123f26091c6ef18c3039f897
   width: 100%;
+>>>>>>> 1c1bc91d42e2dcdb1e64bc59f8ae31d55e458a41
 }
 
 .button-container {

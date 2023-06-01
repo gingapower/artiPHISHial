@@ -113,14 +113,38 @@ def submit_data2():
     
     return jsonify({'message': 'Success'})
 
+@app.route('/download_html', methods=['POST'])
+def download_html():
+    cwd = os.getcwd()
+    data = request.get_json()  # Access the JSON data sent from the frontend
+    url = data.get('inputValue')
+    zip_filename =urlparse(url).netloc
+    folder_path = os.path.join('websites', urlparse(url).netloc)  # Path to the folder to be zipped
+
+    with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+        for root, _, files in os.walk(folder_path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                arcname = os.path.relpath(file_path, folder_path)
+                zip_file.write(file_path, arcname)
+
+    return send_file(zip_filename, as_attachment=True)
+
+
+
+
 @app.route('/download_flask', methods=['POST'])
 def download_flask():
     cwd = os.getcwd()
     data = request.get_json()  # Access the JSON data sent from the frontend
     url = data.get('inputValue')
     check = data.get('checkbox')
+    check2 = data.get('checkbox2')
     print(check)
-    htmledit.insert_css_links(urlparse(url).netloc, 2)
+    if check2 !=True:
+        print("localcss")
+        htmledit.insert_css_links(urlparse(url).netloc, 2)
+
     implement_backend.copy_files(urlparse(url).netloc, "index.html")
     implement_backend.implement_form()
     inputlist = []
@@ -141,7 +165,7 @@ def download_flask():
 
     
     response = convert_to_exe()
-    cwd = os.getcwd()
+  
     zip_filename = 'flaskapp.zip'
     
     with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zip_file:
