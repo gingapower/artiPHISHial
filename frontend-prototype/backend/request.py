@@ -49,8 +49,13 @@ def get_hex_colors(domain):
         return color1, color2
 
 def get_font_family(domain):
-    with open(f"fonts/{domain}_font_family.txt", "r") as f:
-        return f.read().strip()
+    font_file_path = f"fonts/{domain}_font_family.txt"
+    
+    if os.path.isfile(font_file_path):
+        with open(font_file_path, "r") as f:
+            return f.read().strip()
+    
+    return ""  # Return an empty string if the font file doesn't exist
 
 def open_in_browser(filename):
     config = configparser.ConfigParser()

@@ -1,4 +1,4 @@
-body {
+.body {
   background-color: white;
 }
 
@@ -7,18 +7,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  background: linear-gradient(to bottom, #660f3b, #854343);  
+  width: 100%;
 }
 
-.request-container {
-  margin-top: 100px;
-  text-align: center;
-}
 
 .heading {
   font-size: 48px;
   font-weight: bold;
-  color: #0d0630;
+  color: white;
   margin-bottom: 2.5%;
 }
 
@@ -42,7 +39,7 @@ body {
   padding: 10px 20px;
   margin-bottom: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  background-color: #0d0630;
+  background-color: #8c3492;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -57,7 +54,7 @@ body {
   padding: 10px 20px;
   margin-bottom: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  background-color: #0d0630;
+  background-color: #8c3492;
   color: white;
   font-size: 16px;
   cursor: pointer;
