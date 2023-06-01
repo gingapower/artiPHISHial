@@ -8,22 +8,11 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
   background: linear-gradient(to bottom, #3f1a42, #784bc1);  
-=======
-<<<<<<< HEAD
   height: 80vh;
   background-color: black;
 }
-.gardient{
-  padding: 100px;
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(198,24,159,1) 50%, rgba(0,0,0,1) 97%);
-=======
-  background: linear-gradient(to bottom, #660f3b, #854343);  
->>>>>>> 4211077896df1538123f26091c6ef18c3039f897
-  width: 100%;
->>>>>>> 1c1bc91d42e2dcdb1e64bc59f8ae31d55e458a41
-}
+
 
 .button-container {
   display: flex;
@@ -74,12 +63,13 @@ body {
   background-color: #3f1a42;  
   color: white;
   font-size: 16px;
-
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .download-container {
   display: flex;
   gap: 10px;
   color: white;
 }
+

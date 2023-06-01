@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Request.css';
+import { Parallax } from '@react-spring/parallax';
 
 const Request = () => {
   const [isAIRequesting, setIsAIRequesting] = useState(false);
@@ -76,6 +77,7 @@ const Request = () => {
 
   return (
     <body>
+      <Parallax>
       <div className='body'>
         <div className='container'>
           <h1 className='heading'>Generate Your Login Page with OpenAI</h1>
@@ -112,6 +114,7 @@ const Request = () => {
           )}
         </div>
       </div>
+      </Parallax>
     </body>
   );  
 };

@@ -133,7 +133,8 @@ body{
   input[type="checkbox"]:checked {
     background-color: #ffb500;
   }
-  .footer{
+
+.footer{
     padding: 20px;
   }
 
@@ -169,7 +170,7 @@ body{
 button:hover {
     transform: scale(1.1);
     transition: all 0.3s ease;
-    padding: 50px;
+
   }
   .textbox {
     position: absolute;

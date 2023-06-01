@@ -199,14 +199,6 @@ def download_flask():
 
 @app.route('/download_ai', methods=['POST'])
 def download_ai():
-    data = request.get_json()  # Access the JSON data sent from the frontend
-    url = data.get('inputValue')
-    check = data.get('checkbox')
-    print(check)
-
-    # Generate HTML and CSS files using generatepage function
-    request.generatepage(urlparse(url).netloc, "")
-
     # Create a zip file and add the generated files to it
     cwd = os.getcwd()
     zip_filename = 'flaskapp.zip'
