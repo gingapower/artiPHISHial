@@ -173,6 +173,30 @@ def download_flask():
         # return jsonify({'message': 'Success'})
   
 
+@app.route('/download_ai', methods=['POST'])
+def download_ai():
+    data = request.get_json()  # Access the JSON data sent from the frontend
+    url = data.get('inputValue')
+    check = data.get('checkbox')
+    print(check)
+
+    # Generate HTML and CSS files using generatepage function
+    request.generatepage(urlparse(url).netloc, "")
+
+    # Create a zip file and add the generated files to it
+    cwd = os.getcwd()
+    zip_filename = 'flaskapp.zip'
+
+    with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+        zip_file.write('index.html')
+
+        zip_file.write('style.css')
+
+    path = os.path.join(cwd, zip_filename)
+    print(path)
+
+    return send_file(path, as_attachment=True)
+
 
 @app.route('/ai_request', methods=['POST'])
 def ai_request():
