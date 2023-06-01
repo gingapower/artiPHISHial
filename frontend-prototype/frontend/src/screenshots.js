@@ -12,6 +12,8 @@ const [message, setMessage] = useState('');
 const location = useLocation();
 const navigate = useNavigate();
 const [isSubmitted, setIsSubmitted] = useState(false);
+const [ipAddress, setIpAddress] = useState('');
+const [port, setPort] = useState('');
 
 const inputValue = new URLSearchParams(location.search).get('inputValue');
 
@@ -41,6 +43,7 @@ const download =async (event) => {
   event.preventDefault();
   const checkbox = document.getElementById('checkbox').checked;
   const checkbox2 = document.getElementById('checkbox2').checked;
+  // const checkbox3 = document.getElementById('checkbox3').checked;
 
   try {
     const response = await fetch('http://localhost:5000/download_flask', {
@@ -48,7 +51,7 @@ const download =async (event) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ inputValue, checkbox, checkbox2}),
+      body: JSON.stringify({ inputValue, checkbox, checkbox2, checkbox2}),
     });
 
     if (response.ok) {
@@ -75,6 +78,7 @@ const downloadhtml =async (event) => {
   // const checkbox = document.getElementById('checkbox');
   const checkbox = document.getElementById('checkbox').checked;
   const checkbox2 = document.getElementById('checkbox2').checked;
+  
 
   try {
     const response = await fetch('http://localhost:5000/download_html', {
@@ -82,7 +86,7 @@ const downloadhtml =async (event) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ inputValue,}),
+      body: JSON.stringify({ inputValue, checkbox, }),
     });
 
     if (response.ok) {
@@ -147,6 +151,29 @@ const handleAIRequest = () => {
               <input type="checkbox" id="checkbox2"></input>
               <label for="checkbox">online css</label>
             </div>
+            {/* <div class="checkbox-wrapper3">
+              <input type="checkbox" id="checkbox3"></input>
+              <label for="checkbox">external access </label>
+            </div>
+            <div class="checkbox-wrapper4">
+            <input
+              type="text"
+              name="link"
+              placeholder="IP-Adress"
+              value={ipAddress}
+              onChange={(event) => setIpAddress(event.target.value)}
+            />
+            </div>
+            <div class="checkbox-wrapper5">
+            <input
+              type="text"
+              name="link"
+              placeholder="Port"
+              value={port}
+              onChange={(event) => setPort(event.target.value)}
+            />
+            </div> */}
+
             <button class="btn" onClick={download}>{'Download'}</button>
             {isSubmitted && (
               <div className="loader">

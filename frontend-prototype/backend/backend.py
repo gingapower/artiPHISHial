@@ -140,6 +140,11 @@ def download_flask():
     url = data.get('inputValue')
     check = data.get('checkbox')
     check2 = data.get('checkbox2')
+    check3 = data.get('checkbox3')
+    ipAddress = data.get('ipAddress')
+    port = data.get('port')
+    print(check3, ipAddress, port)
+
     print(check)
     if check2 !=True:
         print("localcss")
@@ -150,6 +155,7 @@ def download_flask():
     inputlist = []
     inputnames = []
     implement_backend.get_vars_for_flask(inputlist, inputnames)
+    
     print(inputlist)
     print(inputnames)
     with open('data.pkl', 'wb') as f:

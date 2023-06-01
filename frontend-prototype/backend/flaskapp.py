@@ -3,6 +3,8 @@ import pickle
 from werkzeug.exceptions import BadRequestKeyError
 from flask import Flask, request, render_template, redirect
 import sys
+import subprocess
+import signal
 
 cwd = os.getcwd()
 
@@ -48,6 +50,22 @@ def submit_data():
     return redirect(url)
     # return jsonify(response_data)
 
+def add_firewall_rule(port):
+    # Add an inbound rule to allow incoming connections on the specified port
+    command = f'netsh advfirewall firewall add rule name="Flask Server" dir=in action=allow protocol=TCP localport={port}'
+    subprocess.run(command, shell=True)
+def remove_firewall_rule():
+    # Delete the previously added inbound rule for the Flask server
+    command = 'netsh advfirewall firewall delete rule name="Flask Server"'
+    subprocess.run(command, shell=True)
 
+def signal_handler(signal, frame):
+    # Handle termination signal (e.g., Ctrl+C)
+    remove_firewall_rule()
+    sys.exit(0)
 if __name__ == '__main__':
-  app.run(port=4000,debug=True)
+    add_firewall_rule(4000)
+    
+    #signal.signal(signal.SIGINT, signal_handler)
+    #flask_ip = 'localhost'
+    app.run(port=4000,debug=True)

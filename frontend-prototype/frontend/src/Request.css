@@ -8,7 +8,9 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  background: linear-gradient(to bottom, #3f1a42, #784bc1);  
+  height: 80vh;
+  background-color: black;
 }
 
 
