@@ -1,16 +1,14 @@
 body {
-  background-color: black;
+  background: linear-gradient(to bottom, #3f1a42, #825fba);  
 }
 
 
-.container {
+.ai-container {
   flex-direction: column;
   align-items: center;
   display: flex;
   justify-content: center;
-  background: linear-gradient(to bottom, #3f1a42, #784bc1);  
-  height: 80vh;
-  background-color: black;
+  height: 100vh;
 }
 
 

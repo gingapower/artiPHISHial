@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Request.css';
-import { Parallax } from '@react-spring/parallax';
 
-const Request = () => {
+export default function Response() {
   const [isAIRequesting, setIsAIRequesting] = useState(false);
   const [name, setCompanyName] = useState('');
   const [domain, setDomain] = useState('');
-  const [htmlContent, setHtmlContent] = useState('');
   const [isDownload, setIsDownload] = useState(false);
   const navigate = useNavigate();
 
@@ -25,14 +23,6 @@ const Request = () => {
 
       if (response.ok) {
         console.log('AI Request completed successfully');
-
-        const responseData = await response.json();
-        const { htmlPath, cssPath } = responseData;
-
-        setHtmlContent(`
-          <link rel="stylesheet" href="${cssPath}">
-          <div>${htmlPath}</div>
-        `);
       } else {
         console.log('AI Request failed');
       }
@@ -77,9 +67,8 @@ const Request = () => {
 
   return (
     <body>
-      <Parallax>
       <div className='body'>
-        <div className='container'>
+        <div className='ai-container'>
           <h1 className='heading'>Generate Your Login Page with OpenAI</h1>
           <input
             className='input-field'
@@ -109,14 +98,8 @@ const Request = () => {
                 {isDownload ? 'Downloading...' : 'Download'}
             </button>
           </div>
-          {htmlContent && (
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
-          )}
         </div>
       </div>
-      </Parallax>
     </body>
   );  
 };
-
-export default Request;

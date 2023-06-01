@@ -13,9 +13,7 @@ const location = useLocation();
 const navigate = useNavigate();
 const [isSubmitted, setIsSubmitted] = useState(false);
 
-// Retrieve the query parameter value
 const inputValue = new URLSearchParams(location.search).get('inputValue');
-// const Flask_file = "http://localhost:3000/"
 
 const trySubmit = async (event) => {
   event.preventDefault();
@@ -41,7 +39,6 @@ const trySubmit = async (event) => {
 const download =async (event) => {
   setIsSubmitted(true);
   event.preventDefault();
-  // const checkbox = document.getElementById('checkbox');
   const checkbox = document.getElementById('checkbox').checked;
   const checkbox2 = document.getElementById('checkbox2').checked;
 
