@@ -1,4 +1,4 @@
-body {
+.body {
   background: linear-gradient(to bottom, #3f1a42, #825fba);  
 }
 
@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   background: linear-gradient(to bottom, #3f1a42, #784bc1);  
-  height: 80vh;
+  height: 100vh;
   background-color: black;
 }
 

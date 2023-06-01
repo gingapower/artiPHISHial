@@ -66,8 +66,8 @@ export default function Response() {
   };
 
   return (
-    <body>
-      <div className='body'>
+    <body  className='body'>
+      <div>
         <div className='ai-container'>
           <h1 className='heading'>Generate Your Login Page with OpenAI</h1>
           <input
