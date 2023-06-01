@@ -29,7 +29,7 @@ const trySubmit = async (event) => {
     });
 
     if (response.ok) {
-      setMessage('worked');
+      setMessage('worked')
     } else {
       setMessage('An error occurred');
     }
@@ -39,9 +39,38 @@ const trySubmit = async (event) => {
 };
 const download =async (event) => {
   event.preventDefault();
+  // const checkbox = document.getElementById('checkbox');
+  const checkbox = document.getElementById('checkbox').checked;
 
   try {
     const response = await fetch('http://localhost:5000/download_flask', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ inputValue, checkbox}),
+    });
+
+    if (response.ok) {
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'flaskapp.zip'; // Replace with the desired filename and extension
+      a.click();
+      URL.revokeObjectURL(url);
+    } else {
+      setMessage('An error occurred');
+    }
+  } catch (error) {
+    setMessage('An error occurred: ' + error.message);
+  }
+};
+const download2 =async (event) => {
+  event.preventDefault();
+
+  try {
+    const response = await fetch('http://localhost:5000/download_var', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +79,13 @@ const download =async (event) => {
     });
 
     if (response.ok) {
-      setMessage('worked');
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'flaskapp.exe'; // Replace with the desired filename and extension
+      a.click();
+      URL.revokeObjectURL(url);
     } else {
       setMessage('An error occurred');
     }
@@ -59,7 +94,7 @@ const download =async (event) => {
   }
 };
 const test = () => {
-  navigate('/test');
+  navigate('/download');
 };
 
     return (
@@ -78,10 +113,24 @@ const test = () => {
         <div className="Button">
           {/* Input and button */}
           <button onClick={trySubmit}>Try again</button>
-          <button onClick={test}>test webpae</button>
-          <button onClick={download}>Download Flask</button>
         </div>
-        
+        <div class="rectangle">
+          <h2 class="headline">Download Executable</h2>
+          <p class="text">Download .exe file which deploys the phishing mail on your local system!</p>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="checkbox"></input>
+            <label for="checkbox">remove scripts</label>
+          </div>
+          <button class="btn" onClick={download}>Download</button>
+        </div>
+        <div class="rectangle2">
+          <h2 class="headline">Download HTML </h2>
+          <p class="text">Download just html and css files!</p>
+          <button class="btn" onClick={download}>Download</button>
+        </div>
+        <div class="footer"></div>
+      
+           
         </body>
         
       );

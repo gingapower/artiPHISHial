@@ -1,8 +1,9 @@
 import imp
+from tabnanny import check
 from flask_cors import CORS
 import os
 from werkzeug.exceptions import BadRequestKeyError
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_file
 import clone
 import screenshot
 import mainhtml
@@ -18,6 +19,9 @@ import clone2
 import pickle
 import request as AIRequest
 import maincss
+import subprocess
+import zipfile
+
 
 app = Flask(__name__)
 CORS(app)
@@ -114,6 +118,8 @@ def download_flask():
     cwd = os.getcwd()
     data = request.get_json()  # Access the JSON data sent from the frontend
     url = data.get('inputValue')
+    check = data.get('checkbox')
+    print(check)
     htmledit.insert_css_links(urlparse(url).netloc, 2)
     implement_backend.copy_files(urlparse(url).netloc, "index.html")
     implement_backend.implement_form()
@@ -125,13 +131,47 @@ def download_flask():
     with open('data.pkl', 'wb') as f:
         pickle.dump(inputnames, f)
     
+    if check == True:
+        print("check")
+        implement_backend.delete_scripts()
+
     def convert_to_exe():
         command = f'pyinstaller -F --add-data "templates;templates" --add-data "static;static" --add-data "data.pkl;." flaskapp.py'
         subprocess.run(command, shell=True)
 
     
-    convert_to_exe()
-    return jsonify({'message': 'Success'})
+    response = convert_to_exe()
+    cwd = os.getcwd()
+    zip_filename = 'flaskapp.zip'
+    
+    with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+        # Add the contents of the 'templates' folder to the zip file
+        for root, _, files in os.walk('templates'):
+            for file in files:
+                file_path = os.path.join(root, file)
+                arcname = os.path.join('templates', os.path.relpath(file_path, 'templates'))
+                zip_file.write(file_path, arcname)
+
+        # Add the contents of the 'static' folder to the zip file
+        for root, _, files in os.walk('static'):
+            for file in files:
+                file_path = os.path.join(root, file)
+                arcname = os.path.join('static', os.path.relpath(file_path, 'static'))
+                zip_file.write(file_path, arcname)
+
+         # Add 'flaskapp.exe' to the zip file
+        zip_file.write('dist/flaskapp.exe', 'flaskapp.exe')
+
+        # Add 'data.pkl' to the zip file
+        zip_file.write('data.pkl', 'data.pkl')
+        zip_file.write('url', 'url')
+
+        path = cwd+"\\"+"flaskapp.zip"
+        print(path)
+        return send_file(path, as_attachment=True)
+        # return jsonify(response)  
+        # return jsonify({'message': 'Success'})
+  
 
 
 @app.route('/ai_request', methods=['POST'])
@@ -149,5 +189,18 @@ def ai_request():
     return jsonify({'message': 'Success'})
 
 
+@app.route('/download_var', methods=['POST'])
+def download_var():
+    implement_backend.delete_scripts()
+    def convert_to_exe():
+        command = f'pyinstaller -F --add-data "templates;templates" --add-data "static;static" --add-data "data.pkl;." flaskapp.py'
+        subprocess.run(command, shell=True)
+
+    
+    response = convert_to_exe()
+    cwd = os.getcwd()
+    path = cwd+"\\"+"dist"+"\\"+"flaskapp.exe"
+    print(path)
+    return send_file(path, as_attachment=True)
 if __name__ == '__main__':
     app.run()

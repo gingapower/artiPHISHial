@@ -8,7 +8,7 @@ a = Analysis(
     ['flaskapp.py'],
     pathex=[],
     binaries=[],
-    datas=[('templates', 'templates'), ('static', 'static')],
+    datas=[('templates', 'templates'), ('static', 'static'), ('data.pkl', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

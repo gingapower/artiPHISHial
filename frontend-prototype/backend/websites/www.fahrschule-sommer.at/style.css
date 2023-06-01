@@ -1,0 +1,1112 @@
+@charset "UTF-8";
+/*
+Theme Name: Enfold Child
+Description: A <a href='http://codex.wordpress.org/Child_Themes'>Child Theme</a> for the Enfold Wordpress Theme. If you plan to do a lot of file modifications we recommend to use this Theme instead of the original Theme. Updating wil be much easier then.
+Version: 1.0
+Author: Kriesi
+Author URI: http://www.kriesi.at
+Template: enfold
+*/
+/*Add your own styles here:*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900&display=swap");
+@keyframes mymove {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 256px;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes start {
+  0% {
+    left: -100px;
+    transform: rotate(-90deg);
+  }
+  15% {
+    left: -100px;
+    transform: rotate(-90deg);
+  }
+  100% {
+    left: 185px;
+    transform: rotate(10deg);
+  }
+}
+@keyframes testi {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: 5px;
+  }
+  40% {
+    top: -5px;
+  }
+  60% {
+    top: 5px;
+  }
+  80% {
+    top: -5px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes testiperson {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+  20% {
+    top: 4px;
+    transform: rotate(-5deg);
+  }
+  40% {
+    top: -4px;
+    transform: rotate(5deg);
+  }
+  60% {
+    top: 4px;
+    transform: rotate(-5deg);
+  }
+  80% {
+    top: -4px;
+    transform: rotate(5deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0);
+  }
+}
+@keyframes testi2 {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -5px;
+  }
+  40% {
+    top: 5px;
+  }
+  60% {
+    top: -5px;
+  }
+  80% {
+    top: 5px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes testiperson2 {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+  20% {
+    top: -4px;
+    transform: rotate(5deg);
+  }
+  40% {
+    top: 4px;
+    transform: rotate(-5deg);
+  }
+  60% {
+    top: -4px;
+    transform: rotate(5deg);
+  }
+  80% {
+    top: 4px;
+    transform: rotate(-5deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0);
+  }
+}
+.minus-margin {
+  margin-top: -78px;
+  margin-bottom: -55px;
+}
+
+.av-thin-font .av-special-heading-tag, .modern-quote .av-special-heading-tag {
+  font-weight: 900;
+}
+
+.startanfrage h3 {
+  color: #ffdd00;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 20px;
+}
+
+.caption_center h2.avia-caption-title {
+  text-align: left;
+  display: inline-block;
+  background: #ffdd00;
+  color: #000;
+  padding: 25px;
+}
+
+#top div .caption_center .slideshow_caption {
+  text-align: left;
+}
+
+.slideshow_align_caption {
+  position: relative;
+}
+
+/*.slideshow_align_caption:before{
+  content: "";
+  display: block;
+  width: 211px;
+  height: 196px;
+  background: url(img/lenkrad.png) no-repeat;
+  position: absolute;
+  top: 105px;
+  left: 635px;
+  background-size: contain;
+  animation: fadein 3s none;
+}*/
+.slideshow_align_caption h2:after, .special-line .hr:before {
+  content: "";
+  display: block;
+  width: 143px;
+  height: 256px;
+  background: url("img/line.png") no-repeat;
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  animation: mymove 3s infinite;
+}
+
+#scroll-top-link {
+  display: none;
+}
+
+#top .avia-logo-element-container .slide-entry {
+  padding: 9px;
+  background: #fff;
+  border: 1px solid #333;
+}
+
+/* Termin Styling Start */
+.termin-wrapper {
+  text-align: left;
+}
+
+.termin_av-masonry .av-masonry-container .termin_av-masonry-item {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.termin_av-masonry .av-masonry-container .termin_av-masonry-item .av-inner-masonry-content {
+  padding: unset;
+  background-color: transparent;
+}
+
+.iconlist_content p {
+  margin: 5px 0 0;
+  line-height: 1.2em;
+}
+
+.avia-icon-list-container {
+  margin: 0;
+}
+
+.main_color .avia-icon-list .iconlist_icon {
+  background-color: #ffdd00;
+  color: #000;
+}
+
+.iconlist_content_wrap {
+  padding-top: 10px;
+}
+
+/* Termin Styling End */
+/* FÃ¼hrerschein Klassen Styling Start */
+.fuehrerschein-klassen .grid-entry:nth-child(even) .grid-content .entry-title {
+  color: #000;
+}
+.fuehrerschein-klassen .grid-entry:nth-child(odd) .grid-content {
+  background-color: rgba(177, 195, 15, 0.8) !important;
+}
+.fuehrerschein-klassen .grid-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(255, 221, 0, 0.8) !important;
+}
+.fuehrerschein-klassen .avia-arrow {
+  display: none;
+}
+.fuehrerschein-klassen .grid-entry-title {
+  background: transparent;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+.fuehrerschein-klassen .entry-content-header {
+  left: 0;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+.fuehrerschein-klassen .entry-content-header h3 {
+  padding: 0 20px;
+}
+
+.postid-233 .flex_column:after, .postid-233 .clearfix:after, .no-clear .flex_column:after, .no-clear .clearfix:after {
+  clear: none;
+}
+
+/* FÃ¼hrerschein Klassen Styling End */
+/* Start of CSS for Floating Share Buttons */
+.floating_wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: blue;
+}
+
+#social-float {
+  position: absolute;
+  display: none;
+  text-align: center;
+  right: 0;
+  bottom: -90vh;
+  float: right;
+  margin: 0 0 0 60px;
+  padding-top: 0px;
+  z-index: 99999;
+}
+
+#social-float:hover {
+  opacity: 1;
+}
+
+#social-float ul {
+  list-style: none;
+  height: 300px;
+}
+
+#social-float div.floating-init {
+  display: block;
+  color: #fff;
+  background: #ffdd00;
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  font-size: 20px !important;
+  text-align: center;
+  padding-top: 10px;
+  margin: 0 15px;
+  border: 2px solid #fff;
+}
+
+#social-float .inner-social a {
+  display: inline-block;
+  color: #000;
+  background: #ffdd00;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px !important;
+  text-align: center;
+  padding-top: 10px;
+  margin: 0 15px;
+  border: 2px solid #fff;
+}
+
+#social-float .widget .textwidget > p {
+  margin: 0 0 5px 0;
+}
+
+#social-float > a {
+  position: relative;
+}
+
+#social-float a span {
+  font-size: 20px !important;
+}
+
+#social-float a:hover {
+  text-decoration: none;
+}
+
+.inner-social {
+  display: none;
+  height: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 992px) {
+  #social-float:hover .inner-social {
+    height: 320px;
+    display: block;
+  }
+  .startanfrage fieldset p:last-child {
+    position: absolute;
+    right: 4px;
+    width: 49.5%;
+    bottom: 80px;
+  }
+  .startanfrage fieldset p:last-child .button {
+    float: right;
+  }
+  .startanfrage label {
+    font-size: 0.75em !important;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .inner-social.open {
+    height: 320px;
+    display: block;
+  }
+  .inner-social.closed {
+    height: 1px;
+    display: none;
+  }
+}
+/* End of CSS for Floating Share Buttons */
+/* Start Team Section*/
+#team .flex_column.av_one_fourth {
+  width: 100%;
+  margin-left: 0;
+}
+#team .flex_column.av_one_fourth.first {
+  margin-left: 0;
+}
+
+.team-info-text {
+  display: none;
+}
+
+.team-info-open {
+  cursor: pointer;
+}
+
+.team-info-open:hover {
+  text-decoration: underline;
+}
+
+.team-bild {
+  min-height: 355px;
+}
+.team-bild .avia_image {
+  width: 100%;
+}
+.team-bild .team-info-open {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  margin-right: -250px;
+  z-index: 999;
+  color: #ffdd00;
+}
+.team-bild .avia-image-overlay-wrap {
+  opacity: 1 !important;
+}
+.team-bild .av-image-caption-overlay:after {
+  content: "";
+  display: block;
+  width: 365px;
+  width: 100%;
+  height: 100%;
+  background: url("img/tuer-scheibe.png") no-repeat top center transparent !important;
+  position: absolute;
+  top: 0;
+  opacity: 0.4;
+  transition: all 0.7s ease;
+  z-index: 1;
+}
+.team-bild .av-caption-image-overlay-bg, .team-bild.av-overlay-hover-deactivate .avia-image-overlay-wrap:hover .av-caption-image-overlay-bg {
+  background: url("img/tuer.png") no-repeat top center transparent !important;
+  background-size: contain !important;
+  opacity: 1 !important;
+  min-height: 355px;
+  width: 365px;
+  width: 100%;
+  z-index: 2;
+}
+.team-bild .av-image-caption-overlay-position {
+  z-index: 3;
+}
+.team-bild .av-image-caption-overlay-center {
+  vertical-align: bottom;
+  position: relative;
+  top: 110px;
+  transform: rotate(-7deg);
+}
+.team-bild .av-image-caption-overlay-center h3 {
+  color: #ffdd00;
+  margin-bottom: 0;
+}
+.team-bild .av-image-caption-overlay-center p {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 0;
+  line-height: 17px;
+}
+.team-bild.avia-image-container.av-hover-grow, .team-bild.avia-image-container.av-hover-grow .avia-image-container-inner, .team-bild.avia-image-container.av-hover-grow .avia-image-overlay-wrap a.avia_image {
+  overflow: hidden !important;
+  min-height: 355px;
+}
+
+.team-bild:hover .av-image-caption-overlay:after {
+  top: 120px;
+}
+
+/* End Team Section*/
+/*  Start Testimonial Section*/
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper:first-child {
+  position: relative;
+  visibility: visible;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial {
+  position: unset;
+  flex: 1 0;
+  padding: unset;
+  visibility: unset;
+  opacity: unset;
+}
+@media (max-width: 1500px) {
+  #top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial {
+    flex: 0 0 100%;
+  }
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial:nth-child(even) .avia-testimonial_inner .avia-testimonial-meta::after {
+  animation: testi2 2s infinite;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial:nth-child(even) .avia-testimonial_inner .avia-testimonial-meta .avia-testimonial-image {
+  animation: testiperson2 2s infinite;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial .avia-testimonial_inner {
+  width: max-content;
+  max-width: 100%;
+  margin: auto;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial .avia-testimonial_inner .avia-testimonial-content {
+  position: relative;
+  top: 20px;
+  width: 339px;
+  max-width: 100%;
+  height: 239px;
+  margin: 0 auto;
+  background: url(img/testi-bubble.png) center center/contain no-repeat;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial .avia-testimonial_inner .avia-testimonial-content p {
+  padding: 40px 35px 0 25px;
+  font-weight: bold;
+  line-height: 25px;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial .avia-testimonial_inner .avia-testimonial-meta {
+  margin: unset;
+  padding-bottom: 65px;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial .avia-testimonial_inner .avia-testimonial-meta::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -15px;
+  width: 120%;
+  height: 120%;
+  background: url(img/testi-car.png) top -15px center/contain no-repeat;
+  animation: testi 2s infinite;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial .avia-testimonial_inner .avia-testimonial-meta .avia-testimonial-image {
+  position: relative;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  animation: testiperson 2s infinite;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial .avia-testimonial_inner .avia-testimonial-meta .avia-testimonial-image img {
+  width: 100%;
+}
+#top .avia-slider-testimonials.avia-testimonial-wrapper .avia-testimonial-slide-wrapper .avia-testimonial .avia-testimonial_inner .avia-testimonial-meta .avia-testimonial-meta-mini {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*  End Testimonial Section*/
+.mfp-close-btn-in .white-popup .mfp-close {
+  color: #fff;
+  background-color: #ffdd00;
+  top: 0;
+  right: -30px;
+  border-radius: 50%;
+  opacity: 1;
+}
+.mfp-close-btn-in .white-popup .mfp-close:hover {
+  opacity: 0.8;
+  color: #000;
+}
+
+.white-popup {
+  position: relative;
+  background: transparent;
+  padding: 0;
+  width: fit-content;
+  max-width: 600px;
+  margin: auto;
+}
+
+.mfp-close-btn-in .white-popup .mfp-close {
+  color: #fff;
+}
+
+.white-popup .widget {
+  color: #fff;
+}
+
+#special-footer {
+  background-image: url("img/car.svg");
+  background-repeat: no-repeat;
+  background-position: top 45px right 178px;
+  background-size: 200px;
+}
+
+#special-footer .av-iconlist-small li {
+  margin-bottom: 20px;
+}
+
+.download-list .avia-icon-list li {
+  margin: 7px 0;
+}
+
+#footer-calltoaction h3 {
+  color: #a81010;
+  text-shadow: 0 0 transparent;
+}
+
+#team .flex_column.av_one_fourth.first, #team .flex_column.av_one_fourth:nth-child(odd) {
+  margin-left: 0;
+}
+
+#startsection, #appsection {
+  background-image: none !important;
+}
+
+@media only screen and (min-width: 479px) {
+  .fuehrerschein-klassen .grid-entry.grid-loop-4 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-5 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-8 .grid-content {
+    background-color: rgba(177, 195, 15, 0.8) !important;
+  }
+  .fuehrerschein-klassen .grid-entry.grid-loop-2 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-3 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-6 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-7 .grid-content {
+    background-color: rgba(255, 221, 0, 0.8) !important;
+  }
+  .fuehrerschein-klassen .grid-entry.grid-loop-2 .grid-content .grid-entry-title, .fuehrerschein-klassen .grid-entry.grid-loop-3 .grid-content .grid-entry-title, .fuehrerschein-klassen .grid-entry.grid-loop-6 .grid-content .grid-entry-title, .fuehrerschein-klassen .grid-entry.grid-loop-7 .grid-content .grid-entry-title {
+    color: #000;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .white-popup {
+    max-width: 80% !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .fuehrerschein-klassen .grid-entry-title {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #startsection {
+    background-image: url(../../uploads/2020/05/startbg.jpg) !important;
+    background-size: 450px;
+  }
+  #startsection.video-bg {
+    background-image: url(../../uploads/2020/04/video_bg.png) !important;
+  }
+  #appsection {
+    background-image: url(https://www.fahrschule-sommer.at/wp-content/uploads/2019/11/app-frei.jpg) !important;
+  }
+  #team .flex_column.av_one_fourth {
+    margin-left: 6%;
+    width: 47%;
+  }
+  #team .flex_column.av_one_fourth.first {
+    margin-left: 0;
+  }
+  #team .flex_column.av_one_fourth:nth-child(odd) {
+    margin-left: 6%;
+  }
+  .fuehrerschein-klassen .grid-entry.grid-loop-3 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-6 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-8 .grid-content {
+    background-color: rgba(177, 195, 15, 0.8) !important;
+  }
+  .fuehrerschein-klassen .grid-entry.grid-loop-2 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-4 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-5 .grid-content, .fuehrerschein-klassen .grid-entry.grid-loop-7 .grid-content {
+    background-color: rgba(255, 221, 0, 0.8) !important;
+  }
+  .fuehrerschein-klassen .grid-entry.grid-loop-2 .grid-content .grid-entry-title, .fuehrerschein-klassen .grid-entry.grid-loop-4 .grid-content .grid-entry-title, .fuehrerschein-klassen .grid-entry.grid-loop-5 .grid-content .grid-entry-title, .fuehrerschein-klassen .grid-entry.grid-loop-7 .grid-content .grid-entry-title {
+    color: #000;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  #startsection {
+    background-size: 650px;
+  }
+  #team .flex_column.av_one_fourth {
+    margin-left: 6%;
+    width: 29.3333333333%;
+  }
+  #team .flex_column.av_one_fourth.first {
+    margin-left: 0;
+  }
+  .fuehrerschein-klassen .grid-entry-title {
+    font-size: 50px;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  #team .flex_column.av_one_fourth {
+    margin-left: 6%;
+    width: 20.5%;
+  }
+  #team .flex_column.av_one_fourth.first {
+    margin-left: 0;
+  }
+}
+@media only screen and (min-width: 1901px) {
+  #top .no_margin.av_one_fourth {
+    width: 24.99% !important;
+  }
+}
+.home #footer-calltoaction {
+  display: none !important;
+}
+
+.hide, .team-info-open {
+  display: none !important;
+}
+
+.logo {
+  padding-right: 55px;
+}
+
+.logo:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url("img/l.png") no-repeat transparent;
+  background-size: contain;
+  left: 185px;
+  top: 20px;
+  transform: rotate(10deg);
+  animation: start 1.5s ease;
+}
+
+@media only screen and (max-width: 1699px) {
+  #team .flex_column.av_one_fourth {
+    margin-left: 6%;
+    width: 27.5%;
+    margin-top: 50px;
+  }
+  #team .flex_column.av_one_fourth.first {
+    clear: none !important;
+    margin-left: 0;
+  }
+  #team .entry-content-wrapper .flex_column.av_one_fourth:nth-child(6n+6) {
+    margin-left: 0;
+  }
+  #team .flex_column.av_one_fourth.avia-builder-el-50, #team .flex_column.av_one_fourth.avia-builder-el-62 {
+    margin-left: 6% !important;
+  }
+  #team .flex_column.av_one_fourth.avia-builder-el-56 {
+    margin-left: 0 !important;
+  }
+}
+.termin-wrapper h3 {
+  display: none;
+}
+
+.termin-wrapper .startdatum, .termin-wrapper .enddatum, .termin-wrapper .trennzeichen {
+  font-weight: bold;
+}
+
+.br-only-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 989px) {
+  #startsection .av-parallax {
+    background: none transparent !important;
+  }
+  .caption_center h2.avia-caption-title {
+    max-width: 217px;
+  }
+  #wrap_all #team .flex_column.av_one_fourth {
+    margin-left: 0 !important;
+  }
+  .br-only-mobile {
+    display: block;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .responsive #top #wrap_all .slideshow_caption h2 {
+    font-size: 15px !important;
+  }
+}
+.short-dates ul li {
+  display: none;
+}
+
+.short-dates ul li:nth-child(-n+4) {
+  display: block;
+}
+
+.facebook-like {
+  width: 200px;
+  display: block;
+  float: right;
+}
+
+.facebook-like img {
+  width: 100%;
+  height: auto;
+}
+
+.mfp-bg, .mfp-wrap {
+  display: none !important;
+}
+
+.home .mfp-bg, .home .mfp-wrap {
+  display: block !important;
+}
+
+.title_container {
+  display: none;
+}
+
+.avia-slideshow .image-overlay {
+  display: none !important;
+}
+
+.slide-1 .slideshow_align_caption h2:after, .slide-2 .slideshow_align_caption h2:after {
+  display: none !important;
+}
+
+.app-buttons a:first-child {
+  background: url(../../uploads/2019/11/Appstore-Button.png) center center/cover no-repeat;
+  font-size: 0;
+  height: 60px;
+  width: 205px;
+  border: 0 none !important;
+  background-color: transparent !important;
+}
+
+.app-buttons a:last-child {
+  background: url(../../uploads/2019/11/Playstore-Button.png) center center/cover no-repeat;
+  font-size: 0;
+  height: 60px;
+  width: 205px;
+  border: 0 none !important;
+  background-color: transparent !important;
+}
+
+@media only screen and (max-width: 1300px) {
+  .av-main-nav > li > a {
+    padding: 0 5px;
+  }
+}
+.sb_instagram_header {
+  display: none !important;
+}
+
+.sbi_follow_btn {
+  display: none !important;
+}
+
+.sbi_load_btn, .cff-load-more {
+  display: block;
+  width: 100%;
+  color: #83a83d !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+.sbi_load_btn:hover, .cff-load-more:hover {
+  background: #000 !important;
+  box-shadow: none !important;
+}
+
+.preisbox.iconbox_top .iconbox_content {
+  border: 4px solid #ffdd00 !important;
+}
+.preisbox .entry-content-header {
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .av_special_two_third, .av_special_one_third {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .av_special_one_third {
+    margin-top: 25px !important;
+  }
+}
+#regeln .iconbox_content {
+  padding-top: 65px;
+}
+#regeln .iconbox_icon {
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-size: contain !important;
+  top: -40px;
+  margin-left: -40px;
+}
+#regeln .iconbox_icon[data-av_icon=ï ³] {
+  background-image: url("img/icon1.png");
+}
+#regeln .iconbox_icon[data-av_icon=ï ³]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£¯] {
+  background-image: url("img/icon2.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£¯]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£°] {
+  background-image: url("img/icon3.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£°]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£±] {
+  background-image: url("img/icon4.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£±]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£º] {
+  background-image: url("img/icon5.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£º]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£»] {
+  background-image: url("img/icon6.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£»]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£¼] {
+  background-image: url("img/icon7.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£¼]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£½] {
+  background-image: url("img/icon8.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£½]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£¾] {
+  background-image: url("img/icon9.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£¾]:before {
+  content: "";
+}
+
+.textwidget ul {
+  margin-bottom: 25px !important;
+}
+
+.page-id-593 div .slideshow_caption h2 {
+  text-transform: none;
+}
+
+a.cff-photo .image-overlay, a.sbi_photo .image-overlay {
+  display: none !important;
+}
+
+@media only screen and (max-width: 1200px) {
+  .av_special_two_third, .av_special_one_third {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .av_special_one_third {
+    margin-top: 25px !important;
+  }
+}
+#regeln .iconbox_content {
+  padding-top: 65px;
+}
+#regeln .iconbox_icon {
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-size: contain !important;
+  top: -40px;
+  margin-left: -40px;
+}
+#regeln .iconbox_icon[data-av_icon=ï ³] {
+  background-image: url("img/icon1.png");
+}
+#regeln .iconbox_icon[data-av_icon=ï ³]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£¯] {
+  background-image: url("img/icon2.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£¯]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£°] {
+  background-image: url("img/icon3.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£°]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£±] {
+  background-image: url("img/icon4.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£±]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£º] {
+  background-image: url("img/icon5.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£º]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£»] {
+  background-image: url("img/icon6.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£»]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£¼] {
+  background-image: url("img/icon7.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£¼]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£½] {
+  background-image: url("img/icon8.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£½]:before {
+  content: "";
+}
+#regeln .iconbox_icon[data-av_icon=î£¾] {
+  background-image: url("img/icon9.png");
+}
+#regeln .iconbox_icon[data-av_icon=î£¾]:before {
+  content: "";
+}
+
+.textwidget ul {
+  margin-bottom: 25px !important;
+}
+
+.av_one_third .avia-button-wrap {
+  margin-top: 0;
+}
+
+.avia_datepicker {
+  cursor: pointer;
+}
+
+.caption_center h2.avia-caption-title {
+  text-align: left;
+  display: inline-block;
+  background: #ffdd00;
+  color: #000;
+  padding: 0 !important;
+}
+
+.caption_center h2.avia-caption-title div {
+  text-align: left;
+  display: inline-block;
+  background: #ffdd00;
+  color: #000;
+  padding: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.slideshow_align_caption h2:after {
+  display: none !important;
+}
+
+.entry-content-wrapper li {
+  margin-left: 1.8em;
+}
+
+.responsive .map-wrapper .container {
+  width: 100% !important;
+  padding: 0;
+  max-width: 100% !important;
+}
+
+.responsive .map-wrapper .container .content {
+  padding: 0;
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+#top label {
+  font-weight: 600;
+}
+
+.sub_menu > ul > li > a, .sub_menu > div > ul > li > a {
+  font-weight: 600;
+}
+
+.main_color .container .av-inner-masonry-content, #top .main_color .container .av-masonry-load-more, #top .main_color .container .av-masonry-sort, .main_color .container .av-masonry-entry .avia-arrow {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-section #main {
+  padding-top: 0 !important;
+}
+
+@media only screen and (min-width: 1300px) {
+  #startsection {
+    background-size: 500px !important;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #startsection {
+    background-size: 650px !important;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .slide-1 {
+    background: #f1f1f1;
+  }
+  .slide-1 img {
+    opacity: 0 !important;
+  }
+}
+.hr-small {
+  width: 20%;
+}
+
+/*# sourceMappingURL=style.css.map */

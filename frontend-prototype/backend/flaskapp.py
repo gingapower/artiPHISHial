@@ -35,7 +35,7 @@ def submit_data():
             variable_names.remove(key_error_value)
             with open('data.pkl', 'wb') as f:
                 pickle.dump(variable_names, f)
-            return "App restarted successfully! Please reload the page!"
+            return "Error has been detected. App restarted successfully! Please reload the page!"
 
     # Write the form data to a file
     with open('user_data.txt', 'a') as file:
@@ -50,4 +50,4 @@ def submit_data():
 
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(port=4000,debug=True)
