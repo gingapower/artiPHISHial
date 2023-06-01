@@ -117,6 +117,18 @@ body{
     display: flex;
     margin-right: 78%;
   }
+  .checkbox-wrapper3 {
+    display: flex;
+    margin-right: 69.5%;
+  }
+  .checkbox-wrapper4 {
+    display: flex;
+    margin-right: 55%;
+  }
+  .checkbox-wrapper5 {
+    display: flex;
+    margin-right: 55%;
+  }
   
   input[type="checkbox"] {
     width: 16px;
