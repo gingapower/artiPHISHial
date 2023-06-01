@@ -203,6 +203,22 @@ def download_flask():
         # return jsonify({'message': 'Success'})
   
 
+@app.route('/download_ai', methods=['POST'])
+def download_ai():
+    # Create a zip file and add the generated files to it
+    cwd = os.getcwd()
+    zip_filename = 'flaskapp.zip'
+
+    with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+        zip_file.write('index.html')
+
+        zip_file.write('style.css')
+
+    path = os.path.join(cwd, zip_filename)
+    print(path)
+
+    return send_file(path, as_attachment=True)
+
 
 @app.route('/ai_request', methods=['POST'])
 def ai_request():

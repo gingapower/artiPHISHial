@@ -110,6 +110,13 @@ const downloadhtml =async (event) => {
     setIsSubmitted(false);
   }
 };
+const handleNavigateHome = () => {
+  navigate('/');
+};
+
+const handleAIRequest = () => {
+  navigate('/ai_request');
+};
 
     return (
       <body>
@@ -124,10 +131,16 @@ const downloadhtml =async (event) => {
             <img src={screenshot2} alt="Image 2" className="image" />
           </div>
         </div>
-        {/* <div className="Button">
-          
-          <button onClick={trySubmit}>Try again</button>
-        </div> */}
+        <div className='askDivision'>
+        <div className='tryDivision'>
+          <h3>Did not like it? Try with AI or go back to Home:</h3>
+        </div>
+        <div className="button-container-div">
+          <button className='navigateHome' onClick={handleNavigateHome}>Go to Home</button>
+          <button className='navigateAI' onClick={handleAIRequest}>Try with AI</button>
+        </div>
+        </div>
+
         <div class="recs">
           <div class="rectangle">
             <h2 class="headline">Download Executable</h2>

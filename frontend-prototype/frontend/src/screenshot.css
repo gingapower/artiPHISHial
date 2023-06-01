@@ -57,6 +57,7 @@ body{
     border-radius: 4px;
     padding: 8px 12px;
     cursor: pointer;
+    font-family: Montserrat, sans-serif;
   }
   .recs{
     display: flex;
@@ -106,6 +107,7 @@ body{
     border-radius: 4px;
     padding: 8px 12px;
     cursor: pointer;
+    font-family: Montserrat, sans-serif;
   }
   
   
@@ -143,8 +145,44 @@ body{
   input[type="checkbox"]:checked {
     background-color: #ffb500;
   }
-  .footer{
-    padding: 50px;
+
+.footer{
+    padding: 20px;
+  }
+
+  .button-container-div {
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+  }
+  
+  .tryDivision {
+    color: white;
+    text-align: center;
+  }
+
+  .askDivision {
+    margin-bottom: 5%;
+  }
+
+  .button-container-div button {
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: orange;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+button:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+
   }
   .textbox {
     position: absolute;
