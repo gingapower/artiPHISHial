@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Request.css';
 
+
+
 const Request = () => {
   const [isAIRequesting, setIsAIRequesting] = useState(false);
   const [name, setCompanyName] = useState('');
@@ -46,7 +48,7 @@ const Request = () => {
   };
 
   return (
-  <body>
+  <div className='body'>
     <div className='container'>
       <h1 className='heading'>Generate Your Login Page with OpenAI</h1>
       <input className='input-field'
@@ -59,7 +61,7 @@ const Request = () => {
         type="text"
         value={domain}
         onChange={(e) => setDomain(e.target.value)}
-        placeholder="Domain (link)"
+        placeholder="Domain (Website link)"
       />
       <button className='aiButton' onClick={handleAIRequest} disabled={isAIRequesting}>
         {isAIRequesting ? 'Performing AI Request...' : 'Perform AI Request'}
@@ -70,7 +72,7 @@ const Request = () => {
         <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
       )}
     </div>
-  </body>
+    </div>
   );
 };
 

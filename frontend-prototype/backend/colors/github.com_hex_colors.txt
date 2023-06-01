@@ -10,3 +10,10 @@ Color code: #ffffff, Count: 75
 Color code: #f6f8fa, Count: 48
 Color code: #ffffff, Count: 75
 Color code: #f6f8fa, Count: 48
+<<<<<<< HEAD
+=======
+Color code: #ffffff, Count: 75
+Color code: #f6f8fa, Count: 48
+Color code: #ffffff, Count: 75
+Color code: #f6f8fa, Count: 48
+>>>>>>> 1c1bc91d42e2dcdb1e64bc59f8ae31d55e458a41
