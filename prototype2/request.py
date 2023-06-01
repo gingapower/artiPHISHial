@@ -4,15 +4,9 @@ import configparser
 import os
 import webbrowser
 
-def generatepage(domain):
-    name = input("Enter name of the company: ")
-    
+def generatepage(domain, name):    
     # Load API key from config file
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    api_key = config.get('api', 'key')
-    
-    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer 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"}
     model = "gpt-3.5-turbo-0301"
 
     # Generate HTML code

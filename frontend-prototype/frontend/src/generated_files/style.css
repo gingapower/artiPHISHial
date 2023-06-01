@@ -1,1 +1,55 @@
-Sorry, as an AI language model, I am not able to generate an image for the CSS file. However, here is the code for the CSS file with the requested styles and simple animations at the button:```@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');* {  margin: 0;  padding: 0;  box-sizing: border-box;  font-family: 'Roboto', sans-serif;}body {  background-color: #ffffff;}img {  display: block;  margin: 20px auto;}h1 {  text-align: center;  font-size: 32px;  margin-bottom: 30px;}form {  background-color: #ffffff;  padding: 30px;  border-radius: 10px;  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);  max-width: 400px;  margin: 0 auto;}label {  display: block;  margin-bottom: 10px;  font-size: 16px;  color: #000000;}input[type="email"],input[type="password"] {  width: 100%;  padding: 12px;  border: none;  border-radius: 5px;  margin-bottom: 20px;  font-size: 16px;  color: #000000;}input[type="submit"] {  background-color: #000000;  color: #ffffff;  border: none;  border-radius: 5px;  padding: 12px 20px;  font-size: 18px;  cursor: pointer;  transition: all 0.3s ease;}input[type="submit"]:hover {  background-color: #ffffff;  color: #000000;  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);}```Note: Please make sure to save this CSS code in a file called `style.css` in the same directory where you're keeping the HTML code for the login page.
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  

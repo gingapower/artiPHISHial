@@ -45,7 +45,9 @@ def main(url):
         logo.extract_logo(domain)
         print("Logo successfully pulled")
 
-        request.generatepage(domain)
-
     except Exception as e:
         print("An error occurred trying to pull the logo:", e)
+
+    name = input("Company name: ")
+    request.generatepage(domain, name)
+    

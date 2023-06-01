@@ -4,66 +4,57 @@ import configparser
 import os
 import webbrowser
 
-def generatepage(domain):
-    name = input("Enter name of the company: ")
+def generatepage(domain, name):    
+    # Load API key from config file
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer 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"}
+    model = "gpt-3.5-turbo-0301"
+
+    # Generate HTML code
+    html_prompt = f"please generate me html code of a loginpage for a company named {name}. stylesheet=style.css and also an image: logo.png which should be in a mini size"
+    html_response = generate_response(model, headers, html_prompt)
+    html = cleanup_response(html_response)
+
+    # Generate CSS code
+    color1, color2 = get_hex_colors(domain)
+    font_style = get_font_family(domain)
+    css_prompt = f"create me a advancded css file for html:{html}. The colors should be {color1} and {color2} and in a modern and professional style with {font_style} as font family style. If the colors are the same use other colors. For example: A white font should not be on a white background. Simple animations at the button."
+    css_response = generate_response(model, headers, css_prompt)
+    css = cleanup_response(css_response)
+
+    # Save HTML and CSS files
+    with open('index.html', 'w') as file:
+        file.write(html)
+    with open('style.css', 'w') as file:
+        file.write(css)
+
+    # Open the generated HTML file in the default browser
+    open_in_browser('index.html')
+
+def generate_response(model, headers, prompt):
     url = "https://api.openai.com/v1/chat/completions"
-    config = configparser.ConfigParser()
-
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
-    }
-
-    data = {
-        "model": "gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": "Please generate HTML code for a login page for a company named "+name+". The stylesheet for the page should be style.css. Additionally, please include an image named logo.png that should be displayed in a mini size."}]
-    }
-
+    data = {"model": model, "messages": [{"role": "user", "content": prompt}]}
     response = requests.post(url, headers=headers, data=json.dumps(data))
     response_data = response.json()
+    print(response_data)
+    return response_data['choices'][0]['message']['content']
 
-    # Remove newline characters and tab characters
-    response_content = response_data['choices'][0]['message']['content']
-    response_content = response_content.replace('\n', '').replace('\t', '')
-    with open('index.html', 'w') as file:
-        file.write(response_content)
-    html = response_content
+def cleanup_response(response_content):
+    return response_content.replace('\n', '').replace('\t', '')
 
-    # Assign the two most common colors to color1 and color2
+def get_hex_colors(domain):
     with open(f"colors/{domain}_hex_colors.txt", "r") as f:
         lines = f.readlines()
         color1 = lines[0].split()[2][1:]
         color2 = lines[1].split()[2][1:]
+        return color1, color2
 
-    # Get the font family from the font_family.txt file
+def get_font_family(domain):
     with open(f"fonts/{domain}_font_family.txt", "r") as f:
-        font_style = f.read().strip()
+        return f.read().strip()
 
-    url = "https://api.openai.com/v1/chat/completions"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
-    }
-
-    data = {
-        "model": "gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": "Create an advanced CSS file for an HTML page that uses the following parameters: HTML code: "+html+", Primary color: "+color1+", Secondary color: "+color2+", Font family style: "+font_style+", Include simple animations for buttons."}]
-    }
-    response = requests.post(url, headers=headers, data=json.dumps(data))
-    response_data = response.json()
-
-    # Remove newline characters and tab characters
-    response_content = response_data['choices'][0]['message']['content']
-    response_content = response_content.replace('\n', '').replace('\t', '')
-    with open('style.css', 'w') as file:
-        file.write(response_content)
-
+def open_in_browser(filename):
+    config = configparser.ConfigParser()
     config.read('config.ini')
-    # Get the browser path
     browser_path = config.get('browser', 'path')
     os.environ['BROWSER'] = browser_path
-    # Open the generated HTML file in the default browser
-    webbrowser.open('index.html')
-
-
-    
+    webbrowser.open(filename)

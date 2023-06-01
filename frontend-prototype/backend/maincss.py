@@ -3,9 +3,8 @@ from bs4 import BeautifulSoup
 import request
 import colors
 import logo
-import configparser
 
-def main(url):
+def main(url, name):
     domain = url.split("//")[1].split("/")[0]
     page = requests.get(url)
 
@@ -45,7 +44,8 @@ def main(url):
         logo.extract_logo(domain)
         print("Logo successfully pulled")
 
-        request.generatepage(domain)
 
     except Exception as e:
         print("An error occurred trying to pull the logo:", e)
+
+    request.generatepage(domain, name)

@@ -84,7 +84,6 @@ const Home = () => {
               <li><a href="#">Log in</a></li>
             </div>
             <div className='getstarted'>
-              <button onClick={handleSubmit}>Get Started</button>
               <button onClick={handleAIRequestClick}>Generate AI Login Page</button>
             </div>
           </div>
