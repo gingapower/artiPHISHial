@@ -9,10 +9,10 @@ def insert_css_links(webpage, method):
 
     for file_name in all_files:
         if '.' not in file_name:
-            #css_file_name = file_name + '.css'
-            #css_files.append(css_file_name)
-            #os.rename(os.path.join(folder_path, file_name), os.path.join(folder_path, css_file_name))
-            print(file_name)
+            css_file_name = file_name + '.css'
+            css_files.append(css_file_name)
+            os.rename(os.path.join(folder_path, file_name), os.path.join(folder_path, css_file_name))
+            #print(file_name)
         elif '.css' in file_name:
             css_files.append(file_name)
             

@@ -1,12 +1,24 @@
 body{
   background: linear-gradient(to bottom, #000000, #000000,#ffffff);
 }
+.result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result p{
+  text-align: center;
+  font-size: 50px;
+  color: orange;
+  width: 33%;
+  margin: 0 auto;
+}
 .gallery {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-left: 4%;
+    margin-left: 5%;
    
   }
   .gallery p{
@@ -46,9 +58,12 @@ body{
     padding: 8px 12px;
     cursor: pointer;
   }
-  
+  .recs{
+    display: flex;
+    justify-content: center;
+  }
   .rectangle {
-    margin-left: 10%;
+    margin-right: 10%;
     width: 500px;
     height: 200px;
     background-color: #eaeaea;
@@ -62,7 +77,6 @@ body{
   }
   .rectangle2 {
     margin-left: 10%;
-    margin-top: 2%;
     width: 500px;
     height: 200px;
     background-color: #eaeaea;
@@ -97,7 +111,11 @@ body{
   
   .checkbox-wrapper {
     display: flex;
-    margin-right: 350px;
+    margin-right: 70%;
+  }
+  .checkbox-wrapper2 {
+    display: flex;
+    margin-right: 78%;
   }
   
   input[type="checkbox"] {
@@ -105,14 +123,30 @@ body{
     height: 16px;
     appearance: none;
     border-radius: 4px;
-    border: 2px solid orange;
+    border: 2px solid #ffa500;
     cursor: pointer;
     margin-right: 8px;
   }
   
   input[type="checkbox"]:checked {
-    background-color: orange;
+    background-color: #ffb500;
   }
   .footer{
-    padding: 20px;
+    padding: 50px;
+  }
+  .textbox {
+    position: absolute;
+    left:19%;
+    top: 112%;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: none;
+  }
+  
+  .checkbox-wrapper:hover .textbox {
+    display: block;
+  }
+  .loader{
+    margin-top: 1%;
   }
