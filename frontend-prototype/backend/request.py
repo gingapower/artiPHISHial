@@ -42,11 +42,19 @@ def cleanup_response(response_content):
     return response_content.replace('\n', '').replace('\t', '')
 
 def get_hex_colors(domain):
-    with open(f"colors/{domain}_hex_colors.txt", "r") as f:
-        lines = f.readlines()
-        color1 = lines[0].split()[2][1:]
-        color2 = lines[1].split()[2][1:]
+    hex_file_path = f"colors/{domain}_hex_colors.txt"
+
+    if os.path.isfile(hex_file_path):
+        with open(f"colors/{domain}_hex_colors.txt", "r") as f:
+            lines = f.readlines()
+            color1 = lines[0].split()[2][1:]
+            color2 = lines[1].split()[2][1:]
+            return color1, color2
+    else: 
+        color1 = '#ffffff'
+        color2 = '#000000'
         return color1, color2
+
 
 def get_font_family(domain):
     font_file_path = f"fonts/{domain}_font_family.txt"
@@ -55,7 +63,9 @@ def get_font_family(domain):
         with open(font_file_path, "r") as f:
             return f.read().strip()
     
-    return ""  # Return an empty string if the font file doesn't exist
+    else:
+        font_style = 'sans-serif'
+        return font_style
 
 def open_in_browser(filename):
     config = configparser.ConfigParser()

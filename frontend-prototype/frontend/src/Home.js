@@ -101,7 +101,7 @@ const Home = () => {
             <button onClick={() => navigate('result')}>Submit Login Link</button>
             {isSubmitted && (
               <div className="loader-container">
-                <BeatLoader color="#384E77" loading={true} />
+                <BeatLoader color="#ffffff" loading={true} />
                 <p>Loading...</p>
               </div>
             )}

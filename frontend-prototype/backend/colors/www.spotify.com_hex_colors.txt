@@ -1,0 +1,2 @@
+Color code: #121212, Count: 3
+Color code: #ffcdd2, Count: 1

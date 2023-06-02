@@ -1,5 +1,5 @@
 .body {
-  background: linear-gradient(to bottom, #3f1a42, #825fba);  
+  background: linear-gradient(to bottom, #3f1a42, #7851b6);  
 }
 
 
@@ -8,7 +8,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  background: linear-gradient(to bottom, #3f1a42, #784bc1);  
+  background: linear-gradient(to bottom, #3f1a42, #856dab);  
   height: 100vh;
   background-color: black;
 }
