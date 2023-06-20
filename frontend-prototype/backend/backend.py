@@ -15,7 +15,6 @@ from termcolor import colored
 import implement_backend as backend
 from urllib.parse import urlparse
 import shutil
-import clone2
 import pickle
 import request as AIRequest
 import maincss
@@ -35,7 +34,7 @@ def submit_data():
     # Open Keyword files:
     cwd = os.getcwd()
     
-    folder_path = cwd + "\\" + "keywords"
+    folder_path = os.path.join(cwd, "keywords")
     link_var = []
     input_mail = []
     input_pass = []
@@ -50,8 +49,7 @@ def submit_data():
             input_pass.append(line.strip())
     # Linklists
     links_with_text = []
-
-    urlpath = cwd + "\\url"
+    urlpath = os.path.join(cwd, "url")
     with open(urlpath, "w") as file:
         file.write(url)
 
@@ -77,7 +75,8 @@ def submit_data():
     clone.download_website(url, 1)
     screenshot.take_screenshot(url, 'screenshot.png', 10)
     
-    folder_path = cwd + "\\" + "websites\\" + urlparse(url).netloc + "\\index.html"
+    folder_path1 = os.path.join(cwd, "websites", urlparse(url).netloc)
+    folder_path = os.path.join(folder_path1, "index.html")
     print(folder_path)
     screenshot.take_screenshot(folder_path, 'screenshot2.png', 4)
 
@@ -94,24 +93,6 @@ def submit_data():
     
     return jsonify({'message': 'Success'})
 
-@app.route('/submit_data2', methods=['POST'])
-def submit_data2():
-    cwd = os.getcwd()
-    data = request.get_json()  # Access the JSON data sent from the frontend
-    url = data.get('inputValue')
-    print(url)
-    clone2.clonetry2(url)
-    folder_path = cwd + "\\" + "websites\\" + urlparse(url).netloc + "\\index.html"
-    print(folder_path)
-    screenshot.take_screenshot(folder_path, 'screenshot2.png', 4)
-
-    # Copy screenshots into another directory
-    destination_directory = os.path.abspath('../frontend/src/screenshots')   
-    screenshot2_path = os.path.join(cwd, 'screenshot2.png')
-    destination_path = os.path.join(destination_directory, 'screenshot2.png')
-    shutil.copy(screenshot2_path, destination_path)
-    
-    return jsonify({'message': 'Success'})
 
 @app.route('/download_html', methods=['POST'])
 def download_html():
@@ -119,7 +100,7 @@ def download_html():
     data = request.get_json()  # Access the JSON data sent from the frontend
     url = data.get('inputValue')
     zip_filename =urlparse(url).netloc
-    folder_path = os.path.join('websites', urlparse(url).netloc)  # Path to the folder to be zipped
+    folder_path = os.path.join('websites', zip_filename)  # Path to the folder to be zipped
 
     with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zip_file:
         for root, _, files in os.walk(folder_path):
@@ -196,7 +177,8 @@ def download_flask():
         zip_file.write('data.pkl', 'data.pkl')
         zip_file.write('url', 'url')
 
-        path = cwd+"\\"+"flaskapp.zip"
+        
+        path = os.path.join(cwd, "flaskapp.zip")
         print(path)
         return send_file(path, as_attachment=True)
   
@@ -242,7 +224,7 @@ def download_var():
     
     response = convert_to_exe()
     cwd = os.getcwd()
-    path = cwd+"\\"+"dist"+"\\"+"flaskapp.exe"
+    path= os.path.join(cwd,"dist", "flaskapp.exe")
     print(path)
     return send_file(path, as_attachment=True)
 if __name__ == '__main__':

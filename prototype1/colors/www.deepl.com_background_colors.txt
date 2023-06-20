@@ -1,2 +1,0 @@
-Background color: #006494, Count: 33
-Background color: #0f2b46, Count: 23

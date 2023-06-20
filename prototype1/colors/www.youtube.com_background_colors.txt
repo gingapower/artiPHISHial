@@ -1,6 +1,0 @@
-Background color: #f8f9fa, Count: 1
-Background color: #1a73e8, Count: 1
-Background color: #f8f9fa, Count: 1
-Background color: #1a73e8, Count: 1
-Background color: #f8f9fa, Count: 1
-Background color: #1a73e8, Count: 1

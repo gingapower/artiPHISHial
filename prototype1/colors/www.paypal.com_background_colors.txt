@@ -1,2 +1,0 @@
-Background color: #faf8f5, Count: 14
-Background color: #009cde, Count: 9
