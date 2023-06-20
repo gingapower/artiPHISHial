@@ -1,4 +1,4 @@
 # artiPHISHial
-![Artiphishial](https://github.com/gingapower/artiPHISHial/assets/87360317/b83a01bc-9eb0-44d2-b91f-e069f1f341a0)
+![Artiphishial_75](https://github.com/gingapower/artiPHISHial/assets/87360317/013e1409-b728-428f-855c-48ca27d5a1eb)
 
 Automatic Login Page Generator for Phishing purposes.
