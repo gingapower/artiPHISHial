@@ -18,3 +18,5 @@ Form Data: {'EmailAddress': 'fa@gmail.com', 'Password': 'asdf', 'RememberMe': 'f
 Form Data: {'username': 'fabian.hubrr@gmail.com', 'password': '23452345'}
 Form Data: {}
 Form Data: {'person[email]': 'fabian.hubrr@gmail.com', 'person[password]': 'ollacdsaf', 'commit': 'LogIn'}
+Form Data: {'email': 'fabian.hubrr@gmail.com', 'pass': 'password'}
+Form Data: {'email': '', 'pass': ''}

