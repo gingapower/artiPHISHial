@@ -6,8 +6,8 @@ import configparser
 def insert_css_links(webpage):
     config = configparser.ConfigParser()
     cwd = os.getcwd()
-    folder_path = cwd+ "\\" + "websites\\" + webpage
-    html_file_path = folder_path + "\\index.html"
+    folder_path = os.path.join(cwd, "websites", webpage)
+    html_file_path = os.path.join(folder_path, "index.html")
     css_files = []
     all_files = os.listdir(folder_path)
 

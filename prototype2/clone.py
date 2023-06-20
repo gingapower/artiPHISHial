@@ -11,7 +11,7 @@ def download_website(url):
     # Create a folder to store the downloaded files
     folder_name = urlparse(url).netloc
     cwd = os.getcwd()
-    folder_path = cwd+ "\\" + "websites\\"+folder_name
+    folder_path = os.path.join(cwd, "websites", folder_name)
     os.makedirs(folder_path, exist_ok=True)
 
     # Download the HTML of the webpage

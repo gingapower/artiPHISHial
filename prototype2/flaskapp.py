@@ -9,7 +9,8 @@ cwd = os.getcwd()
 with open('data.pkl', 'rb') as f:
     variable_names = pickle.load(f)
 
-with open(cwd + "\\url", 'r') as f:
+url_file_path = os.path.join(cwd, "url")
+with open(url_file_path, 'r') as f:
     url = f.read()
 
 app = Flask(__name__, static_url_path='/static')

@@ -13,7 +13,7 @@ import subprocess
 
 #Open Keyword files:
 cwd = os.getcwd()
-folder_path = cwd+ "\\" + "keywords"
+folder_path = os.path.join(cwd, "keywords")
 link_var = []
 input_mail=[]
 input_pass=[]
@@ -54,7 +54,9 @@ print("1 ~ Link to Website (Script will search for Loginpage)")
 print("2 ~ Link to Loginsite (Direct clone of webpage)")
 menu = int(input("Enter Option: "))
 url = input("Enter a URL: ")
-urlpath = cwd + "\\url"
+
+urlpath = os.path.join(cwd, "url")
+print(urlpath)
 with open (urlpath ,"w") as file:
     file.write(url)
 
