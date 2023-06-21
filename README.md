@@ -56,3 +56,9 @@ to
 ```
  app.run(ip=1.2.3.4, port=5000,debug=True)
 ```
+
+# DISCLAIMER
+```
+TO BE USED FOR EDUCATIONAL PURPOSES ONLY
+```
+The use of the artiPHISHial is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program.
