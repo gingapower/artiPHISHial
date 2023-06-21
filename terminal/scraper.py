@@ -56,7 +56,6 @@ menu = int(input("Enter Option: "))
 url = input("Enter a URL: ")
 
 urlpath = os.path.join(cwd, "url")
-print(urlpath)
 with open (urlpath ,"w") as file:
     file.write(url)
 

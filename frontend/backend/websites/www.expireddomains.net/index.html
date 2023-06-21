@@ -1,185 +1,0 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta name="referrer" content="same-origin" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Login</title>
-	<meta name="description" content="Information about Expired Domain Names. Check the availability of thousands of Expired Domains every day!" />
-	<meta name="keywords" content="expired domains expiring domains dropped domains deleted domains" />
-	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://www.expireddomains.net/login/" /> 	
-	<link rel="stylesheet" media="all" type="text/css" href="https://static.expireddomains.net/ednet/base.20210305.css" />
-		<link href="base.20210305.css" rel="stylesheet" type="text/css" />
-<link href="{{ url_for('static', filename='base.20210305.css') }}" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-
-<noscript><div id="noscript-warning">ExpiredDomains.net works best with javascript enabled!</div></noscript>
-
-<div id="container" class="container">
-
-	<ul id="topline">
-		<li class="info"><a href="/register/" rel="nofollow" title="Total Number of Domains currently in the Database">Total Domains</a>: <span>578,020,214</span></li>
-		<li class="info"><a href="/deleted-domains/">Deleted Domains</a>: <span>518,291,608</span></li>
-		<li class="link"><a href="/login/" rel="nofollow">Login</a></li>
-		<li class="link"><a href="/register/" rel="nofollow">Sign Up</a></li>
-		<li class="link"><a href="/contact/" rel="nofollow">Contact</a></li>
-	</ul>
-
-	<nav id="navigation" class="navbar navbar-default">
-		<div class="container">
-
-			<div id="logo">
-				<h1><a href="/">Expired <span class="second">Domains</span><span class="tld">.net</span></a></h1>
-				<p>Expired Domain Name Search Engine</p>
-			</div>
-
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" onclick="displayMenu()">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-
-			<div class="collapse navbar-collapse" id="navbar-list">
-				<form id="navsearch" class="navbar-form navbar-right" action="/login/" role="search">
-					<div class="input-group">
-						<input type="text" id="navsearchinput" class="form-control sprite ssearch2" autocomplete="off" placeholder="Search for Domain Names" />
-						<input type="hidden" name="signup" value="1" />
-						<span class="input-group-btn">
-							<button type="submit" class="btn btn-default">Search</button>
-						</span>
-					</div>
-				</form>
-
-				<div id="mainnav">
-					<ul class="nav navbar-nav">
-						<li id="homepagelink"><a href="/">&#9751;</a></li>
-						<li role="separator" class="divider-vertical"></li>
-						<li><a href="/expired-domains/" title="Backorder Expired Domains">Expired Domains</a></li>
-						<li role="separator" class="divider-vertical"></li>
-						<li><a href="/deleted-domains/" title="Deleted Domains">Deleted Domains</a></li>
-						<li role="separator" class="divider-vertical"></li>
-						<li><a href="/domain-lists/" title="Domain Lists">Domain Lists</a></li>
-						<li role="separator" class="divider-vertical"></li>
-					</ul>
-
-					<ul class="nav navbar-nav navbar-right">
-						<li role="separator" class="divider-vertical"></li>
-						<li><a href="/tlds/">TLDs</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-
-	<div id="content">
-
-				
-		
-						
-	<div class="row">
-		<div class="col-md-6 col-sm-12">
-			<div class="box">
-	<div class="box-header">
-		<h2>Login</h2>
-	</div>
-	<div class="box-content">
-		<form class="form-horizontal" method="post" action="https://member.expireddomains.net/login/">
-
-			
-			<div class="form-group">
-				<div class="col-sm-12">
-					<input type="text" name="login" class="form-control" id="inputLogin" placeholder="Username">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-12">
-					<input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-12">
-					<div class="checkbox">
-						<label><input type="checkbox" name="rememberme" id="rememberme" value="1"> Remember Me</label>
-					</div>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-12">
-					<button type="submit" class="btn btn-default">Login</button>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-12">
-					&raquo; <a href="/register/">No account yet? Sign up now!</a><br />
-					&raquo; <a href="/account/newpw/">Reset your password!</a><br />
-					&raquo; <a href="/account/activatemail/">Request another activation link!</a>
-				</div>
-			</div>
-
-			<input type="hidden" name="redirect_to_url" value="/startpage" />		</form>
-	</div>
-</div>
-		</div>
-
-		<div class="col-md-6 col-sm-12">
-			<div class="box">
-	<div class="box-header">
-		<h3>Privacy Information</h3>
-	</div>
-	<div class="box-content">
-		<ul>
-			<li>The member area requires a session cookie to be stored on your computer</li>
-			<li>
-				The cookie is only valid for the time of your session and will be
-				automatically deleted by your browser when you close it
-			</li>
-			<li>The remember me function is optional and not required to enter the member area</li>
-			<li>
-				If you use the remember me function, a permanent cookie will be stored on your computer
-				to automatically log you in the next time you visit our website
-			</li>
-			<li>
-				You can read more about our privacy settings in our <a href="/privacyinformation/">Privacy Information</a>
-			</li>
-			<li>
-				If you have further questions, you can get in touch with us by
-				using the <a href="/contact/">contact form</a>
-				or the addresses specified in the <a href="/impressum/">Impressum</a>
-			</li>
-		</ul>
-	</div>
-</div>
-		</div>
-	</div>
-
-			</div>
-</div>
-<div id="botlinks" class="container">
-	<a href="/references/">References</a> |
-	<a href="/impressum/">Impressum</a> |
-	<a href="/privacyinformation/">Privacy Information</a>
-
-	<div class="right">
-		<a href="/blog/">Blog</a> |
-		<a href="/faq/">FAQ</a> |
-		<a href="/help/">Help</a> |
-		<a href="/dev/">Dev</a>
-	</div>
-</div>
-<script>function displayMenu() {document.getElementById("navbar-list").classList.toggle("show");}</script>
-</body>
-</html>
