@@ -2,14 +2,14 @@
 ![Artiphishial_75](https://github.com/gingapower/artiPHISHial/assets/87360317/013e1409-b728-428f-855c-48ca27d5a1eb)
 
 Automatic Login Page Generator for Phishing purposes. 
-this tool sets up a phishing mail with Flask in about 2 minutes. The tool clones the original page, inserts all necessary components, and sets up the Flaskapp.
+This tool sets up a Phishing Landing Page with Flask in about 2 minutes. The tool clones the original page, inserts all necessary components, and sets up the Flaskapp.
 
 # Tool
-react frontend version:
+React Frontend Version:
 
 ![image](https://github.com/gingapower/artiPHISHial/assets/87360317/bbd2f2ac-e963-472a-ac42-a7011eb1dc0d)
 
-terminal version:
+Terminal Version:
 
 ![image](https://github.com/gingapower/artiPHISHial/assets/87360317/b84c7d09-574a-4cc3-8744-be8dabb03387)
 
@@ -28,14 +28,14 @@ optinal you can setup an python virtuel environment
 python -m venv myenv
 ```
 ## frontend version
-you have to install node.js:
+You have to install node.js:
 https://www.knowledgehut.com/blog/web-development/install-nodejs-npm-on-windows
 ```
 cd frontend/frontend
 npm install
 npm start
 ```
-you also have to start the flask api at the same time:
+You also have to start the flask api at the same time:
 ```
 cd frontend/backend
 python backend.py
@@ -45,7 +45,7 @@ python backend.py
 ```
 py flaskapp.py
 ```
-by default, flaskapp is started on localhost:5000.
+By default, flaskapp is started on localhost:5000.
 You can change the setting in the flaskapp.py file
 
 change
@@ -57,7 +57,7 @@ to
  app.run(ip=1.2.3.4, port=5000,debug=True)
 ```
 
-with the gui version, you have the possibility to download an executable file to launch the phishing webpage on windows:
+with the GUI version, you have the possibility to download an executable file (.exe) to launch the Phishing Webpage on Windows:
 
 ![image](https://github.com/gingapower/artiPHISHial/assets/87360317/56701c3c-a23c-451f-97d3-c45a94858596)
 
