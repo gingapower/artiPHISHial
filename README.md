@@ -16,7 +16,7 @@ terminal version:
 
 
 
-# setup
+# Setup
 ## Terminal version
 ```
 cd terminal
@@ -41,7 +41,7 @@ cd frontend/backend
 python backend.py
 ```
 
-# ussage
+# Usage
 ```
 py flaskapp.py
 ```
