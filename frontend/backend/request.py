@@ -6,7 +6,7 @@ import webbrowser
 
 def generatepage(domain, name):    
     # Load API key from config file
-    headers = {"Content-Type": "application/json", "Authorization": f"Bearer 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"}
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer -yourapikey-"}
     model = "gpt-3.5-turbo-0301"
 
     # Generate HTML code
