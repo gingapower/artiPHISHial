@@ -65,6 +65,24 @@ You can also just download the cloned files:
 
 ![image](https://github.com/gingapower/artiPHISHial/assets/87360317/0cf27131-c2a7-4858-a27d-1052017f208a)
 
+# Succes rate
+| Webapage  | succes |
+| ------------- | ------------- |
+https://www.google.com| 	works
+https://www.facebook.com |	works
+https://twitter.com	|fail
+https://www.instagram.com |	fail
+https://www.linkedin.com  |	works
+https://github.com |	works
+https://www.amazon.com |	fail
+https://www.netflix.com | works
+https://www.dropbox.com | fail
+https://www.paypal.com |	works
+https://www.reddit.com	|	works
+https://www.ebay.com |	fail
+
+
+
 # DISCLAIMER
 ```
 TO BE USED FOR EDUCATIONAL PURPOSES ONLY
