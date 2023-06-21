@@ -5,15 +5,15 @@ Automatic Login Page Generator for Phishing purposes.
 this tool sets up a phishing mail with Flask in about 2 minutes. The tool clones the original page, inserts all necessary components, and sets up the Flaskapp.
 
 # Tool
+react frontend version:
+
 ![image](https://github.com/gingapower/artiPHISHial/assets/87360317/bbd2f2ac-e963-472a-ac42-a7011eb1dc0d)
 
-you have the possibility to download an executable file to launch the phishing webpage on windows:
+terminal version:
 
-![image](https://github.com/gingapower/artiPHISHial/assets/87360317/56701c3c-a23c-451f-97d3-c45a94858596)
+![image](https://github.com/gingapower/artiPHISHial/assets/87360317/b84c7d09-574a-4cc3-8744-be8dabb03387)
 
-You can also just download the cloned files:
 
-![image](https://github.com/gingapower/artiPHISHial/assets/87360317/0cf27131-c2a7-4858-a27d-1052017f208a)
 
 
 # setup
@@ -56,6 +56,14 @@ to
 ```
  app.run(ip=1.2.3.4, port=5000,debug=True)
 ```
+
+with the gui version, you have the possibility to download an executable file to launch the phishing webpage on windows:
+
+![image](https://github.com/gingapower/artiPHISHial/assets/87360317/56701c3c-a23c-451f-97d3-c45a94858596)
+
+You can also just download the cloned files:
+
+![image](https://github.com/gingapower/artiPHISHial/assets/87360317/0cf27131-c2a7-4858-a27d-1052017f208a)
 
 # DISCLAIMER
 ```
